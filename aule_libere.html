@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aule libere polito</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:wght@400;700&family=Roboto+Slab&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style_desk.css">
+</head>
+
+<body >
+   
+
+    <div id="main_container" >
+        <div id="doc_title">
+            <h1>aule libere<br>polito</h1>
+            <p> dati aggiornati il 12/12/12 (12 giorni fa) </p>
+        </div>
+        <div id="block_scroll">
+            <!-- <select id="date_selector" onchange="change_date(this.value)"> 
+
+            </select> -->
+            <div id="date_box">
+                <div>
+                    <input type="date" class="date_input" oninput="change_date(this)" value="" min="" max="" />
+                </div>
+                <p class="date_title">📅 Data:</p>
+                <p class="date_value">...</p>
+                
+            </div>
+
+            <div id="filter_box">
+                <div class="filter_title">
+                    <p>Filtra le aule per:</p>
+                </div>
+
+                <div class="filter" value="_piano">
+                    <p>Piano 🔢</p>
+                </div>
+
+                <div class="filter" value="_capienza">
+                    <p>Capienza 🪑</p>
+                </div>
+
+                <div class="filter" value="_superficie">
+                    <p>Superficie 📐</p>
+                </div>
+
+                <div class="filter" value="_fabbricato">
+                    <p>Zona 📍</p>
+                </div>
+
+                <div class="filter" value="_fasce_libere">
+                    <p>fasce più libere 🕔</p>
+                </div>
+            </div>
+            <div class="row_orari">
+                <div>
+                    <p><span> 08:30 10:00 </span></p>
+                </div>
+                <div>
+                    <p><span> 10:00 11:30 </span></p>
+                </div>
+                <div>
+                    <p><span> 11:30 13:00 </span></p>
+                </div>
+                <div>
+                    <p><span> 13:00 14:30 </span></p>
+                </div>
+                <div>
+                    <p><span> 14:30 16:00 </span></p>
+                </div>
+                <div>
+                    <p><span> 16:00 17:30 </span></p>
+                </div>
+                <div>
+                    <p><span> 17:30 19:00 </span></p>
+                </div>
+                <div>
+                    <p><span> 19:00 20:30 </span></p>
+                </div>
+
+            </div>
+        </div>
+        <div id="container_row_aule">
+            <div style="opacity: 0; order:0" id="scroll_target"></div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="1" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="362" _superficie="318" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XPTE D001">
+            <p class="nome_aula">Aula 1</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+            </div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="2" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="332" _superficie="294" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XPTE E002">
+            <p class="nome_aula">Aula 2</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="3" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="352" _superficie="316" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XPTE D003">
+            <p class="nome_aula">Aula 3</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="4" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="326" _superficie="285" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XPTE E004">
+            <p class="nome_aula">Aula 4</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="5" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="362" _superficie="319" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XPTE D005">
+            <p class="nome_aula">Aula 5</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="6" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="302" _superficie="254" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XPTE E006">
+            <p class="nome_aula">Aula 6</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="7" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="148" _superficie="132" _fabbricato="Area Sud - Parte 2"
+            _id_locale="TO_CEN02 XPTE R001">
+            <p class="nome_aula">Aula 7</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="8" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="278" _superficie="214" _fabbricato="Area Nord"
+            _id_locale="TO_CEN04 XPTE E001">
+            <p class="nome_aula">Aula 8</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="10" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="140" _superficie="145" _fabbricato="Area Nord"
+            _id_locale="TO_CEN04 XPTE H001">
+            <p class="nome_aula">Aula 10</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="11" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="101" _superficie="98" _fabbricato="Area Sud - Parte 2"
+            _id_locale="TO_CEN02 XPTE Q009">
+            <p class="nome_aula">Aula 11</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="12" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="285" _superficie="256" _fabbricato="Area Nord"
+            _id_locale="TO_CEN04 XPTE M009">
+            <p class="nome_aula">Aula 12</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="13" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="100" _superficie="95" _fabbricato="Area Sud - Parte 2"
+            _id_locale="TO_CEN02 XPTE Q008">
+            <p class="nome_aula">Aula 13</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="14" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Interrato" _capienza="178" _superficie="175" _fabbricato="Area Nord"
+            _id_locale="TO_CEN04 XS01 M008">
+            <p class="nome_aula">Aula 14</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="15" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="98" _superficie="88" _fabbricato="Area Sud - Parte 1"
+            _id_locale="TO_CEN01 XPTE E020">
+            <p class="nome_aula">Aula 15</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="16" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="195" _superficie="191" _fabbricato="Area Nord"
+            _id_locale="TO_CEN04 XPTE M011">
+            <p class="nome_aula">Aula 16</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="17" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="32" _superficie="68" _fabbricato="Area Sud - Parte 1"
+            _id_locale="TO_CEN01 XPTE D002">
+            <p class="nome_aula">Aula 17</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="19" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="32" _superficie="69" _fabbricato="Area Sud - Parte 1"
+            _id_locale="TO_CEN01 XPTE D001">
+            <p class="nome_aula">Aula 19</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="27" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="221" _superficie="196" _fabbricato="Ex centrale termica"
+            _id_locale="TO_CEN05 XPTE B056">
+            <p class="nome_aula">Aula 27</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="29" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="213" _superficie="183" _fabbricato="Ex centrale termica"
+            _id_locale="TO_CEN05 XPTE B055">
+            <p class="nome_aula">Aula 29</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="10A" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="252" _superficie="265" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XPTE F004">
+            <p class="nome_aula">Aula 10A</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="10C" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Secondo piano" _capienza="118" _superficie="119" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XP02 Q014">
+            <p class="nome_aula">Aula 10C</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="10D" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Terzo piano" _capienza="127" _superficie="131" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XP03 Q001">
+            <p class="nome_aula">Aula 10D</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="10I" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Interrato" _capienza="88" _superficie="111" _fabbricato="Corte Interrata"
+            _id_locale="TO_CIT08 XS01 011">
+            <p class="nome_aula">Aula 10I</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="11B" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Primo Piano" _capienza="47" _superficie="60" _fabbricato="Area Sud - Parte 2"
+            _id_locale="TO_CEN02 XP01 Q006">
+            <p class="nome_aula">Aula 11B</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="11I" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Interrato" _capienza="96" _superficie="167" _fabbricato="Corte Interrata"
+            _id_locale="TO_CIT08 XS01 012">
+            <p class="nome_aula">Aula 11I</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="11S" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Interrato" _capienza="72" _superficie="78" _fabbricato="Area Sud - Parte 2"
+            _id_locale="TO_CEN02 XS01 D014">
+            <p class="nome_aula">Aula 11S</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="11T" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="142" _superficie="132" _fabbricato="Ex Tornerie"
+            _id_locale="TO_CIT09 XPTE 137">
+            <p class="nome_aula">Aula 11T</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="12A" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="252" _superficie="259" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XPTE F003">
+            <p class="nome_aula">Aula 12A</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="12D" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Terzo piano" _capienza="117" _superficie="119" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XP03 Q009">
+            <p class="nome_aula">Aula 12D</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="12I" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Interrato" _capienza="80" _superficie="185" _fabbricato="Corte Interrata"
+            _id_locale="TO_CIT08 XS01 013">
+            <p class="nome_aula">Aula 12I</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="13A" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="51" _superficie="64" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XPTE C004">
+            <p class="nome_aula">Aula 13A</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="13B" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Primo Piano" _capienza="51" _superficie="82" _fabbricato="Area Sud - Parte 2"
+            _id_locale="TO_CEN02 XP01 Q005">
+            <p class="nome_aula">Aula 13B</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="13S" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Interrato" _capienza="119" _superficie="133" _fabbricato="Area Sud - Parte 2"
+            _id_locale="TO_CEN02 XS01 C016">
+            <p class="nome_aula">Aula 13S</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="15A" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="97" _superficie="110" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XPTE C008">
+            <p class="nome_aula">Aula 15A</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="17A" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="96" _superficie="102" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XPTE C007">
+            <p class="nome_aula">Aula 17A</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="19A" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="87" _superficie="84" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XPTE C003">
+            <p class="nome_aula">Aula 19A</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="1B" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Primo Piano" _capienza="196" _superficie="240" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XP01 L005">
+            <p class="nome_aula">Aula 1B</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="1D" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Terzo piano" _capienza="89" _superficie="102" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XP03 G009">
+            <p class="nome_aula">Aula 1D</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="1I" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Interrato" _capienza="149" _superficie="176" _fabbricato="Corte Interrata"
+            _id_locale="TO_CIT08 XS01 002">
+            <p class="nome_aula">Aula 1I</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="1M" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="76" _superficie="139" _fabbricato="Aule M" _id_locale="TO_CIT02 XPTE 007">
+            <p class="nome_aula">Aula 1M</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="1P" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="220" _superficie="217" _fabbricato="Aule P, nuovi fabbricati"
+            _id_locale="TO_CIT22 XPTE 036">
+            <p class="nome_aula">Aula 1P</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="1S" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Interrato" _capienza="156" _superficie="163" _fabbricato="Area Sud - Parte 2"
+            _id_locale="TO_CEN02 XS01 D005">
+            <p class="nome_aula">Aula 1S</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="1T" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="90" _superficie="102" _fabbricato="Ex Tornerie"
+            _id_locale="TO_CIT09 XPTE 057">
+            <p class="nome_aula">Aula 1T</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="21A" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Terra" _capienza="47" _superficie="67" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XPTE C001">
+            <p class="nome_aula">Aula 21A</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="27B" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Primo Piano" _capienza="221" _superficie="202" _fabbricato="Ex centrale termica"
+            _id_locale="TO_CEN05 XP01 B029">
+            <p class="nome_aula">Aula 27B</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="29B" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Primo Piano" _capienza="213" _superficie="183" _fabbricato="Ex centrale termica"
+            _id_locale="TO_CEN05 XP01 B031">
+            <p class="nome_aula">Aula 29B</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="2C" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Secondo piano" _capienza="121" _superficie="125" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XP02 Q001">
+            <p class="nome_aula">Aula 2C</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="2D" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Terzo piano" _capienza="123" _superficie="122" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XP03 Q005">
+            <p class="nome_aula">Aula 2D</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="2I" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Interrato" _capienza="87" _superficie="109" _fabbricato="Corte Interrata"
+            _id_locale="TO_CIT08 XS01 003">
+            <p class="nome_aula">Aula 2I</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="2M" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="144" _superficie="134" _fabbricato="Aule M" _id_locale="TO_CIT02 XPTE 011">
+            <p class="nome_aula">Aula 2M</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="2N" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="139" _superficie="138" _fabbricato="Ex Stampati"
+            _id_locale="TO_CIT03 XPTE 005">
+            <p class="nome_aula">Aula 2N</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="2P" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="220" _superficie="218" _fabbricato="Aule P, nuovi fabbricati"
+            _id_locale="TO_CIT22 XPTE 038">
+            <p class="nome_aula">Aula 2P</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="2T" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="120" _superficie="142" _fabbricato="Ex Tornerie"
+            _id_locale="TO_CIT09 XPTE 040">
+            <p class="nome_aula">Aula 2T</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="3I" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Interrato" _capienza="148" _superficie="173" _fabbricato="Corte Interrata"
+            _id_locale="TO_CIT08 XS01 004">
+            <p class="nome_aula">Aula 3I</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="3M" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="128" _superficie="144" _fabbricato="Aule M" _id_locale="TO_CIT02 XPTE 027">
+            <p class="nome_aula">Aula 3M</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="3N" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="130" _superficie="143" _fabbricato="Ex Stampati"
+            _id_locale="TO_CIT03 XPTE 006">
+            <p class="nome_aula">Aula 3N</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="3P" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="220" _superficie="218" _fabbricato="Aule P, nuovi fabbricati"
+            _id_locale="TO_CIT22 XPTE 015">
+            <p class="nome_aula">Aula 3P</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="3S" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Interrato" _capienza="156" _superficie="163" _fabbricato="Area Sud - Parte 2"
+            _id_locale="TO_CEN02 XS01 D007">
+            <p class="nome_aula">Aula 3S</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="4C" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Secondo piano" _capienza="120" _superficie="130" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XP02 Q011">
+            <p class="nome_aula">Aula 4C</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="4D" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Terzo piano" _capienza="121" _superficie="131" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XP03 Q010">
+            <p class="nome_aula">Aula 4D</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="4I" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Interrato" _capienza="96" _superficie="171" _fabbricato="Corte Interrata"
+            _id_locale="TO_CIT08 XS01 005">
+            <p class="nome_aula">Aula 4I</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="4M" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="60" _superficie="65" _fabbricato="Aule M" _id_locale="TO_CIT02 XPTE 016">
+            <p class="nome_aula">Aula 4M</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="4N" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="135" _superficie="133" _fabbricato="Ex Stampati"
+            _id_locale="TO_CIT03 XPTE 007">
+            <p class="nome_aula">Aula 4N</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="4P" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="220" _superficie="216" _fabbricato="Aule P, nuovi fabbricati"
+            _id_locale="TO_CIT22 XPTE 005">
+            <p class="nome_aula">Aula 4P</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="4T" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="130" _superficie="144" _fabbricato="Ex Tornerie"
+            _id_locale="TO_CIT09 XPTE 113">
+            <p class="nome_aula">Aula 4T</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="5B" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Primo Piano" _capienza="51" _superficie="52" _fabbricato="Area Sud - Parte 2"
+            _id_locale="TO_CEN02 XP01 Q010">
+            <p class="nome_aula">Aula 5B</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="5I" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Interrato" _capienza="138" _superficie="162" _fabbricato="Corte Interrata"
+            _id_locale="TO_CIT08 XS01 006">
+            <p class="nome_aula">Aula 5I</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="5M" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="76" _superficie="143" _fabbricato="Aule M" _id_locale="TO_CIT02 XPTE 030">
+            <p class="nome_aula">Aula 5M</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="5N" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="68" _superficie="69" _fabbricato="Ex Stampati"
+            _id_locale="TO_CIT03 XPTE 013">
+            <p class="nome_aula">Aula 5N</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="5S" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Interrato" _capienza="156" _superficie="163" _fabbricato="Area Sud - Parte 2"
+            _id_locale="TO_CEN02 XS01 D009">
+            <p class="nome_aula">Aula 5S</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="6C" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Secondo piano" _capienza="25" _superficie="80" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XP02 Q002">
+            <p class="nome_aula">Aula 6C</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="6D" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Terzo piano" _capienza="25" _superficie="71" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XP03 Q004">
+            <p class="nome_aula">Aula 6D</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="6I" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Interrato" _capienza="48" _superficie="128" _fabbricato="Corte Interrata"
+            _id_locale="TO_CIT08 XS01 007">
+            <p class="nome_aula">Aula 6I</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="6N" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="139" _superficie="137" _fabbricato="Ex Stampati"
+            _id_locale="TO_CIT03 XPTE 017">
+            <p class="nome_aula">Aula 6N</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="7B" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Primo Piano" _capienza="97" _superficie="101" _fabbricato="Area Sud - Parte 2"
+            _id_locale="TO_CEN02 XP01 Q009">
+            <p class="nome_aula">Aula 7B</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="7D" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Terzo piano" _capienza="78" _superficie="83" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XP03 G008">
+            <p class="nome_aula">Aula 7D</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="7I" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Interrato" _capienza="140" _superficie="162" _fabbricato="Corte Interrata"
+            _id_locale="TO_CIT08 XS01 008">
+            <p class="nome_aula">Aula 7I</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="7N" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="112" _superficie="146" _fabbricato="Ex Stampati"
+            _id_locale="TO_CIT03 XPTE 015">
+            <p class="nome_aula">Aula 7N</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="7S" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Interrato" _capienza="156" _superficie="163" _fabbricato="Area Sud - Parte 2"
+            _id_locale="TO_CEN02 XS01 D011">
+            <p class="nome_aula">Aula 7S</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="7T" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="144" _superficie="132" _fabbricato="Ex Tornerie"
+            _id_locale="TO_CIT09 XPTE 090">
+            <p class="nome_aula">Aula 7T</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="8C" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Secondo piano" _capienza="193" _superficie="223" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XP02 Q007">
+            <p class="nome_aula">Aula 8C</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="8D" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Terzo piano" _capienza="93" _superficie="107" _fabbricato="Area Centrale"
+            _id_locale="TO_CEN03 XP03 Q003">
+            <p class="nome_aula">Aula 8D</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="8I" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Interrato" _capienza="97" _superficie="128" _fabbricato="Corte Interrata"
+            _id_locale="TO_CIT08 XS01 009">
+            <p class="nome_aula">Aula 8I</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="8N" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Primo Piano" _capienza="64" _superficie="119" _fabbricato="Ex Stampati"
+            _id_locale="TO_CIT03 XP01 013">
+            <p class="nome_aula">Aula 8N</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="9B" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Primo Piano" _capienza="47" _superficie="61" _fabbricato="Area Sud - Parte 2"
+            _id_locale="TO_CEN02 XP01 Q008">
+            <p class="nome_aula">Aula 9B</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="9I" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Interrato" _capienza="107" _superficie="135" _fabbricato="Corte Interrata"
+            _id_locale="TO_CIT08 XS01 010">
+            <p class="nome_aula">Aula 9I</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="9S" _sede="Sede Centrale - Corso Duca degli Abruzzi"
+            _piano="Piano Interrato" _capienza="72" _superficie="83" _fabbricato="Area Sud - Parte 2"
+            _id_locale="TO_CEN02 XS01 D013">
+            <p class="nome_aula">Aula 9S</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="9T" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="144" _superficie="132" _fabbricato="Ex Tornerie"
+            _id_locale="TO_CIT09 XPTE 092">
+            <p class="nome_aula">Aula 9T</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="R1" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="300" _superficie="119" _fabbricato="Aule R" _id_locale="TO_CIT06 XPTE 001">
+            <p class="nome_aula">Aula R1</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="R1B" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Primo Piano" _capienza="150" _superficie="141" _fabbricato="Aule R" _id_locale="TO_CIT06 XP01 006">
+            <p class="nome_aula">Aula R1B</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="R2" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="300" _superficie="119" _fabbricato="Aule R" _id_locale="TO_CIT06 XPTE 002">
+            <p class="nome_aula">Aula R2</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="R2B" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Primo Piano" _capienza="150" _superficie="141" _fabbricato="Aule R" _id_locale="TO_CIT06 XP01 007">
+            <p class="nome_aula">Aula R2B</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="R3" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="300" _superficie="119" _fabbricato="Aule R" _id_locale="TO_CIT06 XPTE 003">
+            <p class="nome_aula">Aula R3</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="R3B" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Primo Piano" _capienza="150" _superficie="141" _fabbricato="Aule R" _id_locale="TO_CIT06 XP01 005">
+            <p class="nome_aula">Aula R3B</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="R4" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Piano Terra" _capienza="300" _superficie="120" _fabbricato="Aule R" _id_locale="TO_CIT06 XPTE 004">
+            <p class="nome_aula">Aula R4</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="row_aule" _currentfasce_libere="" _fasce_libere=0 _id="R4B" _sede="Sede Centrale - Cittadella Politecnica"
+            _piano="Primo Piano" _capienza="150" _superficie="141" _fabbricato="Aule R" _id_locale="TO_CIT06 XP01 008">
+            <p class="nome_aula">Aula R4B</p><p class="info_aula"></p>
+            <div class="lista_aule"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+
+    <div id="credits">
+        <div>
+            <p>"aule libere polito" è un progetto indipendente. Attinge dalla lista delle aule libere publicamente disponibile sul portale <a href="https://www.swas.polito.it/dotnet/orari_lezione_pub/mobile/ricerca_aule_libere.aspx">"www.swas.polito.it"</a>
+            </p>
+            <p class="credit_name" >Interamente sviluppato da <span >Domenico Scaletta</span></p>
+        </div>
+    </div>
+
+    </div>
+
+    
+
+    </div>
+
+    <div id="modal_box" class="hidden">
+        <div id="modal_bg_block">
+        </div>
+        <div id="modal_content_box">
+            <a id="modal_link" target="_blank">📍 Mappa e altre info 🔗</a>
+            <p id="exit_modal" onclick="exit_modal()">⬅ torna all'elenco</p>
+
+            
+            <div id="modal_info_aula">
+                <div class="modal_row" id="modal_title">
+                    <h1 >Aula 5</h1>
+                </div>
+                <div class="modal_row" id="modal_date">
+                    <div>
+                        <input type="date" class="date_input" oninput="change_date(this)" value="" min="" max="" />
+                    </div>
+                    <p class="date_title">📅 Data:</p>
+                    <p class="date_value">...</p>
+                </div>
+                <div class="modal_row" id="modal_fasce">
+                    <p class="title">🕑 Fasce orarie libere: <span></span></p>
+                    <div class="row_orari">
+                        <div><p><span> 08:30 10:00 </span></p></div>
+                        <div><p><span> 10:00 11:30 </span></p></div>
+                        <div><p><span> 11:30 13:00 </span></p></div>
+                        <div><p><span> 13:00 14:30 </span></p></div>
+                        <div><p><span> 14:30 16:00 </span></p></div>
+                        <div><p><span> 16:00 17:30 </span></p></div>
+                        <div><p><span> 17:30 19:00 </span></p></div>
+                        <div><p><span> 19:00 20:30 </span></p></div>
+        
+                    </div>
+                    <div id="modal_lista_aule" class="lista_aule">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        
+                    </div>
+
+                  
+                </div>
+            
+                <div class="modal_row">
+                    <p class="title">🔢 Piano:</p>
+                    <p class="contain" value="_piano">Piano terra</p>
+                </div>
+                <div class="modal_row div_capienza" >
+                    <p class="title">🪑 Capienza:</p>
+                    <p class="contain" value="_capienza">350 posti</p>
+                </div>
+                <div class="modal_row div_superficie">
+                    <p class="title">📐 Superficie:</p>
+                    <p class="contain" value="_superficie">320 m2</p>
+                </div>
+                <div class="modal_row">
+                    <p class="title">📍 Zona:</p>
+                    <p class="contain" value="_area">Area centrale</p>
+                </div>
+                <div class="modal_row">
+                    <p class="title">🏢 Sede:</p>
+                    <p class="contain" value="_sede">Sede centrale</p>
+                </div>
+                <div class="modal_row">
+                    <p class="title">🏷️ Id Locale:</p>
+                    <p class="contain" value="_id_locale">Area centrale</p>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+
+
+
+    <script src="result.js"></script>
+    <script src="js/dome_vanillajs.js"></script>
+    <script src="js/classrooms_data.js"></script>
+    <script src="js/parse_classrooms_data.js"></script>
+    <script src="js/main.js"></script>
+
+    
+</body>
+
+</html>
