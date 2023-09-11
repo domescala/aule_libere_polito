@@ -1,0 +1,330 @@
+@media screen and (min-width: 800px) {
+    :root {
+    }
+    
+    * {
+    }
+    
+    body {
+    }
+    
+    body.loading {
+    }
+    body.loading-out {
+    }
+    
+    
+  
+    #doc_title {
+    }
+    #doc_title p{
+    }
+    #doc_title h1{
+    }
+    
+    #block_scroll {
+    }
+    
+    a {
+    }
+    
+    #main_container {
+    max-width: 800px;
+    margin: 0 auto;
+    }
+    
+    /* -------------------------------- */
+    /*             ORARi                */
+    /* -------------------------------- */
+    
+    .row_orari {
+    
+width: 400px;
+    }
+    
+    
+    
+    .row_orari div {
+    }
+    
+    .row_orari p {
+    }
+    
+    body.current_day .row_orari div.current_slot p{
+        
+    }
+    
+    
+    /* -------------------------------- */
+    /*             AULE                 */
+    /* -------------------------------- */
+    #container_row_aule{
+    }
+    .row_aule {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 8px;
+    border: 0;
+    }
+    
+    
+    .row_aule p.nome_aula, .row_aule p.info_aula {
+    order: 2;
+    display: flex;
+    margin: auto 9px auto 9px;
+    align-items: center;
+    height: 19px;
+    }
+    .row_aule p.info_aula {
+
+    }
+    .row_aule p.info_aula sup{
+    }
+    body:not(.filter_active) .info_aula{
+        display: none;
+    }
+    
+
+    /* contenitore di tutte le aule della riga */
+    div.lista_aule {
+    width: 400px;
+    order: 1;
+    }
+    /* animazione modal */
+    /* .modal_open .lista_aule{
+    }
+    .lista_aule div{
+    }
+    .modal_open .lista_aule div{
+    
+    } */
+    /* blocco dell'aula */
+    div.lista_aule div {
+        /* animation */
+        
+    }
+        div.lista_aule div:first-child {
+    
+        }
+        div.lista_aule div:last-child {
+    
+        }
+        div.lista_aule div.enabled {
+    
+        }
+    
+        div.lista_aule div.disabled {
+        }
+    
+    
+        div.lista_aule div.enabled::after {
+        }
+    
+        div.lista_aule div.disabled::after {
+        }
+    
+        div.lista_aule div.enabled::after,
+        div.lista_aule div.disabled::after {
+        }
+        
+        /* highlight slot if is the current day  */
+            body.current_day div.lista_aule div.current_slot{
+            }
+    
+            body.current_day div.lista_aule div.current_slot::before {
+            }
+    
+            body.current_day div.lista_aule div.disabled.current_slot::before {
+            }
+    
+            /* div.lista_aule div{
+    
+            } */
+            body.current_day div.lista_aule div:not( .current_slot, .current_slot+div, .current_slot+div+div, .current_slot+div+div+div, .current_slot+div+div+div+div, .current_slot+div+div+div+div+div, .current_slot+div+div+div+div+div+div, .current_slot+div+div+div+div+div+div+div ){
+    
+    
+    }
+
+    /* -------------------------------- */
+    /* -------------------------------- */
+    /* -------------------------------- */
+    
+    
+    
+    
+    
+    
+    
+    
+    /* -------------------------------- */
+    /*             FILTER               */
+    /* -------------------------------- */
+    
+    body.filter_active div.artificial_before {
+    }
+    
+    #filter_box {
+    }
+    
+    #filter_box div {
+    }
+    
+    #filter_box p {
+    }
+    
+    .filter_title {
+    }
+    
+    #filter_box .filter p {
+    }
+    
+    #filter_box .filter.active {}
+    
+    #filter_box .filter.active p {
+    }
+    
+    /* -------------------------------- */
+    /* -------------------------------- */
+    /* -------------------------------- */
+    
+    
+    
+    /* -------------------------------- */
+    /*             DATE                 */
+    /* -------------------------------- */
+    
+    #date_box{
+    }
+    #date_box.unavailable{
+    
+    }
+    #date_box div{
+        }
+    
+    .date_input{
+    }
+    .date_title{
+    }
+    #date_box .date_button{
+    }
+    .date_value{
+    }
+    /* -------------------------------- */
+    /* -------------------------------- */
+    /* -------------------------------- */
+    
+    
+    
+    /* -------------------------------- */
+    /*              MODAL               */
+    /* -------------------------------- */
+    
+    
+    
+    #modal_box {
+    }
+    #modal_box.hidden {
+    }
+
+    #modal_date{
+        
+    }
+    
+    
+    #modal_content_box {
+    }
+    
+    #exit_modal {
+    margin-right: 50px;
+    }
+    
+    
+    #modal_link {
+    margin: 0 auto;
+    margin-top: 8px;
+    }
+    
+    #modal_info_aula {
+    max-width: 600px;
+    margin: 0 auto;
+    }
+    
+    #modal_info_aula .modal_row {
+        /* row */
+    }
+    
+    #modal_info_aula .modal_row {}
+    
+    #modal_title.modal_row {
+    }
+    
+    
+    #modal_info_aula .div_capienza,
+    #modal_info_aula .div_superficie {
+    }
+    
+    
+    /* blocco informazioni aula */
+    /* titolo  */
+    #modal_info_aula p.title {
+    }
+    
+    /* contenuto  */
+    #modal_info_aula p.contain {
+    }
+    
+    /* suffisso per capienza e superficie*/
+    #modal_info_aula p[value="_capienza"]::after {
+    }
+    
+    #modal_info_aula p[value="_superficie"]::after {
+    }
+    
+    
+    /* Fasce orarie nel modal */
+    #modal_fasce.modal_row {
+    }
+    
+    #modal_lista_aule,.modal_row .row_orari {
+    }
+    
+    #modal_fasce span.modal_fascia {
+    }
+    
+    #modal_fasce span.modal_fascia:first-child {
+    }
+    
+    #modal_fasce span.modal_fascia:last-child {
+    
+    
+    
+    }
+    
+    #modal_fasce span.modal_fascia.active {
+    }
+    
+    
+    #modal_fasce span.modal_fascia::after {
+    }
+    
+    #modal_fasce span.modal_fascia.active::after {
+    }
+    
+    /* -------------------------------- */
+    /* -------------------------------- */
+    /* -------------------------------- */
+    
+    #credits{
+    }
+    #credits div{
+    }
+    #credits p{
+    }
+    #credits a{
+    }
+    #credits .credit_name {
+    }
+    #credits .credit_name span{
+    }
+
+}
