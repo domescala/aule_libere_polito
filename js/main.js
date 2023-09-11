@@ -3,6 +3,7 @@ function main() {
     load_classroom_data()
     setup_version_date()
     highlight_current_time_slot()
+    setup_search_modal()
 }
 
 
@@ -356,9 +357,9 @@ function filtra_aule(key_tags) {
 const MODAL = q("#modal_box")
 const MODAL_CONTENT = MODAL.q("#modal_info_aula")
 
-function open_modal(row){
-
-    row.addClass("modal_open")
+function open_modal(id_row){
+    const ROW = q('[_id="'+id_row+'"]')
+    ROW.addClass("modal_open")
     MODAL.removeClass("hidden")
     
     // per ogni attributo cerco il tag p allinterno di #modal_info_aula che ha il valore uguale al nome dellattributo 
@@ -367,7 +368,7 @@ function open_modal(row){
     //     <p>🔢 Piano:</p>
     //     <p>Piano terra</p>
     // </div>
-    Object.values(row.attributes).forEach(attribute => {
+    Object.values(ROW.attributes).forEach(attribute => {
         let css_selector= '[value="'+attribute.name+'"]'
         const THAT_P = MODAL_CONTENT.q(css_selector)
         if(THAT_P){
@@ -378,13 +379,13 @@ function open_modal(row){
 
     // copia la roba nel modal
     q("#modal_lista_aule").innerHTML = ""
-    row.q(".lista_aule").CloneSubnodes(q("#modal_lista_aule"))
+    ROW.q(".lista_aule").CloneSubnodes(q("#modal_lista_aule"))
     // q("#modal_lista_aule").innerHTML =  row.q(".lista_aule").innerHTML
     // q("#modal_date").innerHTML =  q("#date_box").innerHTML
     // q("#date_box").innerHTML = ""
 
     
-    let  nome_aula = row.getAttribute("_id")
+    let  nome_aula = ROW.getAttribute("_id")
     MODAL.q("#modal_title").innerHTML = "Aula "+nome_aula
     const MODAL_FASCE = MODAL.Q(".modal_fascia")
 
@@ -401,10 +402,10 @@ function open_modal(row){
 
     
     const TITLE_FASCE_SPAN = MODAL.q("#modal_fasce .title span")
-    var txt = ` ( ${row.getAttribute("_fasce_libere")} / ${MODAL_FASCE.length} )`
+    var txt = ` ( ${ROW.getAttribute("_fasce_libere")} / ${MODAL_FASCE.length} )`
     if(get_current_slot() != -1){
         let slot = get_current_slot()
-        let fasce_rimaste = row.getAttribute("_currentfasce_libere")[slot]
+        let fasce_rimaste = ROW.getAttribute("_currentfasce_libere")[slot]
         let slot_totali_rimasti = 8 - slot 
         txt = ` ( ${fasce_rimaste} / ${slot_totali_rimasti} )`
     }
@@ -467,7 +468,7 @@ function hide_filter(){
 Q(".row_aule").forEach(ROW => {
     ROW.addEventListener("click", function(){
 
-        open_modal(ROW)
+        open_modal(ROW.getAttribute("_id"))
 
     })
 })
@@ -613,6 +614,63 @@ function highlight_current_time_slot(){
     Q(".row_orari").forEach(e=>e.Q("div")[time_slot].addClass("current_slot"))
 
 
+}
+// search modal
+// setup 
+function setup_search_modal() {
+    Aule_ordinate.forEach(nome_aula => {
+        const OP = document.createElement("option")
+        // ogni opzione ha un carattere nascosto al fondo, per evitare che aule come 7 e 7i si confondano
+        OP.setAttribute("value",nome_aula + '\u2063')
+        q("#modalsearch_box datalist").appendChild(OP)
+    });
+}
+
+// bottone cerca appare quando si scrolla, scompare dopo tot secondi
+// se si continua a scrollare il timeout per farlo scommparire si resetta
+var timeout_button_search;
+q("#main_container").addEventListener("scroll", function(){
+    q("#button_search_class").addClass("button_search_appear")
+
+    clearTimeout(timeout_button_search)
+    timeout_button_search = setTimeout(() => {
+        q("#button_search_class").removeClass("button_search_appear")
+    }, 2000);
+})
+q("#button_search_class").addEventListener("click", function(){
+    open_modal_search()
+    q("#button_search_class").removeClass("button_search_appear")
+})
+
+q("#modalsearch_box input").addEventListener("input", function(){
+    let val = q("#modalsearch_box input").value.toUpperCase()
+    q("#modalsearch_box input").value = val;
+
+    // se contiene il carattere nascosto al fondo allora è stato premuto sulla datalist
+    if (val.slice(-1) === '\u2063') {
+        val = val.slice(0, -1); //rimuovi il carattere e lancia il modal
+        q("#modalsearch_box input").value = ""
+        open_modal(val)
+    }
+
+});
+q("#modalsearch_box input").addEventListener("keydown", function(event){
+    // listener addizionale per quando si digita invio
+    if(event.key == "Enter"){
+        let val = q("#modalsearch_box input").value
+        if(Aule_ordinate.includes(val)){
+            open_modal(val)
+            close_modal_search()
+            q("#modalsearch_box input").value = ""
+        }
+    }
+});
+
+function open_modal_search(){
+    q("#modalsearch_box").removeClass("hidden")
+}
+function close_modal_search(){
+    q("#modalsearch_box").addClass("hidden")
 }
 
 main()

@@ -21,6 +21,9 @@
             <h1>aule libere<br>polito</h1>
             <p> dati aggiornati il 12/12/12 (12 giorni fa) </p>
         </div>
+        <div id="button_search_class">
+                <p>🔍</p>
+        </div>
         <div id="block_scroll">
             <!-- <select id="date_selector" onchange="change_date(this.value)"> 
 
@@ -745,7 +748,12 @@
             
         </div>
     </div>
-
+    <div id="modalsearch_box" class="hidden">
+        <p class="exit_modal" onclick="close_modal_search()">⬅ torna all'elenco</p>
+        <input placeholder="Cerca un'aula..." list="search_class_list" />
+        <datalist id="search_class_list">
+        </datalist>
+    </div>
 
 
     <script src="result.js"></script>
