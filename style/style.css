@@ -790,6 +790,7 @@ body.filter_active div.artificial_before {
     animation: color_infinite 10s ease infinite;
     text-wrap: nowrap;
 }
+
 @keyframes color_infinite {
     0%  {color: #25bd34;}
     25% {color: #ea590b;}

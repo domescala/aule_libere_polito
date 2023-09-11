@@ -153,7 +153,7 @@ function httpGetAsync(theUrl, callback)
     const DATE_SELECTOR =  q("#date_selector")
     // const DATE_INPUT =  q(".date_input")
     
-    const Now = new Date("09/15/2023 20:30")
+    const Now = new Date()
     const Start_day = getStartday()
     var Startday_key = Start_day.to_ddmmyyyy("/")
 
