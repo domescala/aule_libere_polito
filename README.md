@@ -13,4 +13,3 @@ Il [nuovo sito 🚀](https://domescala.github.io/aule_libere_polito/) ordina le 
 ### ❌ In progress
 - Stile anche per dispositivi desktop
 - Disponibilità anche per le altre sedi<sub> (sì ne esistono altre!) </sub> <br> Valentino, Lingotto e Mirafiori
-- 
