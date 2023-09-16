@@ -155,10 +155,10 @@ function httpGetAsync(theUrl, callback)
     // const DATE_INPUT =  q(".date_input")
     
     const Now = new Date()
-    const Start_day = getStartday()
-    var Startday_key = Start_day.to_ddmmyyyy("/")
-
-
+    const Start_day = getStartday();
+    var Startday_key = Start_day.to_ddmmyyyy("/");
+    var Selected_district = "SEDE_CENTRALE";
+    var Selected_day = Startday_key;
 
     var Html_data = "";
     var Aule_x_fasce = [];
@@ -203,7 +203,7 @@ function parse_html_poli(html_data){
         fasce_orarie.push(lista_aule_raw.split(","))
     })
     // conversione da lista vero falso
-    Aule_ordinate.forEach(nome_aula => {
+    Aule_ordinate[Selected_district].forEach(nome_aula => {
         disp[nome_aula] = []
         fasce_orarie.forEach(aule_fascia => {
             let aula_disponibile = aule_fascia.includes(nome_aula)
@@ -241,8 +241,8 @@ function updateDoc(disp_aule) {
     // serve solo nel caso i dati sono presi in tempo reale dal poli
     remove_columns(N_fasceorarie)
 
-    // per ogni aula, seguendo l'ordine di Aule_ordinate 
-    Aule_ordinate.forEach(nome_aula => {
+    // per ogni aula, seguendo l'ordine di Aule_ordinate[Selected_district] 
+    Aule_ordinate[Selected_district].forEach(nome_aula => {
         // fasce_aule è la lista di bool riferita all'aula
         const fasce_aula = disp_aule[nome_aula]
 
@@ -495,8 +495,8 @@ function getStartday(){
 
 function setup_selectorsOBSOLETO(){
 
-    Classrooms_data.keys().includes(Startday_key)
-    let dates = Classrooms_data.keys()
+    Classrooms_data[Selected_district].keys().includes(Startday_key)
+    let dates = Classrooms_data[Selected_district].keys()
     var max_days = 20
 
     
@@ -516,12 +516,12 @@ function setup_selectors(){
     // setup della data inizio e di fine
     // "today" è oggi +3.5 ore -> oltre le 20.30 passa al giorno successivo
     // se "today" è sabato o domenica lo "start_day" incrementa di 1 o 2
-    // end_day si ricava dalla lunghezza di Classrooms_data.keys() MENO l'indice di Today
+    // end_day si ricava dalla lunghezza di Classrooms_data[Selected_district].keys() MENO l'indice di Today
 
     // agisce su entrambi i box input
     let start_day = Start_day.to_yyyymmdd("-")
     
-    let end_day = Classrooms_data.keys().last().from_dmy_to_mdy().to_yyyymmdd("-")
+    let end_day = Classrooms_data[Selected_district].keys().last().from_dmy_to_mdy().to_yyyymmdd("-")
     Q(".date_input").forEach(e => e.setAttribute("value", start_day))
     Q(".date_input").forEach(e => e.setAttribute("min", start_day))
     Q(".date_input").forEach(e => e.setAttribute("max", end_day))
@@ -548,16 +548,22 @@ function change_date(this_element){
         Q(".date_input").forEach(e => {e.value = this_element.value})
         Q(".date_value").forEach(e => {e.innerHTML = date.to_day_ddmmyy("/")})
         
-        let disp = parse_classrooms_data(date.to_ddmmyyyy("/"))
-        console.log(date, date.to_ddmmyyyy("/"), disp)
+        Selected_day = date.to_ddmmyyyy("/")
+        let disp = parse_classrooms_data(Selected_day, Selected_district)
         
         updateDoc(disp)
     }
 }
 
+function change_district(this_element) {
+    Selected_district.this_element.value
+    let disp = parse_classrooms_data(Selected_day, Selected_district)
+    console.log(date, date.to_ddmmyyyy("/"), disp)
+
+}
 
 function load_classroom_data() {
-    let disp = parse_classrooms_data(Startday_key)
+    let disp = parse_classrooms_data(Startday_key, Selected_district)
     if (disp){
         updateDoc(disp)
     }
@@ -618,7 +624,7 @@ function highlight_current_time_slot(){
 // search modal
 // setup 
 function setup_search_modal() {
-    Aule_ordinate.forEach(nome_aula => {
+    Aule_ordinate[Selected_district].forEach(nome_aula => {
         const OP = document.createElement("option")
         // ogni opzione ha un carattere nascosto al fondo, per evitare che aule come 7 e 7i si confondano
         OP.setAttribute("value",nome_aula + '\u2063')
@@ -658,7 +664,7 @@ q("#modalsearch_box input").addEventListener("keydown", function(event){
     // listener addizionale per quando si digita invio
     if(event.key == "Enter"){
         let val = q("#modalsearch_box input").value
-        if(Aule_ordinate.includes(val)){
+        if(Aule_ordinate[Selected_district].includes(val)){
             open_modal(val)
             close_modal_search()
             q("#modalsearch_box input").value = ""

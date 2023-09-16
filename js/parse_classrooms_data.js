@@ -1,8 +1,17 @@
 
-const Aule_ordinate = ['1', '3', '5', '7', '11', '13', '15', '17', '19', '27', '29', '2', '4', '6', '8', '10', '12', '14', '16', '10A', '12A', '13A', '15A', '17A', '19A', '21A', '5B', '7B', '9B', '11B', '13B', '1B', '27B', '29B', '2C', '4C', '6C', '8C', '10C', '1D', '2D', '4D', '6D', '7D', '8D', '10D', '12D', '1I', '2I', '3I', '4I', '5I', '6I', '7I', '8I', '9I', '10I', '11I', '12I', '1M', '2M', '3M', '4M', '5M', '2N', '3N', '4N', '5N', '6N', '7N', '8N', '1P', '2P', '3P', '4P', 'R1', 'R1B', 'R2', 'R2B', 'R3', 'R3B', 'R4', 'R4B', '1S', '3S', '5S', '7S', '9S', '11S', '1T', '2T', '4T', '7T', '9T', '13S', '11T']
+const Aule_ordinate = {
+    "SEDE_CENTRALE":
+        ['1', '3', '5', '7', '11', '13', '15', '17', '19', '27', '29', '2', '4', '6', '8', '10', '12', '14', '16', '10A', '12A', '13A', '15A', '17A', '19A', '21A', '5B', '7B', '9B', '11B', '13B', '1B', '27B', '29B', '2C', '4C', '6C', '8C', '10C', '1D', '2D', '4D', '6D', '7D', '8D', '10D', '12D', '1I', '2I', '3I', '4I', '5I', '6I', '7I', '8I', '9I', '10I', '11I', '12I', '1M', '2M', '3M', '4M', '5M', '2N', '3N', '4N', '5N', '6N', '7N', '8N', '1P', '2P', '3P', '4P', 'R1', 'R1B', 'R2', 'R2B', 'R3', 'R3B', 'R4', 'R4B', '1S', '3S', '5S', '7S', '9S', '11S', '1T', '2T', '4T', '7T', '9T', '13S', '11T'],
+    "MIRAFIORI":
+        ["01AM", "02AM", "03AM", "04AM", "05AM", "06AM", "07AM", "11AM", "12AM", "13AM", "14AM",],
+    "LINGOTTO":
+        [ "201","202","203","204","205","206","207","208","209","210","211","212","213","300","301","302","303","304","305","306","307","308","309",],
+    "TORINO - VALENTINO":
+        ["1V","2V","3V","4V","5V","6V","7V","8V","2VM","3VM","4VM","5VM","6VM","7VM",]}
 
 
-function parse_classrooms_data(date) {
+function parse_classrooms_data(date, district) {
+    console.log(date, district)
     // restituisce un dict {"1":[true,false,false...], "2":[true,false,...], ...}
 
 
@@ -28,7 +37,8 @@ function parse_classrooms_data(date) {
     Startday_key = date
     var disponibilita =  {};
 
-    let compressed = Classrooms_data[date]
+    let compressed = Classrooms_data[district][date]
+    console.log(compressed)
     if(!compressed){ // se la data non c'è
         return false
     }
@@ -46,7 +56,7 @@ function parse_classrooms_data(date) {
             disp.push(aula_disp) ;
         }
 
-        disponibilita[Aule_ordinate[i]] = disp
+        disponibilita[Aule_ordinate[district][i]] = disp
     }
     return disponibilita
 }
