@@ -10,8 +10,8 @@ const Aule_ordinate = {
         ["1V","2V","3V","4V","5V","6V","7V","8V","2VM","3VM","4VM","5VM","6VM","7VM",]}
 
 
-function parse_classrooms_data(date, district) {
-    console.log(date, district)
+function parse_classrooms_data(date, campus) {
+    console.log(date, campus)
     // restituisce un dict {"1":[true,false,false...], "2":[true,false,...], ...}
 
 
@@ -37,7 +37,7 @@ function parse_classrooms_data(date, district) {
     Startday_key = date
     var disponibilita =  {};
 
-    let compressed = Classrooms_data[district][date]
+    let compressed = Classrooms_data[campus][date]
     console.log(compressed)
     if(!compressed){ // se la data non c'è
         return false
@@ -56,7 +56,7 @@ function parse_classrooms_data(date, district) {
             disp.push(aula_disp) ;
         }
 
-        disponibilita[Aule_ordinate[district][i]] = disp
+        disponibilita[Aule_ordinate[campus][i]] = disp
     }
     return disponibilita
 }

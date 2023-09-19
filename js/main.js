@@ -1,4 +1,6 @@
 function main() {
+    // updateDoc_campus(Selected_campus)
+    load_localStorage()
     setup_selectors()
     load_classroom_data()
     setup_version_date()
@@ -157,7 +159,7 @@ function httpGetAsync(theUrl, callback)
     const Now = new Date()
     const Start_day = getStartday();
     var Startday_key = Start_day.to_ddmmyyyy("/");
-    var Selected_district = "SEDE_CENTRALE";
+    var Selected_campus = "SEDE_CENTRALE";
     var Selected_day = Startday_key;
 
     var Html_data = "";
@@ -203,7 +205,7 @@ function parse_html_poli(html_data){
         fasce_orarie.push(lista_aule_raw.split(","))
     })
     // conversione da lista vero falso
-    Aule_ordinate[Selected_district].forEach(nome_aula => {
+    Aule_ordinate[Selected_campus].forEach(nome_aula => {
         disp[nome_aula] = []
         fasce_orarie.forEach(aule_fascia => {
             let aula_disponibile = aule_fascia.includes(nome_aula)
@@ -222,11 +224,11 @@ function parse_html_poli(html_data){
     
 
     // Aule_totali = [...Aule_totali] // non puo essere un set
-    updateDoc(disp)
+    updateDoc_date(disp)
 }
 
 
-function updateDoc(disp_aule) {
+function updateDoc_date(disp_aule) {
     // disp_aule è un dizionario così:
     //      {
     //          "1" : [true, true, true, true, true, true, true, true]
@@ -235,14 +237,16 @@ function updateDoc(disp_aule) {
     //      } 
     Disp_aule = disp_aule;
 
+    // reset filter
+    filtra_aule("reset")
     N_fasceorarie = disp_aule.length
     // elimino le colonne delle fasce orarie che non ci sono
     // /!\  obsoleto, le colonne ci sono sempre tutte ormai /!\ 
     // serve solo nel caso i dati sono presi in tempo reale dal poli
     remove_columns(N_fasceorarie)
 
-    // per ogni aula, seguendo l'ordine di Aule_ordinate[Selected_district] 
-    Aule_ordinate[Selected_district].forEach(nome_aula => {
+    // per ogni aula, seguendo l'ordine di Aule_ordinate[Selected_campus] 
+    Aule_ordinate[Selected_campus].forEach(nome_aula => {
         // fasce_aule è la lista di bool riferita all'aula
         const fasce_aula = disp_aule[nome_aula]
 
@@ -298,6 +302,37 @@ function updateDoc(disp_aule) {
     // Loading.end()
 }
 
+function updateDoc_campus(campus, disp){
+    // update del documento con tutte le aule nuove della sede selezionata
+    // reset aule
+    Q(".row_aule").forEach(e=>e.remove())
+    Classrooms_info[campus].keys().forEach(nome_aula => {
+        const ROW = document.createElement("DIV");
+        ROW.addClass("row_aule")
+        Classrooms_info[campus][nome_aula].keys().forEach(att_name => {
+            let att_value = Classrooms_info[campus][nome_aula][att_name]
+            ROW.setAttribute(att_name, att_value)
+        });
+        const P_info = document.createElement("P");
+        const P_name = document.createElement("P");
+        P_info.addClass("info_aula")
+        P_name.addClass("nome_aula")
+        P_name.innerHTML = "Aula " + ROW.getAttribute("_id")
+        const DIV_lista = document.createElement("DIV");
+        DIV_lista.addClass("lista_aule")
+
+        for (let index = 0; index < 8; index++) {
+            const div = document.createElement("DIV");
+            DIV_lista.appendChild(div)
+        }
+
+        q("#container_row_aule").appendChild(ROW)
+        ROW.appendChild(P_name)
+        ROW.appendChild(P_info)
+        ROW.appendChild(DIV_lista)
+    });
+    updateDoc_date(disp)
+}
 
 function remove_columns(n_fasceorarie) {
     var MODAL_FASCE = Q("#modal_div_orari span.modal_fascia")
@@ -314,6 +349,11 @@ function remove_columns(n_fasceorarie) {
 
 function filtra_aule(key_tags) {
     if(key_tags=="reset"){
+        let last = q("#filter_box div.active")
+        if(last){
+            last.removeClass("active")
+        }
+        q("body").removeClass("filter_active")
         const ROWS_AULE = Q(".row_aule")
         ROWS_AULE.forEach(ROW_AULA => {
             ROW_AULA.style["order"] = 1  // order è meglio se parte da uno
@@ -335,22 +375,42 @@ function filtra_aule(key_tags) {
         });
     }
     else{
-
-
+        const ROWS_AULE = Q(".row_aule")
+        ROWS_AULE.forEach(ROW => {
+            let att = ROW.getAttribute(key_tags)
+            if (Number(att)){
+                att = Number(att)
+            }
+            let index = Classrooms_order[key_tags].indexOf(att)
+            ROW.style["order"] = index
+            ROW.q(".info_aula").innerHTML = suffix_info[key_tags][0] + att + suffix_info[key_tags][1]
+        });
         
-        for (let i = 0; i < Tag_aule[key_tags].length; i++) {
-            let tag = Tag_aule[key_tags][i]
+        // Non è performante questo -> ci mette 10 volte di piu
+        // for (let i = 0; i < Classrooms_order[key_tags].length; i++) {
+        //     let tag = Classrooms_order[key_tags][i]
+        //     const ROWS_AULE = Q('[' + key_tags + '="' + tag + '"]')
+        //     ROWS_AULE.forEach(ROW_AULA => {
+        //         ROW_AULA.style["order"] = i + 1  // order è meglio se parte da uno
+        //         ROW_AULA.q(".info_aula").innerHTML = suffix_info[key_tags][0] + tag + suffix_info[key_tags][1]
+        //     });
+        // }
+    }
+}
 
-            const ROWS_AULE = Q('[' + key_tags + '="' + tag + '"]')
-
-            ROWS_AULE.forEach(ROW_AULA => {
-                ROW_AULA.style["order"] = i + 1  // order è meglio se parte da uno
-                ROW_AULA.q(".info_aula").innerHTML = suffix_info[key_tags][0] + tag + suffix_info[key_tags][1]
-            });
-        }
+function load_localStorage(){
+    var last = localStorage["last_campus"];
+    console.log(last)
+    if(new Set(["VALENTINO","LINGOTTO","MIRAFIORI","SEDE_CENTRALE"]).has(last)){
+        Selected_campus = last;
+        q("#campus_input").value = Selected_campus
+    }
+    else{
+        Selected_campus = "SEDE_CENTRALE";
+        localStorage["last_campus"] = Selected_campus;
     }
 
-}
+}   
 
 
 // modal!!
@@ -453,8 +513,7 @@ FILTERS.forEach(filter => {
             q("#block_scroll").scrollIntoView(true)
         }
         if (last == filter) {
-            last.removeClass("active")
-            q("body").removeClass("filter_active")
+            
             filtra_aule("reset")
         }
         
@@ -495,8 +554,8 @@ function getStartday(){
 
 function setup_selectorsOBSOLETO(){
 
-    Classrooms_data[Selected_district].keys().includes(Startday_key)
-    let dates = Classrooms_data[Selected_district].keys()
+    Classrooms_data[Selected_campus].keys().includes(Startday_key)
+    let dates = Classrooms_data[Selected_campus].keys()
     var max_days = 20
 
     
@@ -516,12 +575,12 @@ function setup_selectors(){
     // setup della data inizio e di fine
     // "today" è oggi +3.5 ore -> oltre le 20.30 passa al giorno successivo
     // se "today" è sabato o domenica lo "start_day" incrementa di 1 o 2
-    // end_day si ricava dalla lunghezza di Classrooms_data[Selected_district].keys() MENO l'indice di Today
+    // end_day si ricava dalla lunghezza di Classrooms_data[Selected_campus].keys() MENO l'indice di Today
 
     // agisce su entrambi i box input
     let start_day = Start_day.to_yyyymmdd("-")
     
-    let end_day = Classrooms_data[Selected_district].keys().last().from_dmy_to_mdy().to_yyyymmdd("-")
+    let end_day = Classrooms_data[Selected_campus].keys().last().from_dmy_to_mdy().to_yyyymmdd("-")
     Q(".date_input").forEach(e => e.setAttribute("value", start_day))
     Q(".date_input").forEach(e => e.setAttribute("min", start_day))
     Q(".date_input").forEach(e => e.setAttribute("max", end_day))
@@ -549,23 +608,26 @@ function change_date(this_element){
         Q(".date_value").forEach(e => {e.innerHTML = date.to_day_ddmmyy("/")})
         
         Selected_day = date.to_ddmmyyyy("/")
-        let disp = parse_classrooms_data(Selected_day, Selected_district)
+        let disp = parse_classrooms_data(Selected_day, Selected_campus)
         
-        updateDoc(disp)
+        updateDoc_date(disp)
     }
 }
 
-function change_district(this_element) {
-    Selected_district.this_element.value
-    let disp = parse_classrooms_data(Selected_day, Selected_district)
-    console.log(date, date.to_ddmmyyyy("/"), disp)
+function change_campus(this_element) {
+    Selected_campus = this_element.value
+    localStorage["last_campus"] = Selected_campus;
+    // Selected_campus.this_element.value
+    let disp = parse_classrooms_data(Selected_day, Selected_campus)
+
+    updateDoc_campus(Selected_campus, disp)
 
 }
 
 function load_classroom_data() {
-    let disp = parse_classrooms_data(Startday_key, Selected_district)
+    let disp = parse_classrooms_data(Startday_key, Selected_campus)
     if (disp){
-        updateDoc(disp)
+        updateDoc_campus(Selected_campus, disp)
     }
     else{
         // httpGetAsync(Url_poli, parse_html_poli) 
@@ -593,7 +655,6 @@ function setup_version_date() {
 }
 
 function get_current_slot(){
-    console.log("hi")
     let time = Now.to_timehours() // orario in ore
     // time = 16
     if( time < 8.5 || 20.5 < time || !(new Date(Startday_key.from_dmy_to_mdy()).isSameDay(Now)))
@@ -611,7 +672,6 @@ function highlight_current_time_slot(){
     time_slot = get_current_slot()
     if(time_slot==-1){return}
 
-    console.log(time_slot)
     Q(".lista_aule").forEach(lista_aula => {
 
         lista_aula.Q("div")[time_slot].addClass("current_slot")
@@ -624,7 +684,7 @@ function highlight_current_time_slot(){
 // search modal
 // setup 
 function setup_search_modal() {
-    Aule_ordinate[Selected_district].forEach(nome_aula => {
+    Aule_ordinate[Selected_campus].forEach(nome_aula => {
         const OP = document.createElement("option")
         // ogni opzione ha un carattere nascosto al fondo, per evitare che aule come 7 e 7i si confondano
         OP.setAttribute("value",nome_aula + '\u2063')
@@ -664,7 +724,7 @@ q("#modalsearch_box input").addEventListener("keydown", function(event){
     // listener addizionale per quando si digita invio
     if(event.key == "Enter"){
         let val = q("#modalsearch_box input").value
-        if(Aule_ordinate[Selected_district].includes(val)){
+        if(Aule_ordinate[Selected_campus].includes(val)){
             open_modal(val)
             close_modal_search()
             q("#modalsearch_box input").value = ""

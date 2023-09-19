@@ -419,8 +419,53 @@ filter: blur(1px) grayscale(1);
 /* -------------------------------- */
 /* -------------------------------- */
 
+/* -------------------------------- */
+/*           CAMPUS                 */
+/* -------------------------------- */
+#campus_box{
+    /* border: 1px solid black; */
+    position: relative;
+    display: flex;
+    margin-bottom: 9px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: hidden;
+}
+#campus_input{
 
+font-family: "Roboto Slab", sans-serif;
 
+font-size: 16px;
+
+/* margin-right: 20px; */
+
+/* margin-top: 4px; */
+
+/* line-height: 1; */
+
+border: 1px solid #00a459;
+
+padding: 2px 4px 2px 4px;
+
+border-radius: 7px;
+
+line-height: 1;
+
+margin-top: 7px;
+
+color: #00a459;
+
+outline: none;
+}
+.campus_title{
+    font-size: 10px;
+    font-family: "Roboto mono", monospace;
+    width: 100%;
+}
+
+/* -------------------------------- */
+/* -------------------------------- */
+/* -------------------------------- */
 
 
 
