@@ -1,5 +1,4 @@
 function main() {
-    // updateDoc_campus(Selected_campus)
     load_localStorage()
     setup_selectors()
     load_classroom_data()
@@ -330,6 +329,10 @@ function updateDoc_campus(campus, disp){
         ROW.appendChild(P_name)
         ROW.appendChild(P_info)
         ROW.appendChild(DIV_lista)
+
+        ROW.addEventListener("click", function () {
+            open_modal(nome_aula)
+        })
     });
     updateDoc_date(disp)
 }
@@ -418,6 +421,7 @@ const MODAL = q("#modal_box")
 const MODAL_CONTENT = MODAL.q("#modal_info_aula")
 
 function open_modal(id_row){
+    console.log(id_row)
     const ROW = q('[_id="'+id_row+'"]')
     ROW.addClass("modal_open")
     MODAL.removeClass("hidden")
@@ -429,8 +433,10 @@ function open_modal(id_row){
     //     <p>Piano terra</p>
     // </div>
     Object.values(ROW.attributes).forEach(attribute => {
+        console.log()
         let css_selector= '[value="'+attribute.name+'"]'
         const THAT_P = MODAL_CONTENT.q(css_selector)
+        console.log(THAT_P, attribute.name)
         if(THAT_P){
             THAT_P.innerHTML = attribute.value
 
