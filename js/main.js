@@ -161,6 +161,11 @@ function httpGetAsync(theUrl, callback)
     var Selected_campus = "SEDE_CENTRALE";
     var Selected_day = Startday_key;
 
+    var Filter_already = false;
+    // lo scrollToView del filter triggera il listener scroll del pulsante pulsante per la ricerca delle aule (no buono)
+    // il flag "Filter_already" diventa true appena si attiva un filter
+    // di conseguenza il listener del pulsante ignora il codice e resetta il flag
+
     var Html_data = "";
     var Aule_x_fasce = [];
     var Aule_totali = [];
@@ -505,6 +510,7 @@ const FILTERS_BOX = q("#filter_box")
 const FILTERS = Q("#filter_box .filter")
 FILTERS.forEach(filter => {
     filter.addEventListener("click", function (event) {
+        Filter_already = true
         let last = q("#filter_box div.active")
         if (last) {
             last.removeClass("active")
@@ -708,40 +714,48 @@ function setup_search_modal() {
 // se si continua a scrollare il timeout per farlo scommparire si resetta
 var timeout_button_search;
 q("#main_container").addEventListener("scroll", function(){
-    q("#button_search_class").addClass("button_search_appear")
-
-    clearTimeout(timeout_button_search)
-    timeout_button_search = setTimeout(() => {
-        q("#button_search_class").removeClass("button_search_appear")
-    }, 2000);
+    if (!Filter_already) {
+        
+        q("#button_search_class").addClass("button_search_appear")
+        
+        clearTimeout(timeout_button_search)
+        timeout_button_search = setTimeout(() => {
+            q("#button_search_class").removeClass("button_search_appear")
+        }, 2000);
+    }
+    Filter_already = false
 })
 q("#button_search_class").addEventListener("click", function(){
-    open_modal_search()
+    // open_modal_search()
+    q("#search_main").focus()
     q("#button_search_class").removeClass("button_search_appear")
 })
 
-q("#modalsearch_box input").addEventListener("input", function(){
-    let val = q("#modalsearch_box input").value.toUpperCase()
-    q("#modalsearch_box input").value = val;
+q("#search_main").addEventListener("input", function(){
+    let val = q("#search_main").value.toUpperCase()
+    q("#search_main").value = val;
 
     // se contiene il carattere nascosto al fondo allora è stato premuto sulla datalist
     if (val.slice(-1) === '\u2063') {
         val = val.slice(0, -1); //rimuovi il carattere e lancia il modal
-        q("#modalsearch_box input").value = ""
+        q("#search_main").value = ""
         open_modal(val)
     }
 
 });
-q("#modalsearch_box input").addEventListener("keydown", function(event){
+q("#search_main").addEventListener("keydown", function(event){
     // listener addizionale per quando si digita invio
     if(event.key == "Enter"){
-        let val = q("#modalsearch_box input").value
+        let val = q("#search_main").value
         if(Aule_ordinate[Selected_campus].includes(val)){
             open_modal(val)
             close_modal_search()
-            q("#modalsearch_box input").value = ""
+            q("#search_main").value = ""
         }
     }
+});
+q("#search_main").addEventListener("focusout", (event) => {
+    q("#search_main").value = ""
 });
 
 function open_modal_search(){
