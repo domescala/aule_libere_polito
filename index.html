@@ -3,13 +3,13 @@
 
 <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-BGKMWM60M8"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-BGKMWM60M8');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BGKMWM60M8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-BGKMWM60M8');
+    </script>
     <meta name="google-site-verification" content="tYZjZrYbrJT2ifLSUd1sTZWSuDtXbP-lYLYd3rAApfM" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,21 +18,23 @@
     <title>Aule libere Politecnico di Torino</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:wght@400;600&family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:wght@400;600&family=Roboto+Slab:wght@400;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/style_desk.css">
 </head>
 
-<body >
-   
+<body>
 
-    <div id="main_container" >
+
+    <div id="main_container">
         <div id="doc_title">
             <h1>aule libere<br>polito</h1>
             <p> dati aggiornati il 12/12/12 (12 giorni fa) </p>
         </div>
         <div id="button_search_class">
-                <p>🔍</p>
+            <p>🔍</p>
         </div>
         <div id="search_main_box">
             <input id="search_main" type="text" placeholder="Cerca un aula..." list="search_class_list">
@@ -44,13 +46,13 @@
             </select> -->
             <div id="campus_box">
                 <p class="campus_title">📍 Sede:</p>
-                <select id="campus_input" onchange="change_campus(this)"">
+                <select id="campus_input" onchange="change_campus(this)">
                     <option value="SEDE_CENTRALE">Sede Centrale</option>
                     <option value="MIRAFIORI">Mirafiori</option>
                     <option value="LINGOTTO">Lingotto</option>
                     <option value="VALENTINO">Valentino</option>
                 </select>
-                
+
             </div>
             <div id="date_box">
                 <div>
@@ -58,7 +60,7 @@
                 </div>
                 <p class="date_title row_title">📅 Data:</p>
                 <p class="date_value">...</p>
-                
+
             </div>
 
             <div id="filter_box">
@@ -119,17 +121,126 @@
 
         </div>
 
-    <div id="credits">
-        <div>
-            <p>"aule libere polito" è un progetto indipendente. Attinge dalla lista delle aule libere publicamente disponibile sul portale <a href="https://www.swas.polito.it/dotnet/orari_lezione_pub/mobile/ricerca_aule_libere.aspx">"www.swas.polito.it"</a>
-            <br>Poiché i dati delle aule sono aggiornati manualmente, questo sito si serve di Google Analytics con il solo scopo di contare il numero delle visite e valutare di conseguenza se continuare o interrompere gli aggiornamenti. </p>
-            <p class="credit_name" >Sviluppato da <span >Domenico Scaletta</span></p>
+        <div id="credits">
+            <div class="line">
+
+            </div>
+            <div>
+                <span class="credit_emoji">
+                    Cos'è? 💡
+                </span><br>
+                <p>
+                    Questo è un progetto indipendente con l'obiettivo di migliorare la fruibilità del servizio per la
+                    ricerca delle aule libere del Politecnico di Torino.<br>
+                </p>
+                <span class="credit_emoji_sub">
+                    Problema 💣
+                </span><br>
+                <p>
+                    Il sito fornito dal <a target="_blank"
+                        href="https://www.swas.polito.it/dotnet/orari_lezione_pub/mobile/ricerca_aule_libere.aspx">🔗portale</a>
+                    non è sempre semplicissimo e comodo da consultare. Ogni fascia oraria dispone di un blocco di testo
+                    semplice con le aule in ordine alfabetico. L'utente è obbligato a cercare faticosamente nell'elenco
+                    di ogni blocco se un'aula, ad esempio, rimane libera per due fasce consecutive.<br>
+                </p>
+                <span class="credit_emoji_sub">
+                    Soluzione 💥
+                </span><br>
+                <p>
+                    Attingendo i dati dal <a target="_blank"
+                        href="https://www.swas.polito.it/dotnet/orari_lezione_pub/mobile/ricerca_aule_libere.aspx">🔗portale</a>,
+                    il sito ordina le aule in una lista verticale di N righe. In ognuna ci sono 8 blocchi, uno per
+                    fascia oraria, ad indicare la disponibilità. A colpo d'occhio l'utente vede quali aule sono
+                    disponibili nella fascia corrente e in quelle successive. Un sistema di filtri permette di ordinare
+                    in base alla disponibilità, alla zona, al piano, alla capienza e alla superficie.<br>
+                </p>
+                <span class="credit_emoji_sub">
+                    Features 🚀
+                </span><br>
+                <p class="list">
+                    * Disposizione verticale delle aule<br>
+                    * Filtri per ordinare le aule<br>
+                    * Calcolo fasce orarie disponibili<br>
+                    * Slot liberi evidenziati in verde<br>
+                    * Fascia oraria corrente evidenziata in giallo<br>
+                    * Fasce orarie passate evidenziate in grigio<br>
+                    * Info sull'aula (fai tap sopra)<br>
+                    * Ricerca aule<br>
+                    * Fino a 20 giorni consultabili<br>
+                    * Memorizzazione dell'ultima sede selezionata<br>
+                    * Avvio sul primo giorno consultabile<br>
+                    * Disponibilità per ogni sede<br>
+                </p>
+                <span class="credit_emoji_sub">
+                    In progress 🔜
+                </span><br>
+                <p class="list">
+                    * Tipologia dei banchi<br>
+                    * Presenza di prese elettriche<br>
+                    * Presenza di proiettori<br>
+                    * Presenza di lavagne<br>
+                    * Mappa<br>
+                    * Presenza di cantieri<br>
+                    * Avviso se l'accesso all'aula è limitato<br>
+                </p>
+                <span class="credit_emoji_sub">
+                    Misfeature 🚧
+                </span><br>
+                <p class="list">
+                    * Non funziona con aule prenotate troppo recentemente<br>
+                    * Non è possibile consultare date precedenti
+                </p>
+            </div>
+            <div>
+                <span class="credit_emoji">
+                    Condividi 📣
+                </span><br>
+                <p>
+                    Se trovi utile questo sito, condividilo con quell'amica/o che si lamenta sempre che non trova mai
+                    aule libere.
+                </p>
+            </div>
+            <div>
+                <span class="credit_emoji">
+                    Assistenza 🧰🔧
+                </span><br>
+                <p>
+                    Per qualsiasi problema fai uno screenshot e invialo a <a
+                        href="https://t.me/domescala">@domescala</a> su
+                    telegram. Daje
+                </p>
+            </div>
+            <div>
+                <span class="credit_emoji">
+                    Disclaimer 🕵️‍♂️📊
+                </span><br>
+                <p>
+                    Il sito attinge i dati dalla lista delle aule libere disponibile pubblicamente sul portale <a
+                        target="_blank"
+                        href="https://www.swas.polito.it/dotnet/orari_lezione_pub/mobile/ricerca_aule_libere.aspx">"www.swas.polito.it"</a>
+                    e li impagina in un'interfaccia più chiara e leggibile.<br>
+                    Nel sito sono caricati inoltre i dati sulle caratteristiche delle aule (Capienza, Superficie, Zona e
+                    Piano) per poter applicare dei filtri ed ordinarle.
+                </p>
+                <p>
+                    Poiché i dati delle aule sono aggiornati manualmente, questo sito si serve di Google Analytics con
+                    il solo scopo di contare il numero delle visite e valutare di conseguenza se continuare o
+                    interrompere gli aggiornamenti.
+                </p>
+                <p>
+                    Il sito memorizza localmente, ovvero sul TUO dispositivo(in localStorage), l'ultima sede
+                    selezionata.<br>
+                    Consulti spesso gli orari del Valentino? Quando apri questa pagina la ricerca sarà già impostata sul
+                    Valentino. Comodo, no?
+                </p>
+            </div>
+            <p class="credit_name">Sviluppato da <a target="_blank" href="https://domescala.github.io">Domenico
+                    Scaletta</a></p>
         </div>
-    </div>
 
     </div>
 
-    
+
 
     </div>
 
@@ -140,7 +251,7 @@
             <a id="modal_link" target="_blank">📍 Mappa e altre info 🔗</a>
             <p id="exit_modal" onclick="exit_modal()">⬅ torna all'elenco</p>
 
-            
+
             <div id="modal_info_aula">
                 <div class="modal_row" id="modal_title">
                     <h1>-</h1>
@@ -155,15 +266,31 @@
                 <div class="modal_row" id="modal_fasce">
                     <p class="title">🕑 Fasce orarie libere: <span></span></p>
                     <div class="row_orari">
-                        <div><p><span> 08:30 10:00 </span></p></div>
-                        <div><p><span> 10:00 11:30 </span></p></div>
-                        <div><p><span> 11:30 13:00 </span></p></div>
-                        <div><p><span> 13:00 14:30 </span></p></div>
-                        <div><p><span> 14:30 16:00 </span></p></div>
-                        <div><p><span> 16:00 17:30 </span></p></div>
-                        <div><p><span> 17:30 19:00 </span></p></div>
-                        <div><p><span> 19:00 20:30 </span></p></div>
-        
+                        <div>
+                            <p><span> 08:30 10:00 </span></p>
+                        </div>
+                        <div>
+                            <p><span> 10:00 11:30 </span></p>
+                        </div>
+                        <div>
+                            <p><span> 11:30 13:00 </span></p>
+                        </div>
+                        <div>
+                            <p><span> 13:00 14:30 </span></p>
+                        </div>
+                        <div>
+                            <p><span> 14:30 16:00 </span></p>
+                        </div>
+                        <div>
+                            <p><span> 16:00 17:30 </span></p>
+                        </div>
+                        <div>
+                            <p><span> 17:30 19:00 </span></p>
+                        </div>
+                        <div>
+                            <p><span> 19:00 20:30 </span></p>
+                        </div>
+
                     </div>
                     <div id="modal_lista_aule" class="lista_aule">
                         <div></div>
@@ -174,17 +301,17 @@
                         <div></div>
                         <div></div>
                         <div></div>
-                        
+
                     </div>
 
-                  
+
                 </div>
-            
+
                 <div class="modal_row">
                     <p class="title">🔢 Piano:</p>
                     <p class="contain" value="_piano">-</p>
                 </div>
-                <div class="modal_row div_capienza" >
+                <div class="modal_row div_capienza">
                     <p class="title">🪑 Capienza:</p>
                     <p class="contain" value="_capienza">-</p>
                 </div>
@@ -205,8 +332,8 @@
                     <p class="contain" value="_id_locale">-</p>
                 </div>
             </div>
-            
-            
+
+
         </div>
     </div>
     <div id="modalsearch_box" class="hidden">
@@ -223,8 +350,8 @@
     <script src="js/classrooms_data.js"></script>
     <script src="js/parse_classrooms_data.js"></script>
     <script src="js/main.js"></script>
-    
-    
+
+
 </body>
 
 </html>

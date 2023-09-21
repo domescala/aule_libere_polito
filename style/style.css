@@ -957,39 +957,73 @@ body.filter_active div.artificial_before {
 /* -------------------------------- */
 
 #credits{
-    padding: 0px 10px;
-    margin: 17px 0px;
+    /* position: relative; */
+    z-index: 400;
     width: 100%;
-    text-align: center;
+    background: white;
+    margin: 17px 0px 25px;
+    width: 100%;
+    box-shadow: 0px -4px 12px 0px #00000029;
+    padding: 13px 15px 12px;
 }
 #credits div{
-    border-top: 1px dashed #3e3e3e;
-    padding: 11px 0px;
+    border-bottom: 1px dashed #afafaf;
+    padding: 8px 0px 12px;
+}
+#credits .line{
+    border: 0;
+    padding: 0;
+    margin: 0px 9px 0px;
+    /* width: 100%; */
+    /* border-top:1px solid black; */
 }
 #credits p{
     font-size: 12px;
     font-family: "Roboto Mono", sans-serif;
-    font-weight: bolder;
-    color: #4d4d4d;
-    max-width:400px;
-    margin: 5px auto 0px;
+    font-weight: 400;
+    color: #0a0a0a;
+    /* max-width:400px; */
+    margin-bottom: 4px;
 }
 #credits a{
+    font-size: 12px;
     color:unset;
     text-decoration: underline;
 }
+#credits span{
+    display: inline-block;
+    /* margin-top: 4px; */
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 600;
+    font-family: 'Roboto Mono';
+    color: #2d2d2d;
+}
+#credits .credit_emoji_sub{
+    color: #454444;
+    font-size: 13px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+#credits .list{
+    line-height: 1.5;
+}
 #credits .credit_name {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
     color:#202020;
 }
-#credits .credit_name span{
-    animation: color_infinite 10s ease infinite;
-    text-wrap: nowrap;
+#credits .credit_name a{
+    font-weight: 600;
+    text-decoration: none;
+    animation: color_infinite 10s linear infinite alternate-reverse;
+    word-wrap: nowrap;
 }
 
 @keyframes color_infinite {
-    0%  {color: #25bd34;}
-    25% {color: #ea590b;}
-    50% {color: #ea0b4e;}
-    75% {color: #0b3fea;}
-    100%{color: #25bd34;}
+    0% {color: #ffa724;}
+    50% {color: #ff3138;}
+    100% {color: #2436ff;}
 }
