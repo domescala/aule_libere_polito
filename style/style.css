@@ -71,12 +71,13 @@ body.loading-out {
     font-size: 10px;
     font-family: "Roboto mono", monospace;
     color: #939393;
-    font-weight: bolder;
+    font-weight: 700;
     margin-top: 11px;
 }
 #doc_title h1{
     font-size: 52px;
     font-family: "Roboto Slab", monospace;
+    font-weight: 600;
 }
 
 #block_scroll {
@@ -187,7 +188,7 @@ outline: 2px solid #424242;
     /* border-top: 1px solid #ce8bff; */
     text-align: center;
     outline: 1px dashed #424242;
-    font-weight: bold;
+    font-weight: 600;
     line-height: 1.5;
     color: #202020;
     line-height: 2;
@@ -237,7 +238,7 @@ justify-content: flex-end;
 .row_aule p.nome_aula, .row_aule p.info_aula {
     font-family: 'Roboto mono', monospace;
     font-size: 12px;
-    font-weight: bold;
+    font-weight: 600;
     margin-top: -10px;
     margin-bottom: 7px;
     padding: 2px 6px;
@@ -518,7 +519,7 @@ body.filter_active div.artificial_before {
     color: #6312f7;
     font-size: 12px;
     font-family: 'Roboto Mono', monospace;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 #filter_box .filter.active {}
@@ -578,7 +579,7 @@ body.filter_active div.artificial_before {
 #date_box .date_button{
     font-size: 12px;
     font-family: 'Roboto Mono', monospace;
-    /* font-weight: bold; */
+    /* font-weight: 600; */
     padding: 4px 10px;
     border-radius: 5px;
     /* border: 1px solid #dc0031; */
@@ -655,7 +656,7 @@ body.filter_active div.artificial_before {
     margin: 16px 10px -20px auto;
     font-size: 10px;
     font-family: "Roboto Mono", sans-serif;
-    font-weight: bold;
+    font-weight: 600;
     height: 29px;
     display: flex;
     align-items: center;
@@ -776,7 +777,7 @@ body.filter_active div.artificial_before {
     border-top: 1px solid #91f6bf;
     text-align: center;
     border-left: 1px solid #0bea70;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 #modal_fasce span.modal_fascia:first-child {
