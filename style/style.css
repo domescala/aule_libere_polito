@@ -113,7 +113,7 @@ a {
     bottom: 50px;
     right: -100px;
     z-index: 150;
-    box-shadow: -1px 2px 5px 3px #9822ff94;
+    box-shadow: -1px 2px 5px 3px hsla(272, 100%, 78%, 0.184);
     margin: 0;
     transition: right 0.5s ease;
 }
