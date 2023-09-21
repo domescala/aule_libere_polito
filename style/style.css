@@ -254,13 +254,20 @@ justify-content: flex-end;
     background: #6613ff;
     font-weight: normal;
     margin-right: 0px;
+    /* max-width: 50%; */
+    /* transition: all 1s ease; */
+    /* text-overflow: clip; */
+    /* overflow: hidden; */
+    /* white-space: nowrap; */
 }
 .row_aule p.info_aula sup{
     line-height: 0.5;
 }
 body:not(.filter_active) .info_aula{
     display: none;
-    
+    /* color:transparent; */
+    /* padding: 0; */
+    /* max-width: 0%; */
 }
 
 @keyframes open_modal {
