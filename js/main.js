@@ -663,7 +663,7 @@ function setup_version_date() {
         delta = "oggi"
     }
 
-    let txt = `dati aggiornati al ${new Date(Update_date).to_ddmmyyyy(".")} (${delta})`
+    let txt = `dati aggiornati il ${new Date(Update_date).to_ddmmyyyy(".")} (${delta})`
     q("#doc_title p").innerHTML = txt 
 }
 
