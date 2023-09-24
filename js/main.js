@@ -369,19 +369,29 @@ function filtra_aule(key_tags) {
         });
         return 
     }
-    if(key_tags=="_fasce_libere"  && get_current_slot() != -1){
-        // l'attributo _fasce_libere contiene il numero di fasce libere 
-        // l'attributo _currentfasce_libere contiene invece una serie di numeri-> le disponibilita dellaula ad ogni fascia -> da utlizzare solo nel giorno corrente
-        // se un aula ha 11111100 e siamo alle ultime 2 ore, questa dovrà essere ordinata al fondo perchè gli slot liberi dalla penultima ora sono zero, invece quelli totali sono sei
+    if(key_tags=="_fasce_libere"){
+        if(get_current_slot() != -1){
+            // l'attributo _fasce_libere contiene il numero di fasce libere 
+            // l'attributo _currentfasce_libere contiene invece una serie di numeri-> le disponibilita dellaula ad ogni fascia -> da utlizzare solo nel giorno corrente
+            // se un aula ha 11111100 e siamo alle ultime 2 ore, questa dovrà essere ordinata al fondo perchè gli slot liberi dalla penultima ora sono zero, invece quelli totali sono sei
 
-        time_slot = get_current_slot()
+            time_slot = get_current_slot()
 
-        const ROWS_AULE = Q(".row_aule")
-        ROWS_AULE.forEach(ROW_AULA => {
-            i = Number(ROW_AULA.getAttribute("_currentfasce_libere")[time_slot])
-            ROW_AULA.style["order"] = -i  // order è meglio se parte da uno
-            ROW_AULA.q(".info_aula").innerHTML = i + " fasce libere"
-        });
+            const ROWS_AULE = Q(".row_aule")
+            ROWS_AULE.forEach(ROW_AULA => {
+                i = Number(ROW_AULA.getAttribute("_currentfasce_libere")[time_slot])
+                ROW_AULA.style["order"] = -i  // order è meglio se parte da uno
+                ROW_AULA.q(".info_aula").innerHTML = i + " fasce libere"
+            });
+        }
+        else{
+            const ROWS_AULE = Q(".row_aule")
+            ROWS_AULE.forEach(ROW_AULA => {
+                i = Number(ROW_AULA.getAttribute("_fasce_libere"))
+                ROW_AULA.style["order"] = 8 - i  // order è meglio se parte da uno
+                ROW_AULA.q(".info_aula").innerHTML = i + " fasce libere"
+            });
+        }
     }
     else{
         const ROWS_AULE = Q(".row_aule")
