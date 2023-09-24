@@ -635,7 +635,14 @@ body.filter_active div.artificial_before {
     z-index: 500;
     background: white;
     transition: left 0.25s ease;
-    overflow: scroll;
+    /* overflow: scroll; */
+}
+#modal_bg_block{
+    background: #ffffff;
+    z-index: -1;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
 }
 #modal_box.hidden {
     left: -100vw;
