@@ -311,8 +311,16 @@ function updateDoc_campus(campus, disp){
     // reset aule
     Q(".row_aule").forEach(e=>e.remove())
     Classrooms_info[campus].keys().forEach(nome_aula => {
+        let info_alert_aula = `
+            <p class="info_alert_aula">
+                <img src="style/plug.svg">
+            </p>`
+        if (Classrooms_info[campus][nome_aula]["_prese_elettriche"]){
+            info_alert_aula = ``
+        }
         const row_string = (`
             <div class="row_aule" _id="${nome_aula}">
+                ${info_alert_aula}
                 <p class="nome_aula">Aula ${nome_aula}</p>
                 <p class="info_aula"></p>
                 <div class="lista_aule">
@@ -459,6 +467,12 @@ function open_modal(id_row){
         }
     });
 
+    if (Classrooms_info[Selected_campus][id_row]["_prese_elettriche"]){
+        MODAL_CONTENT.q("#modal_alert").style["display"] = "none"
+    }
+    else{
+        MODAL_CONTENT.q("#modal_alert").style["display"] = "flex"
+    }
     // copia la roba nel modal
     q("#modal_lista_aule").innerHTML = ""
     ROW.q(".lista_aule").CloneSubnodes(q("#modal_lista_aule"))

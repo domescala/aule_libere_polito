@@ -10,6 +10,7 @@ const Classrooms_info =
                 "_capienza": "362",
                 "_superficie": "318",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN03 XPTE D001"
             },
             "2": {
@@ -21,6 +22,7 @@ const Classrooms_info =
                 "_capienza": "332",
                 "_superficie": "294",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN03 XPTE E002"
             },
             "3": {
@@ -32,6 +34,7 @@ const Classrooms_info =
                 "_capienza": "352",
                 "_superficie": "316",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN03 XPTE D003"
             },
             "4": {
@@ -43,6 +46,7 @@ const Classrooms_info =
                 "_capienza": "326",
                 "_superficie": "285",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN03 XPTE E004"
             },
             "5": {
@@ -54,6 +58,7 @@ const Classrooms_info =
                 "_capienza": "362",
                 "_superficie": "319",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN03 XPTE D005"
             },
             "6": {
@@ -65,6 +70,7 @@ const Classrooms_info =
                 "_capienza": "302",
                 "_superficie": "254",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN03 XPTE E006"
             },
             "7": {
@@ -76,6 +82,7 @@ const Classrooms_info =
                 "_capienza": "148",
                 "_superficie": "132",
                 "_fabbricato": "Area Sud - Parte 2",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN02 XPTE R001"
             },
             "8": {
@@ -87,6 +94,7 @@ const Classrooms_info =
                 "_capienza": "278",
                 "_superficie": "214",
                 "_fabbricato": "Area Nord",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN04 XPTE E001"
             },
             "10": {
@@ -98,6 +106,7 @@ const Classrooms_info =
                 "_capienza": "140",
                 "_superficie": "145",
                 "_fabbricato": "Area Nord",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN04 XPTE H001"
             },
             "11": {
@@ -109,6 +118,7 @@ const Classrooms_info =
                 "_capienza": "101",
                 "_superficie": "98",
                 "_fabbricato": "Area Sud - Parte 2",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN02 XPTE Q009"
             },
             "12": {
@@ -120,6 +130,7 @@ const Classrooms_info =
                 "_capienza": "285",
                 "_superficie": "256",
                 "_fabbricato": "Area Nord",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN04 XPTE M009"
             },
             "13": {
@@ -131,6 +142,7 @@ const Classrooms_info =
                 "_capienza": "100",
                 "_superficie": "95",
                 "_fabbricato": "Area Sud - Parte 2",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN02 XPTE Q008"
             },
             "14": {
@@ -142,6 +154,7 @@ const Classrooms_info =
                 "_capienza": "178",
                 "_superficie": "175",
                 "_fabbricato": "Area Nord",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN04 XS01 M008"
             },
             "15": {
@@ -153,6 +166,7 @@ const Classrooms_info =
                 "_capienza": "98",
                 "_superficie": "88",
                 "_fabbricato": "Area Sud - Parte 1",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN01 XPTE E020"
             },
             "16": {
@@ -164,6 +178,7 @@ const Classrooms_info =
                 "_capienza": "195",
                 "_superficie": "191",
                 "_fabbricato": "Area Nord",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN04 XPTE M011"
             },
             "17": {
@@ -175,6 +190,7 @@ const Classrooms_info =
                 "_capienza": "32",
                 "_superficie": "68",
                 "_fabbricato": "Area Sud - Parte 1",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN01 XPTE D002"
             },
             "19": {
@@ -186,6 +202,7 @@ const Classrooms_info =
                 "_capienza": "32",
                 "_superficie": "69",
                 "_fabbricato": "Area Sud - Parte 1",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN01 XPTE D001"
             },
             "27": {
@@ -197,6 +214,7 @@ const Classrooms_info =
                 "_capienza": "221",
                 "_superficie": "196",
                 "_fabbricato": "Ex centrale termica",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN05 XPTE B056"
             },
             "29": {
@@ -208,6 +226,7 @@ const Classrooms_info =
                 "_capienza": "213",
                 "_superficie": "183",
                 "_fabbricato": "Ex centrale termica",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN05 XPTE B055"
             },
             "10A": {
@@ -219,6 +238,7 @@ const Classrooms_info =
                 "_capienza": "252",
                 "_superficie": "265",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XPTE F004"
             },
             "10C": {
@@ -230,6 +250,7 @@ const Classrooms_info =
                 "_capienza": "118",
                 "_superficie": "119",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XP02 Q014"
             },
             "10D": {
@@ -241,6 +262,7 @@ const Classrooms_info =
                 "_capienza": "127",
                 "_superficie": "131",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XP03 Q001"
             },
             "10I": {
@@ -252,6 +274,7 @@ const Classrooms_info =
                 "_capienza": "88",
                 "_superficie": "111",
                 "_fabbricato": "Corte Interrata",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT08 XS01 011"
             },
             "11B": {
@@ -263,6 +286,7 @@ const Classrooms_info =
                 "_capienza": "47",
                 "_superficie": "60",
                 "_fabbricato": "Area Sud - Parte 2",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN02 XP01 Q006"
             },
             "11I": {
@@ -274,6 +298,7 @@ const Classrooms_info =
                 "_capienza": "96",
                 "_superficie": "167",
                 "_fabbricato": "Corte Interrata",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT08 XS01 012"
             },
             "11S": {
@@ -285,6 +310,7 @@ const Classrooms_info =
                 "_capienza": "72",
                 "_superficie": "78",
                 "_fabbricato": "Area Sud - Parte 2",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN02 XS01 D014"
             },
             "11T": {
@@ -296,6 +322,7 @@ const Classrooms_info =
                 "_capienza": "142",
                 "_superficie": "132",
                 "_fabbricato": "Ex Tornerie",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CIT09 XPTE 137"
             },
             "12A": {
@@ -307,6 +334,7 @@ const Classrooms_info =
                 "_capienza": "252",
                 "_superficie": "259",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XPTE F003"
             },
             "12D": {
@@ -318,6 +346,7 @@ const Classrooms_info =
                 "_capienza": "117",
                 "_superficie": "119",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XP03 Q009"
             },
             "12I": {
@@ -329,6 +358,7 @@ const Classrooms_info =
                 "_capienza": "80",
                 "_superficie": "185",
                 "_fabbricato": "Corte Interrata",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT08 XS01 013"
             },
             "13A": {
@@ -340,6 +370,7 @@ const Classrooms_info =
                 "_capienza": "51",
                 "_superficie": "64",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XPTE C004"
             },
             "13B": {
@@ -351,6 +382,7 @@ const Classrooms_info =
                 "_capienza": "51",
                 "_superficie": "82",
                 "_fabbricato": "Area Sud - Parte 2",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN02 XP01 Q005"
             },
             "13S": {
@@ -362,6 +394,7 @@ const Classrooms_info =
                 "_capienza": "119",
                 "_superficie": "133",
                 "_fabbricato": "Area Sud - Parte 2",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN02 XS01 C016"
             },
             "15A": {
@@ -373,6 +406,7 @@ const Classrooms_info =
                 "_capienza": "97",
                 "_superficie": "110",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XPTE C008"
             },
             "17A": {
@@ -384,6 +418,7 @@ const Classrooms_info =
                 "_capienza": "96",
                 "_superficie": "102",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XPTE C007"
             },
             "19A": {
@@ -395,6 +430,7 @@ const Classrooms_info =
                 "_capienza": "87",
                 "_superficie": "84",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XPTE C003"
             },
             "1B": {
@@ -406,6 +442,7 @@ const Classrooms_info =
                 "_capienza": "196",
                 "_superficie": "240",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XP01 L005"
             },
             "1D": {
@@ -417,6 +454,7 @@ const Classrooms_info =
                 "_capienza": "89",
                 "_superficie": "102",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XP03 G009"
             },
             "1I": {
@@ -428,6 +466,7 @@ const Classrooms_info =
                 "_capienza": "149",
                 "_superficie": "176",
                 "_fabbricato": "Corte Interrata",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT08 XS01 002"
             },
             "1M": {
@@ -439,6 +478,7 @@ const Classrooms_info =
                 "_capienza": "76",
                 "_superficie": "139",
                 "_fabbricato": "Aule M",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CIT02 XPTE 007"
             },
             "1P": {
@@ -450,6 +490,7 @@ const Classrooms_info =
                 "_capienza": "220",
                 "_superficie": "217",
                 "_fabbricato": "Aule P, nuovi fabbricati",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT22 XPTE 036"
             },
             "1S": {
@@ -461,6 +502,7 @@ const Classrooms_info =
                 "_capienza": "156",
                 "_superficie": "163",
                 "_fabbricato": "Area Sud - Parte 2",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN02 XS01 D005"
             },
             "1T": {
@@ -472,6 +514,7 @@ const Classrooms_info =
                 "_capienza": "90",
                 "_superficie": "102",
                 "_fabbricato": "Ex Tornerie",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT09 XPTE 057"
             },
             "21A": {
@@ -483,6 +526,7 @@ const Classrooms_info =
                 "_capienza": "47",
                 "_superficie": "67",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XPTE C001"
             },
             "27B": {
@@ -494,6 +538,7 @@ const Classrooms_info =
                 "_capienza": "221",
                 "_superficie": "202",
                 "_fabbricato": "Ex centrale termica",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN05 XP01 B029"
             },
             "29B": {
@@ -505,6 +550,7 @@ const Classrooms_info =
                 "_capienza": "213",
                 "_superficie": "183",
                 "_fabbricato": "Ex centrale termica",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN05 XP01 B031"
             },
             "2C": {
@@ -516,6 +562,7 @@ const Classrooms_info =
                 "_capienza": "121",
                 "_superficie": "125",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XP02 Q001"
             },
             "2D": {
@@ -527,6 +574,7 @@ const Classrooms_info =
                 "_capienza": "123",
                 "_superficie": "122",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XP03 Q005"
             },
             "2I": {
@@ -538,6 +586,7 @@ const Classrooms_info =
                 "_capienza": "87",
                 "_superficie": "109",
                 "_fabbricato": "Corte Interrata",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT08 XS01 003"
             },
             "2M": {
@@ -549,6 +598,7 @@ const Classrooms_info =
                 "_capienza": "144",
                 "_superficie": "134",
                 "_fabbricato": "Aule M",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CIT02 XPTE 011"
             },
             "2N": {
@@ -560,6 +610,7 @@ const Classrooms_info =
                 "_capienza": "139",
                 "_superficie": "138",
                 "_fabbricato": "Ex Stampati",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CIT03 XPTE 005"
             },
             "2P": {
@@ -571,6 +622,7 @@ const Classrooms_info =
                 "_capienza": "220",
                 "_superficie": "218",
                 "_fabbricato": "Aule P, nuovi fabbricati",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT22 XPTE 038"
             },
             "2T": {
@@ -582,6 +634,7 @@ const Classrooms_info =
                 "_capienza": "120",
                 "_superficie": "142",
                 "_fabbricato": "Ex Tornerie",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT09 XPTE 040"
             },
             "3I": {
@@ -593,6 +646,7 @@ const Classrooms_info =
                 "_capienza": "148",
                 "_superficie": "173",
                 "_fabbricato": "Corte Interrata",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT08 XS01 004"
             },
             "3M": {
@@ -604,6 +658,7 @@ const Classrooms_info =
                 "_capienza": "128",
                 "_superficie": "144",
                 "_fabbricato": "Aule M",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CIT02 XPTE 027"
             },
             "3N": {
@@ -615,6 +670,7 @@ const Classrooms_info =
                 "_capienza": "130",
                 "_superficie": "143",
                 "_fabbricato": "Ex Stampati",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CIT03 XPTE 006"
             },
             "3P": {
@@ -626,6 +682,7 @@ const Classrooms_info =
                 "_capienza": "220",
                 "_superficie": "218",
                 "_fabbricato": "Aule P, nuovi fabbricati",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT22 XPTE 015"
             },
             "3S": {
@@ -637,6 +694,7 @@ const Classrooms_info =
                 "_capienza": "156",
                 "_superficie": "163",
                 "_fabbricato": "Area Sud - Parte 2",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN02 XS01 D007"
             },
             "4C": {
@@ -648,6 +706,7 @@ const Classrooms_info =
                 "_capienza": "120",
                 "_superficie": "130",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XP02 Q011"
             },
             "4D": {
@@ -659,6 +718,7 @@ const Classrooms_info =
                 "_capienza": "121",
                 "_superficie": "131",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XP03 Q010"
             },
             "4I": {
@@ -670,6 +730,7 @@ const Classrooms_info =
                 "_capienza": "96",
                 "_superficie": "171",
                 "_fabbricato": "Corte Interrata",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT08 XS01 005"
             },
             "4M": {
@@ -681,6 +742,7 @@ const Classrooms_info =
                 "_capienza": "60",
                 "_superficie": "65",
                 "_fabbricato": "Aule M",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CIT02 XPTE 016"
             },
             "4N": {
@@ -692,6 +754,7 @@ const Classrooms_info =
                 "_capienza": "135",
                 "_superficie": "133",
                 "_fabbricato": "Ex Stampati",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CIT03 XPTE 007"
             },
             "4P": {
@@ -703,6 +766,7 @@ const Classrooms_info =
                 "_capienza": "220",
                 "_superficie": "216",
                 "_fabbricato": "Aule P, nuovi fabbricati",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT22 XPTE 005"
             },
             "4T": {
@@ -714,6 +778,7 @@ const Classrooms_info =
                 "_capienza": "130",
                 "_superficie": "144",
                 "_fabbricato": "Ex Tornerie",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT09 XPTE 113"
             },
             "5B": {
@@ -725,6 +790,7 @@ const Classrooms_info =
                 "_capienza": "51",
                 "_superficie": "52",
                 "_fabbricato": "Area Sud - Parte 2",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN02 XP01 Q010"
             },
             "5I": {
@@ -736,6 +802,7 @@ const Classrooms_info =
                 "_capienza": "138",
                 "_superficie": "162",
                 "_fabbricato": "Corte Interrata",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT08 XS01 006"
             },
             "5M": {
@@ -747,6 +814,7 @@ const Classrooms_info =
                 "_capienza": "76",
                 "_superficie": "143",
                 "_fabbricato": "Aule M",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CIT02 XPTE 030"
             },
             "5N": {
@@ -758,6 +826,7 @@ const Classrooms_info =
                 "_capienza": "68",
                 "_superficie": "69",
                 "_fabbricato": "Ex Stampati",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CIT03 XPTE 013"
             },
             "5S": {
@@ -769,6 +838,7 @@ const Classrooms_info =
                 "_capienza": "156",
                 "_superficie": "163",
                 "_fabbricato": "Area Sud - Parte 2",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN02 XS01 D009"
             },
             "6C": {
@@ -780,6 +850,7 @@ const Classrooms_info =
                 "_capienza": "25",
                 "_superficie": "80",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XP02 Q002"
             },
             "6D": {
@@ -791,6 +862,7 @@ const Classrooms_info =
                 "_capienza": "25",
                 "_superficie": "71",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XP03 Q004"
             },
             "6I": {
@@ -802,6 +874,7 @@ const Classrooms_info =
                 "_capienza": "48",
                 "_superficie": "128",
                 "_fabbricato": "Corte Interrata",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT08 XS01 007"
             },
             "6N": {
@@ -813,6 +886,7 @@ const Classrooms_info =
                 "_capienza": "139",
                 "_superficie": "137",
                 "_fabbricato": "Ex Stampati",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CIT03 XPTE 017"
             },
             "7B": {
@@ -824,6 +898,7 @@ const Classrooms_info =
                 "_capienza": "97",
                 "_superficie": "101",
                 "_fabbricato": "Area Sud - Parte 2",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN02 XP01 Q009"
             },
             "7D": {
@@ -835,6 +910,7 @@ const Classrooms_info =
                 "_capienza": "78",
                 "_superficie": "83",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XP03 G008"
             },
             "7I": {
@@ -846,6 +922,7 @@ const Classrooms_info =
                 "_capienza": "140",
                 "_superficie": "162",
                 "_fabbricato": "Corte Interrata",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT08 XS01 008"
             },
             "7N": {
@@ -857,6 +934,7 @@ const Classrooms_info =
                 "_capienza": "112",
                 "_superficie": "146",
                 "_fabbricato": "Ex Stampati",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CIT03 XPTE 015"
             },
             "7S": {
@@ -868,6 +946,7 @@ const Classrooms_info =
                 "_capienza": "156",
                 "_superficie": "163",
                 "_fabbricato": "Area Sud - Parte 2",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN02 XS01 D011"
             },
             "7T": {
@@ -879,6 +958,7 @@ const Classrooms_info =
                 "_capienza": "144",
                 "_superficie": "132",
                 "_fabbricato": "Ex Tornerie",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT09 XPTE 090"
             },
             "8C": {
@@ -890,6 +970,7 @@ const Classrooms_info =
                 "_capienza": "193",
                 "_superficie": "223",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XP02 Q007"
             },
             "8D": {
@@ -901,6 +982,7 @@ const Classrooms_info =
                 "_capienza": "93",
                 "_superficie": "107",
                 "_fabbricato": "Area Centrale",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN03 XP03 Q003"
             },
             "8I": {
@@ -912,6 +994,7 @@ const Classrooms_info =
                 "_capienza": "97",
                 "_superficie": "128",
                 "_fabbricato": "Corte Interrata",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT08 XS01 009"
             },
             "8N": {
@@ -923,6 +1006,7 @@ const Classrooms_info =
                 "_capienza": "64",
                 "_superficie": "119",
                 "_fabbricato": "Ex Stampati",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CIT03 XP01 013"
             },
             "9B": {
@@ -934,6 +1018,7 @@ const Classrooms_info =
                 "_capienza": "47",
                 "_superficie": "61",
                 "_fabbricato": "Area Sud - Parte 2",
+                "_prese_elettriche": false,
                 "_id_locale": "TO_CEN02 XP01 Q008"
             },
             "9I": {
@@ -945,6 +1030,7 @@ const Classrooms_info =
                 "_capienza": "107",
                 "_superficie": "135",
                 "_fabbricato": "Corte Interrata",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT08 XS01 010"
             },
             "9S": {
@@ -956,6 +1042,7 @@ const Classrooms_info =
                 "_capienza": "72",
                 "_superficie": "83",
                 "_fabbricato": "Area Sud - Parte 2",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CEN02 XS01 D013"
             },
             "9T": {
@@ -967,6 +1054,7 @@ const Classrooms_info =
                 "_capienza": "144",
                 "_superficie": "132",
                 "_fabbricato": "Ex Tornerie",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT09 XPTE 092"
             },
             "R1": {
@@ -978,6 +1066,7 @@ const Classrooms_info =
                 "_capienza": "300",
                 "_superficie": "119",
                 "_fabbricato": "Aule R",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT06 XPTE 001"
             },
             "R1B": {
@@ -989,6 +1078,7 @@ const Classrooms_info =
                 "_capienza": "150",
                 "_superficie": "141",
                 "_fabbricato": "Aule R",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT06 XP01 006"
             },
             "R2": {
@@ -1000,6 +1090,7 @@ const Classrooms_info =
                 "_capienza": "300",
                 "_superficie": "119",
                 "_fabbricato": "Aule R",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT06 XPTE 002"
             },
             "R2B": {
@@ -1011,6 +1102,7 @@ const Classrooms_info =
                 "_capienza": "150",
                 "_superficie": "141",
                 "_fabbricato": "Aule R",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT06 XP01 007"
             },
             "R3": {
@@ -1022,6 +1114,7 @@ const Classrooms_info =
                 "_capienza": "300",
                 "_superficie": "119",
                 "_fabbricato": "Aule R",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT06 XPTE 003"
             },
             "R3B": {
@@ -1033,6 +1126,7 @@ const Classrooms_info =
                 "_capienza": "150",
                 "_superficie": "141",
                 "_fabbricato": "Aule R",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT06 XP01 005"
             },
             "R4": {
@@ -1044,6 +1138,7 @@ const Classrooms_info =
                 "_capienza": "300",
                 "_superficie": "120",
                 "_fabbricato": "Aule R",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT06 XPTE 004"
             },
             "R4B": {
@@ -1055,6 +1150,7 @@ const Classrooms_info =
                 "_capienza": "150",
                 "_superficie": "141",
                 "_fabbricato": "Aule R",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_CIT06 XP01 008"
             }
         },
@@ -1068,6 +1164,7 @@ const Classrooms_info =
                 "_capienza": "93",
                 "_superficie": "158.53",
                 "_fabbricato": "Mirafiori",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_MIR01 XPTE C008"
             },
             "02AM": {
@@ -1079,6 +1176,7 @@ const Classrooms_info =
                 "_capienza": "99",
                 "_superficie": "158.53",
                 "_fabbricato": "Mirafiori",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_MIR01 XPTE C002"
             },
             "03AM": {
@@ -1090,6 +1188,7 @@ const Classrooms_info =
                 "_capienza": "32",
                 "_superficie": "128.27",
                 "_fabbricato": "Mirafiori",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_MIR01 XPTE C003"
             },
             "04AM": {
@@ -1101,6 +1200,7 @@ const Classrooms_info =
                 "_capienza": "199",
                 "_superficie": "188.78",
                 "_fabbricato": "Mirafiori",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_MIR01 XPTE C004"
             },
             "05AM": {
@@ -1112,6 +1212,7 @@ const Classrooms_info =
                 "_capienza": "49",
                 "_superficie": "72.23",
                 "_fabbricato": "Mirafiori",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_MIR01 XPTE E005"
             },
             "06AM": {
@@ -1123,6 +1224,7 @@ const Classrooms_info =
                 "_capienza": "61",
                 "_superficie": "72.21",
                 "_fabbricato": "Mirafiori",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_MIR01 XPTE E006"
             },
             "07AM": {
@@ -1134,6 +1236,7 @@ const Classrooms_info =
                 "_capienza": "49",
                 "_superficie": "74.38",
                 "_fabbricato": "Mirafiori",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_MIR01 XPTE E007"
             },
             "11AM": {
@@ -1145,6 +1248,7 @@ const Classrooms_info =
                 "_capienza": "99",
                 "_superficie": "158.53",
                 "_fabbricato": "Mirafiori",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_MIR01 XP01 C001"
             },
             "12AM": {
@@ -1156,6 +1260,7 @@ const Classrooms_info =
                 "_capienza": "99",
                 "_superficie": "158.53",
                 "_fabbricato": "Mirafiori",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_MIR01 XP01 C002"
             },
             "13AM": {
@@ -1167,6 +1272,7 @@ const Classrooms_info =
                 "_capienza": "99",
                 "_superficie": "128.27",
                 "_fabbricato": "Mirafiori",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_MIR01 XP01 C003"
             },
             "14AM": {
@@ -1178,6 +1284,7 @@ const Classrooms_info =
                 "_capienza": "133",
                 "_superficie": "188.22",
                 "_fabbricato": "Mirafiori",
+                "_prese_elettriche": true,
                 "_id_locale": "TO_MIR01 XP01 C004"
             }
         },
@@ -1191,6 +1298,7 @@ const Classrooms_info =
                 "_capienza": "140",
                 "_superficie": "160.34",
                 "_fabbricato": "Laboratori",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_CAS06 XP02 S003"
             },
             "2V": {
@@ -1202,6 +1310,7 @@ const Classrooms_info =
                 "_capienza": "100",
                 "_superficie": "136.55",
                 "_fabbricato": "Laboratori",
+                "_prese_elettriche": false,
                 "_id_locale": " TO_CAS06 XPTE S004"
             },
             "3V": {
@@ -1213,6 +1322,7 @@ const Classrooms_info =
                 "_capienza": "56",
                 "_superficie": "136.25",
                 "_fabbricato": "Ala Nord",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_CAS02 XPTE F003"
             },
             "4V": {
@@ -1224,6 +1334,7 @@ const Classrooms_info =
                 "_capienza": "80",
                 "_superficie": "137.19",
                 "_fabbricato": "Ala Sud",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_CAS03 XPTE E002"
             },
             "5V": {
@@ -1235,6 +1346,7 @@ const Classrooms_info =
                 "_capienza": "56",
                 "_superficie": "138.37",
                 "_fabbricato": "Ala Nord",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_CAS02 XPTE F005"
             },
             "6V": {
@@ -1246,6 +1358,7 @@ const Classrooms_info =
                 "_capienza": "80",
                 "_superficie": "138.76",
                 "_fabbricato": "Ala Sud",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_CAS03 XPTE E003"
             },
             "7V": {
@@ -1257,6 +1370,7 @@ const Classrooms_info =
                 "_capienza": "100",
                 "_superficie": "106.74",
                 "_fabbricato": "Manica Chevalley",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_CAS04 XPTE L010"
             },
             "8V": {
@@ -1268,6 +1382,7 @@ const Classrooms_info =
                 "_capienza": "72",
                 "_superficie": "147.61",
                 "_fabbricato": "Manica Nuova",
+                "_prese_elettriche": false,
                 "_id_locale": " TO_CAS07 XS01 T009"
             },
             "2VM": {
@@ -1279,6 +1394,7 @@ const Classrooms_info =
                 "_capienza": "90",
                 "_superficie": "103.81",
                 "_fabbricato": "Morgari",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_MOR01 XPTE 001"
             },
             "3VM": {
@@ -1290,6 +1406,7 @@ const Classrooms_info =
                 "_capienza": "24",
                 "_superficie": "68.09",
                 "_fabbricato": "Morgari",
+                "_prese_elettriche": false,
                 "_id_locale": " TO_MOR01 XPTE 014"
             },
             "4VM": {
@@ -1301,6 +1418,7 @@ const Classrooms_info =
                 "_capienza": "56",
                 "_superficie": "135.39",
                 "_fabbricato": "Morgari",
+                "_prese_elettriche": false,
                 "_id_locale": " TO_MOR01 XP01 009"
             },
             "5VM": {
@@ -1312,6 +1430,7 @@ const Classrooms_info =
                 "_capienza": "24",
                 "_superficie": "34.86",
                 "_fabbricato": "Morgari",
+                "_prese_elettriche": false,
                 "_id_locale": " TO_MOR01 XP01 008"
             },
             "6VM": {
@@ -1323,6 +1442,7 @@ const Classrooms_info =
                 "_capienza": "25",
                 "_superficie": "71.66",
                 "_fabbricato": "Morgari",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_MOR01 XP02 016"
             },
             "7VM": {
@@ -1334,6 +1454,7 @@ const Classrooms_info =
                 "_capienza": "76",
                 "_superficie": "260.92",
                 "_fabbricato": "Morgari",
+                "_prese_elettriche": false,
                 "_id_locale": " TO_MOR01 XP02 007"
             }
         },
@@ -1347,6 +1468,7 @@ const Classrooms_info =
                 "_capienza": "119",
                 "_superficie": "150.85",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP02 004"
             },
             "202": {
@@ -1358,6 +1480,7 @@ const Classrooms_info =
                 "_capienza": "119",
                 "_superficie": "150.19",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP02 005"
             },
             "203": {
@@ -1369,6 +1492,7 @@ const Classrooms_info =
                 "_capienza": "36",
                 "_superficie": "74.77",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP02 006"
             },
             "204": {
@@ -1380,6 +1504,7 @@ const Classrooms_info =
                 "_capienza": "30",
                 "_superficie": "61.77",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP02 007"
             },
             "205": {
@@ -1391,6 +1516,7 @@ const Classrooms_info =
                 "_capienza": "45",
                 "_superficie": "65.55",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP02 017"
             },
             "206": {
@@ -1402,6 +1528,7 @@ const Classrooms_info =
                 "_capienza": "57",
                 "_superficie": "74.18",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP02 021"
             },
             "207": {
@@ -1413,6 +1540,7 @@ const Classrooms_info =
                 "_capienza": "68",
                 "_superficie": "171.03",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP02 036"
             },
             "208": {
@@ -1424,6 +1552,7 @@ const Classrooms_info =
                 "_capienza": "62",
                 "_superficie": "172.19",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP02 037"
             },
             "209": {
@@ -1435,6 +1564,7 @@ const Classrooms_info =
                 "_capienza": "30",
                 "_superficie": "62.37",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP02 030"
             },
             "210": {
@@ -1446,6 +1576,7 @@ const Classrooms_info =
                 "_capienza": "28",
                 "_superficie": "61.89",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP02 039"
             },
             "211": {
@@ -1457,6 +1588,7 @@ const Classrooms_info =
                 "_capienza": "14",
                 "_superficie": "61.79",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP02 041"
             },
             "212": {
@@ -1468,6 +1600,7 @@ const Classrooms_info =
                 "_capienza": "28",
                 "_superficie": "62.54",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP02 032"
             },
             "213": {
@@ -1479,6 +1612,7 @@ const Classrooms_info =
                 "_capienza": "28",
                 "_superficie": "61.74",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP02 042"
             },
             "300": {
@@ -1490,6 +1624,7 @@ const Classrooms_info =
                 "_capienza": "60",
                 "_superficie": "171.27",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP03 027"
             },
             "301": {
@@ -1501,6 +1636,7 @@ const Classrooms_info =
                 "_capienza": "96",
                 "_superficie": "151.10",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP03 005"
             },
             "302": {
@@ -1512,6 +1648,7 @@ const Classrooms_info =
                 "_capienza": "96",
                 "_superficie": "150.50",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP03 006"
             },
             "303": {
@@ -1523,6 +1660,7 @@ const Classrooms_info =
                 "_capienza": "36",
                 "_superficie": "74.96",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP03 007"
             },
             "304": {
@@ -1534,6 +1672,7 @@ const Classrooms_info =
                 "_capienza": "64",
                 "_superficie": "128.37",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP03 008"
             },
             "305": {
@@ -1545,6 +1684,7 @@ const Classrooms_info =
                 "_capienza": "36",
                 "_superficie": "74.95",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP03 022"
             },
             "306": {
@@ -1556,6 +1696,7 @@ const Classrooms_info =
                 "_capienza": "98",
                 "_superficie": "125.63",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP03 036"
             },
             "307": {
@@ -1567,6 +1708,7 @@ const Classrooms_info =
                 "_capienza": "30",
                 "_superficie": "126.12",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP03 037"
             },
             "308": {
@@ -1578,6 +1720,7 @@ const Classrooms_info =
                 "_capienza": "16",
                 "_superficie": "65.25",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP03 001"
             },
             "309": {
@@ -1589,6 +1732,7 @@ const Classrooms_info =
                 "_capienza": "30",
                 "_superficie": "61.67",
                 "_fabbricato": "Lingotto",
+                "_prese_elettriche": true,
                 "_id_locale": " TO_LIN01 XP03 003"
             }
         }
