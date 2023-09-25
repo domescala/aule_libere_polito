@@ -707,16 +707,16 @@ function highlight_current_time_slot(){
 // search modal
 // setup 
 function setup_search_modal() {
-    const MODALSEARCH_BOX = q("#modalsearch_box")
-    MODALSEARCH_BOX.q("datalist").remove()
+    const SEARCH_BOX = q("#search_main_box")
+    SEARCH_BOX.q("datalist").remove()
     const DATALIST = document.createElement("DATALIST")
     DATALIST.setAttribute("id", "search_class_list")
-    MODALSEARCH_BOX.appendChild(DATALIST)
+    SEARCH_BOX.appendChild(DATALIST)
     Aule_ordinate[Selected_campus].forEach(nome_aula => {
         const OP = document.createElement("option")
         // ogni opzione ha un carattere nascosto al fondo, per evitare che aule come 7 e 7i si confondano
         OP.setAttribute("value",nome_aula + '\u2063')
-        q("#modalsearch_box datalist").appendChild(OP)
+        DATALIST.appendChild(OP)
     });
 }
 
