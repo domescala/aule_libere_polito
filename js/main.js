@@ -311,30 +311,30 @@ function updateDoc_campus(campus, disp){
     // reset aule
     Q(".row_aule").forEach(e=>e.remove())
     Classrooms_info[campus].keys().forEach(nome_aula => {
-        const ROW = document.createElement("DIV");
-        ROW.addClass("row_aule")
+        const row_string = (`
+            <div class="row_aule" _id="${nome_aula}">
+                <p class="nome_aula">Aula ${nome_aula}</p>
+                <p class="info_aula"></p>
+                <div class="lista_aule">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        `)
+
+        const parser = new DOMParser();
+        const ROW = parser.parseFromString(row_string, 'text/html').q("div");
         Classrooms_info[campus][nome_aula].keys().forEach(att_name => {
             let att_value = Classrooms_info[campus][nome_aula][att_name]
             ROW.setAttribute(att_name, att_value)
         });
-        const P_info = document.createElement("P");
-        const P_name = document.createElement("P");
-        P_info.addClass("info_aula")
-        P_name.addClass("nome_aula")
-        P_name.innerHTML = "Aula " + ROW.getAttribute("_id")
-        const DIV_lista = document.createElement("DIV");
-        DIV_lista.addClass("lista_aule")
-
-        for (let index = 0; index < 8; index++) {
-            const div = document.createElement("DIV");
-            DIV_lista.appendChild(div)
-        }
-
         q("#container_row_aule").appendChild(ROW)
-        ROW.appendChild(P_name)
-        ROW.appendChild(P_info)
-        ROW.appendChild(DIV_lista)
-
         ROW.addEventListener("click", function () {
             open_modal(nome_aula)
         })
@@ -452,7 +452,7 @@ function open_modal(id_row){
         console.log()
         let css_selector= '[value="'+attribute.name+'"]'
         const THAT_P = MODAL_CONTENT.q(css_selector)
-        console.log(THAT_P, attribute.name)
+        // console.log(THAT_P, attribute.name)
         if(THAT_P){
             THAT_P.innerHTML = attribute.value
 
