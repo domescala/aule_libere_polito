@@ -39,6 +39,8 @@
         <div id="search_main_box">
             <input id="search_main" type="text" placeholder="Cerca un aula..." list="search_class_list">
             <div class="search_background"></div>
+            <datalist id="search_class_list">
+            </datalist>
         </div>
         <div id="block_scroll">
             <!-- <select id="date_selector" onchange="change_date(this.value)"> 
@@ -331,12 +333,6 @@
 
 
         </div>
-    </div>
-    <div id="modalsearch_box" class="hidden">
-        <p class="exit_modal" onclick="close_modal_search()">⬅ torna all'elenco</p>
-        <input placeholder="Cerca un'aula..." list="search_class_list" />
-        <datalist id="search_class_list">
-        </datalist>
     </div>
 
 
