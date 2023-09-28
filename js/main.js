@@ -160,7 +160,7 @@ function httpGetAsync(theUrl, callback)
     var Startday_key = Start_day.to_ddmmyyyy("/");
     var Selected_campus = "SEDE_CENTRALE";
     var Selected_day = Startday_key;
-
+    var Favorites = [];
     var Filter_already = false;
     // lo scrollToView del filter triggera il listener scroll del pulsante pulsante per la ricerca delle aule (no buono)
     // il flag "Filter_already" diventa true appena si attiva un filter
@@ -311,12 +311,12 @@ function updateDoc_campus(campus, disp){
     // reset aule
     Q(".row_aule").forEach(e=>e.remove())
     Classrooms_info[campus].keys().forEach(nome_aula => {
-        let info_alert_aula = `
+        let info_alert_aula = ""
+        if (!Classrooms_info[campus][nome_aula]["_prese_elettriche"]){
+            info_alert_aula = `
             <p class="info_alert_aula">
                 <img src="style/plug.svg">
             </p>`
-        if (Classrooms_info[campus][nome_aula]["_prese_elettriche"]){
-            info_alert_aula = ``
         }
         const row_string = (`
             <div class="row_aule" _id="${nome_aula}">
@@ -426,10 +426,8 @@ function filtra_aule(key_tags) {
 }
 
 function load_localStorage(){
-    var last = localStorage["last_campus"];
-    console.log(last)
-    if(new Set(["VALENTINO","LINGOTTO","MIRAFIORI","SEDE_CENTRALE"]).has(last)){
-        Selected_campus = last;
+    if (Object.keys(localStorage).includes("last_campus")){
+        Selected_campus = localStorage["last_campus"];
         q("#campus_input").value = Selected_campus
     }
     else{
