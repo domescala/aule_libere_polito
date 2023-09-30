@@ -10,7 +10,18 @@ Il [nuovo sito 🚀](https://domescala.github.io/aule_libere_polito/) ordina le 
 - Pagina di recap sulle informazioni generali dell'aula selezionata
 - La fascia oraria corrente è evidenziata
 - Ricerca aule
+- Avvio sul primo giorno consultabile
+- Disponibilità per tutte le sedi: Centrale, Valentino, Lingotto e Mirafiori
+- Memorizzazione dell'ultima sede selezionata
+
 ### ✨ Novità
-- Disponibilità anche per le altre sedi: Valentino, Lingotto e Mirafiori
+- Avviso in caso di prese elettriche assenti 
+
 ### ⏳ In progress
 - Stile anche per dispositivi desktop
+- Tipologia dei banchi 
+- Mappa
+- Avviso se l'accesso all'aula è limitato 
+
+
+
