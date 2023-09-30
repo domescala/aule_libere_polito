@@ -16,6 +16,7 @@ Il [nuovo sito 🚀](https://domescala.github.io/aule_libere_polito/) ordina le 
 
 ### ✨ Novità
 - Avviso in caso di prese elettriche assenti 
+- Aule preferite⭐
 
 ### ⏳ In progress
 - Stile anche per dispositivi desktop
