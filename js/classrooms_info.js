@@ -81,7 +81,7 @@ const Classrooms_info =
                 "_piano": "Piano Terra",
                 "_capienza": "148",
                 "_superficie": "132",
-                "_fabbricato": "Area Sud - Parte 2",
+                "_fabbricato": "Area Sud 2",
                 "_prese_elettriche": false,
                 "_id_locale": "TO_CEN02 XPTE R001"
             },
@@ -117,7 +117,7 @@ const Classrooms_info =
                 "_piano": "Piano Terra",
                 "_capienza": "101",
                 "_superficie": "98",
-                "_fabbricato": "Area Sud - Parte 2",
+                "_fabbricato": "Area Sud 2",
                 "_prese_elettriche": false,
                 "_id_locale": "TO_CEN02 XPTE Q009"
             },
@@ -141,7 +141,7 @@ const Classrooms_info =
                 "_piano": "Piano Terra",
                 "_capienza": "100",
                 "_superficie": "95",
-                "_fabbricato": "Area Sud - Parte 2",
+                "_fabbricato": "Area Sud 2",
                 "_prese_elettriche": false,
                 "_id_locale": "TO_CEN02 XPTE Q008"
             },
@@ -165,7 +165,7 @@ const Classrooms_info =
                 "_piano": "Piano Terra",
                 "_capienza": "98",
                 "_superficie": "88",
-                "_fabbricato": "Area Sud - Parte 1",
+                "_fabbricato": "Area Sud 1",
                 "_prese_elettriche": false,
                 "_id_locale": "TO_CEN01 XPTE E020"
             },
@@ -189,7 +189,7 @@ const Classrooms_info =
                 "_piano": "Piano Terra",
                 "_capienza": "32",
                 "_superficie": "68",
-                "_fabbricato": "Area Sud - Parte 1",
+                "_fabbricato": "Area Sud 1",
                 "_prese_elettriche": false,
                 "_id_locale": "TO_CEN01 XPTE D002"
             },
@@ -201,7 +201,7 @@ const Classrooms_info =
                 "_piano": "Piano Terra",
                 "_capienza": "32",
                 "_superficie": "69",
-                "_fabbricato": "Area Sud - Parte 1",
+                "_fabbricato": "Area Sud 1",
                 "_prese_elettriche": false,
                 "_id_locale": "TO_CEN01 XPTE D001"
             },
@@ -285,7 +285,7 @@ const Classrooms_info =
                 "_piano": "Primo Piano",
                 "_capienza": "47",
                 "_superficie": "60",
-                "_fabbricato": "Area Sud - Parte 2",
+                "_fabbricato": "Area Sud 2",
                 "_prese_elettriche": false,
                 "_id_locale": "TO_CEN02 XP01 Q006"
             },
@@ -309,7 +309,7 @@ const Classrooms_info =
                 "_piano": "Piano Interrato",
                 "_capienza": "72",
                 "_superficie": "78",
-                "_fabbricato": "Area Sud - Parte 2",
+                "_fabbricato": "Area Sud 2",
                 "_prese_elettriche": true,
                 "_id_locale": "TO_CEN02 XS01 D014"
             },
@@ -381,7 +381,7 @@ const Classrooms_info =
                 "_piano": "Primo Piano",
                 "_capienza": "51",
                 "_superficie": "82",
-                "_fabbricato": "Area Sud - Parte 2",
+                "_fabbricato": "Area Sud 2",
                 "_prese_elettriche": false,
                 "_id_locale": "TO_CEN02 XP01 Q005"
             },
@@ -393,7 +393,7 @@ const Classrooms_info =
                 "_piano": "Piano Interrato",
                 "_capienza": "119",
                 "_superficie": "133",
-                "_fabbricato": "Area Sud - Parte 2",
+                "_fabbricato": "Area Sud 2",
                 "_prese_elettriche": true,
                 "_id_locale": "TO_CEN02 XS01 C016"
             },
@@ -489,7 +489,7 @@ const Classrooms_info =
                 "_piano": "Piano Terra",
                 "_capienza": "220",
                 "_superficie": "217",
-                "_fabbricato": "Aule P, nuovi fabbricati",
+                "_fabbricato": "Aule P",
                 "_prese_elettriche": true,
                 "_id_locale": "TO_CIT22 XPTE 036"
             },
@@ -501,7 +501,7 @@ const Classrooms_info =
                 "_piano": "Piano Interrato",
                 "_capienza": "156",
                 "_superficie": "163",
-                "_fabbricato": "Area Sud - Parte 2",
+                "_fabbricato": "Area Sud 2",
                 "_prese_elettriche": true,
                 "_id_locale": "TO_CEN02 XS01 D005"
             },
@@ -621,7 +621,7 @@ const Classrooms_info =
                 "_piano": "Piano Terra",
                 "_capienza": "220",
                 "_superficie": "218",
-                "_fabbricato": "Aule P, nuovi fabbricati",
+                "_fabbricato": "Aule P",
                 "_prese_elettriche": true,
                 "_id_locale": "TO_CIT22 XPTE 038"
             },
@@ -681,7 +681,7 @@ const Classrooms_info =
                 "_piano": "Piano Terra",
                 "_capienza": "220",
                 "_superficie": "218",
-                "_fabbricato": "Aule P, nuovi fabbricati",
+                "_fabbricato": "Aule P",
                 "_prese_elettriche": true,
                 "_id_locale": "TO_CIT22 XPTE 015"
             },
@@ -693,7 +693,7 @@ const Classrooms_info =
                 "_piano": "Piano Interrato",
                 "_capienza": "156",
                 "_superficie": "163",
-                "_fabbricato": "Area Sud - Parte 2",
+                "_fabbricato": "Area Sud 2",
                 "_prese_elettriche": true,
                 "_id_locale": "TO_CEN02 XS01 D007"
             },
@@ -765,7 +765,7 @@ const Classrooms_info =
                 "_piano": "Piano Terra",
                 "_capienza": "220",
                 "_superficie": "216",
-                "_fabbricato": "Aule P, nuovi fabbricati",
+                "_fabbricato": "Aule P",
                 "_prese_elettriche": true,
                 "_id_locale": "TO_CIT22 XPTE 005"
             },
@@ -789,7 +789,7 @@ const Classrooms_info =
                 "_piano": "Primo Piano",
                 "_capienza": "51",
                 "_superficie": "52",
-                "_fabbricato": "Area Sud - Parte 2",
+                "_fabbricato": "Area Sud 2",
                 "_prese_elettriche": false,
                 "_id_locale": "TO_CEN02 XP01 Q010"
             },
@@ -837,7 +837,7 @@ const Classrooms_info =
                 "_piano": "Piano Interrato",
                 "_capienza": "156",
                 "_superficie": "163",
-                "_fabbricato": "Area Sud - Parte 2",
+                "_fabbricato": "Area Sud 2",
                 "_prese_elettriche": true,
                 "_id_locale": "TO_CEN02 XS01 D009"
             },
@@ -897,7 +897,7 @@ const Classrooms_info =
                 "_piano": "Primo Piano",
                 "_capienza": "97",
                 "_superficie": "101",
-                "_fabbricato": "Area Sud - Parte 2",
+                "_fabbricato": "Area Sud 2",
                 "_prese_elettriche": false,
                 "_id_locale": "TO_CEN02 XP01 Q009"
             },
@@ -945,7 +945,7 @@ const Classrooms_info =
                 "_piano": "Piano Interrato",
                 "_capienza": "156",
                 "_superficie": "163",
-                "_fabbricato": "Area Sud - Parte 2",
+                "_fabbricato": "Area Sud 2",
                 "_prese_elettriche": true,
                 "_id_locale": "TO_CEN02 XS01 D011"
             },
@@ -1017,7 +1017,7 @@ const Classrooms_info =
                 "_piano": "Primo Piano",
                 "_capienza": "47",
                 "_superficie": "61",
-                "_fabbricato": "Area Sud - Parte 2",
+                "_fabbricato": "Area Sud 2",
                 "_prese_elettriche": false,
                 "_id_locale": "TO_CEN02 XP01 Q008"
             },
@@ -1041,7 +1041,7 @@ const Classrooms_info =
                 "_piano": "Piano Interrato",
                 "_capienza": "72",
                 "_superficie": "83",
-                "_fabbricato": "Area Sud - Parte 2",
+                "_fabbricato": "Area Sud 2",
                 "_prese_elettriche": true,
                 "_id_locale": "TO_CEN02 XS01 D013"
             },
@@ -1774,10 +1774,10 @@ const Classrooms_order = {
         'Ala Sud',
         'Area Centrale',
         'Area Nord',
-        'Area Sud - Parte 1',
-        'Area Sud - Parte 2',
+        'Area Sud 1',
+        'Area Sud 2',
         'Aule M',
-        'Aule P, nuovi fabbricati',
+        'Aule P',
         'Aule R',
         'Corte Interrata',
         'Ex Stampati',
