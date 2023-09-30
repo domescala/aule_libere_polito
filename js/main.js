@@ -162,6 +162,7 @@ function httpGetAsync(theUrl, callback)
     var Selected_day = Startday_key;
     var Favorites = [];
     var Filter_already = false;
+    var Aula_modal = ""
     // lo scrollToView del filter triggera il listener scroll del pulsante pulsante per la ricerca delle aule (no buono)
     // il flag "Filter_already" diventa true appena si attiva un filter
     // di conseguenza il listener del pulsante ignora il codice e resetta il flag
@@ -312,6 +313,7 @@ function updateDoc_campus(campus, disp){
     Q(".row_aule").forEach(e=>e.remove())
     Classrooms_info[campus].keys().forEach(nome_aula => {
         let info_alert_aula = ""
+        let favorite = Favorites.includes(nome_aula) ? "favorite" : ""
         if (!Classrooms_info[campus][nome_aula]["_prese_elettriche"]){
             info_alert_aula = `
             <p class="info_alert_aula">
@@ -319,7 +321,8 @@ function updateDoc_campus(campus, disp){
             </p>`
         }
         const row_string = (`
-            <div class="row_aule" _id="${nome_aula}">
+            <div class="row_aule ${favorite}" _id="${nome_aula}">
+                <p id="info_favorite">⭐</p>
                 ${info_alert_aula}
                 <p class="nome_aula">Aula ${nome_aula}</p>
                 <p class="info_aula"></p>
@@ -373,7 +376,8 @@ function filtra_aule(key_tags) {
         q("body").removeClass("filter_active")
         const ROWS_AULE = Q(".row_aule")
         ROWS_AULE.forEach(ROW_AULA => {
-            ROW_AULA.style["order"] = 1  // order è meglio se parte da uno
+            let order = ROW_AULA.classList.contains("favorite")? -1 : 1; // -1 e non -200 così durante la funzione order favorites vengono ricalcolati
+            ROW_AULA.style["order"] = order  // order è meglio se parte da uno
         });
         return 
     }
@@ -423,6 +427,7 @@ function filtra_aule(key_tags) {
         //     });
         // }
     }
+    Order_favorites()
 }
 
 function load_localStorage(){
@@ -435,6 +440,12 @@ function load_localStorage(){
         localStorage["last_campus"] = Selected_campus;
     }
 
+    if (Object.keys(localStorage).includes("favorites")){
+        Favorites = JSON.parse(localStorage["favorites"])
+    }
+    else{
+        localStorage["favorites"] = "[]"
+    }
 }   
 
 
@@ -443,7 +454,7 @@ const MODAL = q("#modal_box")
 const MODAL_CONTENT = MODAL.q("#modal_info_aula")
 
 function open_modal(id_row){
-    console.log(id_row)
+    Aula_modal = id_row
     const ROW = q('[_id="'+id_row+'"]')
     ROW.addClass("modal_open")
     MODAL.removeClass("hidden")
@@ -517,11 +528,18 @@ function open_modal(id_row){
 
     MODAL.q("#modal_link").setAttribute("href", link_aula)
     
+    if(ROW.classList.contains("favorite")){
+        q("#modal_favorite").addClass("favorite")
+    }
+    else{
+        q("#modal_favorite").removeClass("favorite")
+    }
 }
 
 function exit_modal(){
     MODAL.addClass("hidden")
     q(".modal_open").removeClass("modal_open")
+    Aula_modal = ""
     // q("#date_box").innerHTML =  q("#modal_date").innerHTML
     // q("#modal_date").innerHTML = ""
 
@@ -567,7 +585,46 @@ Q(".row_aule").forEach(ROW => {
     })
 })
 
+q("#modal_favorite").addEventListener("click", function(){
+    q("#modal_favorite").toggleClass("favorite")
+    q('[_id="' + Aula_modal + '"]').toggleClass("favorite")
 
+    if (Favorites.includes(Aula_modal)){
+        let index = Favorites.indexOf(Aula_modal);
+        Favorites.splice(index, 1);
+    }
+    else{
+        Favorites.push(Aula_modal)
+    }
+    localStorage["favorites"] = JSON.stringify(Favorites)
+    Order_favorites()
+})
+function Order_favorites(){
+    // i valori di order dipendono se il Filtro è attivo o no e se è nei preferiti o no 
+    // tabella dei 4 casi
+    //    FAVORITE   FILTER  ->  ORDER
+    // c1) ---NO---   --NO--  ->  +1
+    // c2) ---NO---   Filter  ->   X (dipende dal filtro)(tra 0 e 100 circa)
+    // c3) Favorite   --NO--  ->  -1
+    // c4) Favorite   Filter  ->   X - 200  (tra -200 e -100 circa)
+    console.log("aa",q(".row_aule.favorite"))
+    Q(".row_aule").forEach(ROW => {
+        let last_order = Number(ROW.style["order"])
+        if(ROW.classList.contains("favorite") && -100 < last_order){
+            // la row è nei preferiti ma il valore di order non è ancora stato aggiustato
+            ROW.style["order"] = last_order - 200
+        }
+        else if (!ROW.classList.contains("favorite") && last_order < -100){
+            // la row non è nei preferiti ma il valore di order lo è ancora (con i filtri (-200))
+            ROW.style["order"] = last_order + 200
+        }
+        else if (!ROW.classList.contains("favorite") && last_order == -1){
+            // la row non è nei preferiti ma il valore di order lo è ancora (senza i filtri (-1))
+            ROW.style["order"] = 1
+        }
+
+    })
+}
 function getStartday(){
     let today = Now.offsetHours(3.5)
     // sposto il giorno di tre ore e mezza per farlo conludere alle 20.30

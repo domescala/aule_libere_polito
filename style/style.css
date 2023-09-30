@@ -237,7 +237,7 @@ justify-content: flex-end;
 }
 
 
-.row_aule p.nome_aula, .row_aule p.info_aula, .row_aule p.info_alert_aula {
+.row_aule p.nome_aula, .row_aule p.info_aula, .row_aule p.info_alert_aula,.row_aule #info_favorite {
     font-family: 'Roboto mono', monospace;
     font-size: 12px;
     font-weight: 600;
@@ -249,6 +249,13 @@ justify-content: flex-end;
     margin-right: 7px;
     outline: 1px solid #a3a3a3;
     border-radius: 7px;
+}
+.row_aule.favorite{
+    border-top: 1px dashed #ffc83d;
+}
+.row_aule.favorite p.nome_aula{
+    outline: 1px solid #ffc83d;
+    background:#ffc83d;
 }
 .row_aule p.info_aula {
     color: #ffffff;
@@ -270,6 +277,17 @@ body:not(.filter_active) .info_aula{
     /* color:transparent; */
     /* padding: 0; */
     /* max-width: 0%; */
+}
+
+.row_aule #info_favorite{
+    display: none;
+    outline: none;
+    margin-right: auto;
+    scale: 1.5;
+    padding: 0px 5px;
+}
+.row_aule.favorite #info_favorite{
+    display: unset;
 }
 .row_aule p.info_alert_aula img{
     /* background: url("plug.svg") */
@@ -672,7 +690,7 @@ body.filter_active div.artificial_before {
 #modal_alert{
     width: 100%;
     display: flex;
-    margin-bottom: 9px;
+    margin-bottom: 17px;
 }
 #modal_alert div{
     /* width: 100%; */
@@ -680,7 +698,7 @@ body.filter_active div.artificial_before {
     flex-direction: column;
     align-items: center;
     margin-bottom: 15px;
-    outline: 2px solid #fac021;
+    outline: 2px solid #ffb133;
     border-radius: 5px;
     padding: 3px 16px 6px;
     margin: 0px auto;
@@ -695,6 +713,39 @@ body.filter_active div.artificial_before {
 #modal_alert img{
     width: 28px;
     margin: 6px;
+}
+#modal_favorite{
+    margin-bottom: 10px;
+}
+#modal_favorite p{
+    border-radius: 5px;
+    border: 1px solid #3d3d3d;
+    padding: 2px 13px 2px 0px;
+    font-family: 'Roboto mono', monospace;
+    font-weight: 600;
+    font-size: 12px;
+    color: #3d3d3d;
+}
+#modal_favorite p::after{
+    content: "Aggiungi ai preferiti"
+}
+#modal_favorite p::before{
+    content: "⭐";
+    font-size: 15px;
+    margin: 0px 5px;
+    filter: saturate(0) brightness(1.2);
+}
+#modal_favorite.favorite p{
+    color: #ffffff;
+    background: #454545;
+    border: 1px solid #454545;
+}
+#modal_favorite.favorite p::after{
+    content: "Aula preferita";
+}
+#modal_favorite.favorite p::before{
+    content: "⭐";
+    filter: saturate(1);
 }
 
 #modal_content_box {
