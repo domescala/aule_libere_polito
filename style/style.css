@@ -809,6 +809,8 @@ body.filter_active div.artificial_before {
     border-bottom: 1px solid #c2c2c2;
     padding-bottom: 4px;
     width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
 #modal_info_aula .modal_row {}
