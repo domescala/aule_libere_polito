@@ -14,7 +14,8 @@
     }
     
     
-  
+    
+    
     #doc_title {
     }
     #doc_title p{
@@ -28,9 +29,12 @@
     a {
     }
     
+    #button_search_class{
+    }
+    #button_search_class.button_search_appear{
+    }
+    
     #main_container {
-    max-width: 800px;
-    margin: 0 auto;
     }
     
     /* -------------------------------- */
@@ -38,8 +42,6 @@
     /* -------------------------------- */
     
     .row_orari {
-    
-width: 400px;
     }
     
     
@@ -51,8 +53,7 @@ width: 400px;
     }
     
     body.current_day .row_orari div.current_slot p{
-        
-    }
+}
     
     
     /* -------------------------------- */
@@ -60,35 +61,35 @@ width: 400px;
     /* -------------------------------- */
     #container_row_aule{
     }
-    .row_aule {
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 8px;
-    border: 0;
+    .row_aule {  
     }
     
     
-    .row_aule p.nome_aula, .row_aule p.info_aula {
-    order: 2;
-    display: flex;
-    margin: auto 9px auto 9px;
-    align-items: center;
-    height: 19px;
+    .row_aule p.nome_aula, .row_aule p.info_aula, .row_aule p.info_alert_aula,.row_aule #info_favorite {
+    }
+    .row_aule.favorite{
+    }
+    .row_aule.favorite p.nome_aula{
     }
     .row_aule p.info_aula {
-
     }
     .row_aule p.info_aula sup{
     }
     body:not(.filter_active) .info_aula{
-        display: none;
     }
     
-
+    .row_aule #info_favorite{
+    }
+    .row_aule.favorite #info_favorite{
+    }
+    .row_aule p.info_alert_aula img{
+    }
+    .row_aule p.info_alert_aula{
+    }
+    
+  
     /* contenitore di tutte le aule della riga */
     div.lista_aule {
-    width: 400px;
-    order: 1;
     }
     /* animazione modal */
     /* .modal_open .lista_aule{
@@ -101,16 +102,12 @@ width: 400px;
     /* blocco dell'aula */
     div.lista_aule div {
         /* animation */
-        
     }
         div.lista_aule div:first-child {
-    
         }
         div.lista_aule div:last-child {
-    
         }
         div.lista_aule div.enabled {
-    
         }
     
         div.lista_aule div.disabled {
@@ -144,13 +141,24 @@ width: 400px;
     
     
     }
-
+        
     /* -------------------------------- */
     /* -------------------------------- */
     /* -------------------------------- */
     
+    /* -------------------------------- */
+    /*           CAMPUS                 */
+    /* -------------------------------- */
+    #campus_box{
+    }
+    #campus_input{
+    }
+    .campus_title{
+    }
     
-    
+    /* -------------------------------- */
+    /* -------------------------------- */
+    /* -------------------------------- */
     
     
     
@@ -223,30 +231,48 @@ width: 400px;
     
     #modal_box {
     }
+    #modal_bg_block{
+    }
     #modal_box.hidden {
     }
 
     #modal_date{
-        
     }
     
+    #modal_alert{
+    }
+    #modal_alert div{
+    }
+    #modal_alert p{
+    }
+    #modal_alert img{
+    }
+    #modal_favorite{
+    }
+    #modal_favorite p{
+    }
+    #modal_favorite p::after{
+    }
+    #modal_favorite p::before{
+    }
+    #modal_favorite.favorite p{
+    }
+    #modal_favorite.favorite p::after{
+    }
+    #modal_favorite.favorite p::before{
+    }
     
     #modal_content_box {
     }
     
     #exit_modal {
-    margin-right: 50px;
     }
     
     
     #modal_link {
-    margin: 0 auto;
-    margin-top: 8px;
     }
     
     #modal_info_aula {
-    max-width: 600px;
-    margin: 0 auto;
     }
     
     #modal_info_aula .modal_row {
@@ -314,17 +340,78 @@ width: 400px;
     /* -------------------------------- */
     /* -------------------------------- */
     
+    
+    
+    /* -------------------------------- */
+    /*          modal search            */
+    /* -------------------------------- */
+    #search_main_box{
+    }
+    #search_main{
+    }
+    #search_main::placeholder{
+    }
+    #search_main:focus{
+    }
+    #search_main:focus::placeholder{
+    
+    }
+    #search_main_box:focus-within{
+    }
+    #search_main:focus+.search_background{
+    }
+    
+    #modalsearch_box{
+    }
+    #modalsearch_box p{
+    }
+    #modalsearch_box input{
+    }
+    #modalsearch_box input:focus{
+    }
+    #modalsearch_box.hidden{
+    }
+    #modalsearch_box .exit_modal{
+    }
+    /* -------------------------------- */
+    /* -------------------------------- */
+    /* -------------------------------- */
+    
     #credits{
     }
     #credits div{
+    display: flex;
+    flex-wrap: wrap;
+    width: 650px;
+    margin: 0 auto;
+    justify-content: space-between;
+    }
+    #credits .line{
     }
     #credits p{
+    width: 69%;
+    font-size: 14px;
     }
     #credits a{
     }
+    #credits span{
+    width: 30%;
+    text-align: right;
+    font-size: 18px;
+    }
+    #credits .credit_emoji_sub{
+    font-size: 15px;
+    }
+    #credits .list{
+    }
     #credits .credit_name {
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 14px;
     }
-    #credits .credit_name span{
+    #credits .credit_name a{
+    font-size: 14px;
     }
+    
 
 }
