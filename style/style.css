@@ -1102,6 +1102,7 @@ body.filter_active div.artificial_before {
     font-weight: 600;
     font-family: 'Roboto Mono';
     color: #2d2d2d;
+    width: 100%;
 }
 #credits .credit_emoji_sub{
     color: #454444;
@@ -1112,6 +1113,25 @@ body.filter_active div.artificial_before {
 #credits .list{
     line-height: 1.5;
 }
+#credits .list i{
+    display: flex;
+    font-style: normal;
+}
+#credits .list i::before{
+    content:"-";
+    position: relative;
+    margin-right: 5px;
+}
+
+/* #credits div .list:nth-child(4) i::before{
+    content:"🚀";
+}
+#credits div .list:nth-child(5) i::before{
+    content:"🔜";
+}
+#credits div .list:nth-child(6) i::before{
+    content:"🚧";
+} */
 #credits .credit_name {
     margin-top: 20px;
     text-align: center;
