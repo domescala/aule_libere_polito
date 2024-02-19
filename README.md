@@ -15,11 +15,11 @@ Il [nuovo sito 🚀](https://domescala.github.io/aule_libere_polito/) ordina le 
 - Memorizzazione dell'ultima sede selezionata
 
 ### ✨ Novità
+- Stile anche per dispositivi desktop
 - Avviso in caso di prese elettriche assenti 
 - Aule preferite⭐
 
 ### ⏳ In progress
-- Stile anche per dispositivi desktop
 - Tipologia dei banchi 
 - Mappa
 - Avviso se l'accesso all'aula è limitato 
