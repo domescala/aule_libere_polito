@@ -19,15 +19,22 @@
     #doc_title {
     }
     #doc_title p{
+    font-size: 12px;
     }
     #doc_title h1{
+    width: unset;
     }
     
     #block_scroll {
-    margin-left: 240px;
+    margin-left: 200px;
     }
     #inputs-box{
         
+position: FIXED;
+        
+width: 195px;
+        
+left: calc(20vw - 100px);
     }
     a {
     }
@@ -38,6 +45,7 @@
     }
     
     #main_container {
+    padding: 0 calc(20vw - 100px);
     }
     
     /* -------------------------------- */
@@ -54,6 +62,7 @@
     }
     
     .row_orari p {
+    font-size: 14px;
     }
     
     body.current_day .row_orari div.current_slot p{
@@ -65,13 +74,17 @@
     /* -------------------------------- */
     #container_row_aule{
     /* width: 556px; */
-    margin-left: 240px;
+    margin-left: 200px;
     }
-    .row_aule {  
+    .row_aule {
+    margin-top: 27px;
     }
     
     
     .row_aule p.nome_aula, .row_aule p.info_aula, .row_aule p.info_alert_aula,.row_aule #info_favorite {
+    font-size: 12px;
+    padding: 3px 14px;
+    margin-top: -12px;
     }
     .row_aule.favorite{
     }
@@ -160,6 +173,7 @@
     #campus_input{
     }
     .campus_title{
+    font-size: 14px;
     }
     
     /* -------------------------------- */
@@ -178,18 +192,24 @@
     }
     
     #filter_box {
+    display: flex;
+    flex-direction: column;
+    margin-top: 13px;
+    border-top: 1px dashed #6312f7;
     }
     
     #filter_box div {
     }
     
     #filter_box p {
+    font-size: 14px;
     }
     
     .filter_title {
     }
     
     #filter_box .filter p {
+    font-size: 14px;
     }
     
     #filter_box .filter.active {}
@@ -218,6 +238,7 @@
     .date_input{
     }
     .date_title{
+    font-size: 13px;
     }
     #date_box .date_button{
     }
@@ -236,6 +257,9 @@
     
     
     #modal_box {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
     }
     #modal_bg_block{
     }
@@ -269,13 +293,17 @@
     }
     
     #modal_content_box {
+    width: 600px;
     }
     
     #exit_modal {
+    font-size: 12px;
     }
     
     
     #modal_link {
+    font-size: 13px;
+    margin-top: 9px;
     }
     
     #modal_info_aula {
@@ -285,7 +313,7 @@
         /* row */
     }
     
-    #modal_info_aula .modal_row {}
+    #modal_info_aula .modal_row {padding-bottom: 11px;}
     
     #modal_title.modal_row {
     }
@@ -299,10 +327,13 @@
     /* blocco informazioni aula */
     /* titolo  */
     #modal_info_aula p.title {
+    margin-bottom: 9px;
+    font-size: 12px;
     }
     
     /* contenuto  */
     #modal_info_aula p.contain {
+    font-size: 26px;
     }
     
     /* suffisso per capienza e superficie*/
@@ -352,19 +383,39 @@
     /*          modal search            */
     /* -------------------------------- */
     #search_main_box{
+    position: fixed;
+    top: 117px;
     }
     #search_main{
+    margin: 0;
     }
     #search_main::placeholder{
     }
     #search_main:focus{
+        
+width: 50vw;
+        
+position: fixed;
+        
+top: 25hw;
+        
+left: 25vw;
     }
     #search_main:focus::placeholder{
     
     }
     #search_main_box:focus-within{
-    }
+
+position: fixed;
+
+overflow: hidden;
+
+}
     #search_main:focus+.search_background{
+    position: fixed;
+    left: 0;
+    top: 0;
+    overflow: hidden;
     }
     
     #modalsearch_box{
@@ -384,6 +435,7 @@
     /* -------------------------------- */
     
     #credits{
+    padding: 61px 15px 12px;
     }
     #credits div{
     display: flex;
@@ -395,8 +447,12 @@
     #credits .line{
     }
     #credits p{
-    width: 69%;
+    border-left: 1px solid black;
+    width: 61%;
     font-size: 14px;
+    padding-left: 2%;
+    margin-bottom: 20px;
+    margin-top: 20px;
     }
     #credits a{
     }
@@ -404,6 +460,7 @@
     width: 30%;
     text-align: right;
     font-size: 18px;
+    margin-top: 20px;
     }
     #credits .credit_emoji_sub{
     font-size: 15px;
@@ -414,6 +471,7 @@
     margin-left: auto;
     margin-right: auto;
     font-size: 14px;
+    border: midnightblue;
     }
     #credits .credit_name a{
     font-size: 14px;
