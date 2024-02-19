@@ -92,7 +92,11 @@ body.loading-out {
     display: flex;
     flex-wrap: wrap;
 }
-
+#inputs-box{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+} 
 a {
     /* color: rgb(255, 255, 255); */
     text-decoration: inherit;

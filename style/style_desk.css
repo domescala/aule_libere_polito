@@ -24,8 +24,11 @@
     }
     
     #block_scroll {
+    margin-left: 240px;
     }
-    
+    #inputs-box{
+        
+    }
     a {
     }
     
@@ -42,6 +45,7 @@
     /* -------------------------------- */
     
     .row_orari {
+    /* width: 600px; */
     }
     
     
@@ -60,6 +64,8 @@
     /*             AULE                 */
     /* -------------------------------- */
     #container_row_aule{
+    /* width: 556px; */
+    margin-left: 240px;
     }
     .row_aule {  
     }

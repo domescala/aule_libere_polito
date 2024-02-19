@@ -14,7 +14,7 @@
         href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono:wght@400;600&family=Roboto+Slab:wght@400;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
-    <!-- <link rel="stylesheet" href="style/style_desk.css"> -->
+    <link rel="stylesheet" href="style/style_desk.css">
 </head>
 
 <body>
@@ -38,56 +38,59 @@
             <!-- <select id="date_selector" onchange="change_date(this.value)"> 
 
             </select> -->
-            <div id="campus_box">
-                <p class="campus_title">📍 Sede:</p>
-                <select id="campus_input" onchange="change_campus(this)">
-                    <option value="SEDE_CENTRALE">Sede Centrale</option>
-                    <option value="MIRAFIORI">Mirafiori</option>
-                    <option value="LINGOTTO">Lingotto</option>
-                    <option value="VALENTINO">Valentino</option>
-                </select>
+            <div id="inputs-box">
 
+                <div id="campus_box">
+                    <p class="campus_title">📍 Sede:</p>
+                    <select id="campus_input" onchange="change_campus(this)">
+                        <option value="SEDE_CENTRALE">Sede Centrale</option>
+                        <option value="MIRAFIORI">Mirafiori</option>
+                        <option value="LINGOTTO">Lingotto</option>
+                        <option value="VALENTINO">Valentino</option>
+                    </select>
+                    
+                </div>
+                <div id="date_box">
+                    <div>
+                        <input type="date" class="date_input" oninput="change_date(this)" value="" min="" max="" />
+                    </div>
+                    <p class="date_title row_title">📅 Data:</p>
+                    <p class="date_value">...</p>
+                    
+                </div>
+                
+                <div id="filter_box">
+                    <div class="filter_title">
+                        <p>Filtra le aule per:</p>
+                    </div>
+                    
+                    <div class="filter" value="_piano">
+                        <p>Piano 🔢</p>
+                    </div>
+                    
+                    <div class="filter" value="_capienza">
+                        <p>Capienza 🪑</p>
+                    </div>
+                    
+                    <div class="filter" value="_superficie">
+                        <p>Superficie 📐</p>
+                    </div>
+                    
+                    <div class="filter" value="_fabbricato">
+                        <p>Zona 📍</p>
+                    </div>
+                    
+                    <div class="filter" value="_fasce_libere">
+                        <p>Disponibilità 🕔</p>
+                    </div>
+                </div>
             </div>
-            <div id="date_box">
-                <div>
-                    <input type="date" class="date_input" oninput="change_date(this)" value="" min="" max="" />
-                </div>
-                <p class="date_title row_title">📅 Data:</p>
-                <p class="date_value">...</p>
-
-            </div>
-
-            <div id="filter_box">
-                <div class="filter_title">
-                    <p>Filtra le aule per:</p>
-                </div>
-
-                <div class="filter" value="_piano">
-                    <p>Piano 🔢</p>
-                </div>
-
-                <div class="filter" value="_capienza">
-                    <p>Capienza 🪑</p>
-                </div>
-
-                <div class="filter" value="_superficie">
-                    <p>Superficie 📐</p>
-                </div>
-
-                <div class="filter" value="_fabbricato">
-                    <p>Zona 📍</p>
-                </div>
-
-                <div class="filter" value="_fasce_libere">
-                    <p>Disponibilità 🕔</p>
-                </div>
-            </div>
-            <div class="row_orari">
-                <div>
-                    <p><span> 08:30 10:00 </span></p>
-                </div>
-                <div>
-                    <p><span> 10:00 11:30 </span></p>
+                <div class="row_orari">
+                    <div>
+                        <p><span> 08:30 10:00 </span></p>
+                    </div>
+                    <div>
+                        <p><span> 10:00 11:30 </span></p>
                 </div>
                 <div>
                     <p><span> 11:30 13:00 </span></p>
