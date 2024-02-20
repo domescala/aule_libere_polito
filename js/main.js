@@ -305,6 +305,12 @@ function updateDoc_date(disp_aule) {
     });
     highlight_current_time_slot()
     // Loading.end()
+
+    if (Aula_modal){
+        const ROW = q('[_id="'+Aula_modal+'"]')
+        q("#modal_lista_aule").innerHTML = ""
+        ROW.q(".lista_aule").CloneSubnodes(q("#modal_lista_aule"))
+    }
 }
 
 function updateDoc_campus(campus, disp){
@@ -562,7 +568,7 @@ FILTERS.forEach(filter => {
             filter.addClass("active")
             q("body").addClass("filter_active")
             filtra_aule(filter.getAttribute("value"))
-            q("#scroll_target").scrollIntoView(false)
+            // q("#scroll_target").scrollIntoView(false)
             q("#block_scroll").scrollIntoView(true)
         }
         if (last == filter) {
