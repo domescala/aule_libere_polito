@@ -122,6 +122,13 @@ a {
     box-shadow: -1px 2px 5px 3px hsla(272, 100%, 78%, 0.184);
     margin: 0;
     transition: right 0.5s ease;
+    cursor: pointer;
+}
+#button_search_class:active{
+    scale: 0.90;
+}
+#button_search_class:hover{
+    scale: 1.1;
 }
 #button_search_class.button_search_appear{
     right: 40px;
@@ -238,8 +245,12 @@ border-top: 1px solid #a3a3a3;
 /* overflow: hidden; */
 
 justify-content: flex-end;
+cursor: pointer;
+transition: scale 0.2s ease;
 }
-
+.row_aule:active{
+    scale:0.95;
+}
 
 .row_aule p.nome_aula, .row_aule p.info_aula, .row_aule p.info_alert_aula,.row_aule #info_favorite {
     font-family: 'Roboto mono', monospace;
@@ -485,6 +496,10 @@ filter: blur(1px) grayscale(1);
     color: #00a459;
     outline: none;
     margin-right: auto;
+    cursor: pointer;
+}
+#campus_input:active{
+    scale: 0.95;
 }
 .campus_title{
     font-size: 10px;
@@ -559,16 +574,31 @@ body.filter_active div.artificial_before {
     font-size: 12px;
     font-family: 'Roboto Mono', monospace;
     font-weight: 600;
+    transition-property: color scale background;
+    transition-duration: 0.1s;
+    cursor: pointer;
+
 }
 
 #filter_box .filter.active {}
 
 #filter_box .filter.active p {
+    scale: 0.95;
     background: #6613ff;
     color: white;
     font-weight: normal;
     /* box-shadow: 0px 0px 5px 2px #7930ff; */
 }
+#filter_box .filter:active p{
+    scale: 0.90;
+    /* background: #eee5ff; */
+}
+#filter_box .filter.active:active p{
+    scale: 0.90;
+    background: #894aff;
+
+}
+
 
 /* -------------------------------- */
 /* -------------------------------- */
@@ -670,9 +700,9 @@ body.filter_active div.artificial_before {
 #modal_bg_block{
     background: #ffffff;
     z-index: -1;
-    position: absolute;
+    position: fixed;
     width: 100vw;
-    height: 100vh;
+    height: 200vh;
 }
 #modal_box.hidden {
     left: -100vw;
@@ -718,38 +748,111 @@ body.filter_active div.artificial_before {
     width: 28px;
     margin: 6px;
 }
+#modal_box.hidden #modal_alert {
+    animation:none
+}
+#modal_box.hidden #modal_alert img{
+    animation:none
+}
+#modal_box #modal_alert{
+    
+    animation: modal_alert 0.5s 0.5s ease 2
+}
+#modal_box #modal_alert img{
+    
+    animation: modal_alert_img 0.5s 0.5s ease 2
+}
+@keyframes modal_alert {
+    10%{    transform: rotate(2deg);}
+    20%{    transform: rotate(-2deg);}
+    30%{    transform: rotate(2deg);}
+    40%{    transform: rotate(-2deg);}
+    45%{    transform: rotate(0deg);}
+    100%{   transform: rotate(0deg);}
+}
+@keyframes modal_alert_img {
+    10%{    transform: rotate(-10deg);}
+    20%{    transform: rotate(10deg);}
+    30%{    transform: rotate(-10deg);}
+    40%{    transform: rotate(10deg);}
+    45%{    transform: rotate(0deg);}
+    100%{   transform: rotate(0deg);}
+}
 #modal_favorite{
     margin-bottom: 10px;
 }
 #modal_favorite p{
     border-radius: 5px;
-    border: 1px solid #3d3d3d;
-    padding: 2px 13px 2px 0px;
+    outline: 1px solid #171717;
+    padding: 5px 13px;
     font-family: 'Roboto mono', monospace;
     font-weight: 600;
     font-size: 12px;
-    color: #3d3d3d;
+    color: #171717;
+    cursor: pointer;
+    transition-property: color border background filter;
+    transition-duration: 0.2s;
+    transition-timing-function: ease;
+}
+#modal_favorite p:hover{
+    outline: 1px solid #ffc83d;
+}
+#modal_favorite p:active{
+    scale:0.90
 }
 #modal_favorite p::after{
     content: "Aggiungi ai preferiti"
 }
 #modal_favorite p::before{
-    content: "⭐";
+    /* content: "⭐"; */
     font-size: 15px;
     margin: 0px 5px;
-    filter: saturate(0) brightness(1.2);
+    /* filter: saturate(0) brightness(1.2); */
+    display: inline-block;
 }
 #modal_favorite.favorite p{
-    color: #ffffff;
-    background: #454545;
-    border: 1px solid #454545;
+    padding: 5px;
+    outline: 1px solid #ffc83d;
+    background:#ffffff;
+    animation:favoriteadd_background 1s ease forwards;
+    animation-fill-mode: forwards;
+
 }
 #modal_favorite.favorite p::after{
-    content: "Aula preferita";
+    content: "";
 }
 #modal_favorite.favorite p::before{
     content: "⭐";
-    filter: saturate(1);
+    animation:favoriteadd_star 0.5s ease 
+}
+
+@keyframes favoriteadd_star {
+    0%{
+        scale: 0;
+        opacity: 0;
+        rotate: 360deg;
+    }
+
+    70%{scale: 2;
+        rotate: -30deg;}
+    90%{
+        scale: 0.9;
+        
+    }
+
+}
+@keyframes favoriteadd_background {
+
+    40%{
+        background:#ffffff;
+    }
+    70%{
+        background:#ffc83d;
+    }
+    100%{
+        background:#ffc83d;
+    }
+
 }
 
 #modal_content_box {
@@ -777,8 +880,38 @@ body.filter_active div.artificial_before {
     z-index: 10;
     /* position: absolute; */
     /* position: relative; */
-}
+    cursor: pointer;
 
+}
+#exit_modal::before{
+    content: "\2B05\FE0F";
+    display:inline-block;
+    transition: opacity 1s ease;
+    margin-right: 5px
+}
+#exit_modal:active{
+    scale:0.9;
+}
+#exit_modal:hover::before{
+    animation:exithover 1s ease forwards
+}
+@keyframes exithover {
+    0%{
+        /* transform: translateX(50px) ; */
+    }
+    10%{
+        transform: translateX(2px) ;
+        opacity: 1;
+    }
+    25%{
+        transform: translateX(-20px) ;
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+        transform: translateX(0px) ;
+    }
+}
 
 #modal_link {
     color: #525252;
@@ -948,6 +1081,7 @@ body.filter_active div.artificial_before {
     width: 100%;
     height: 28px;
     position: relative;
+    cursor: pointer;
 }
 #search_main{
     margin: 0px 10px;
@@ -968,6 +1102,7 @@ body.filter_active div.artificial_before {
     height: 24px;
     z-index: 50;
     position: absolute;
+    cursor: pointer;
 }
 #search_main::placeholder{
     font-size: 16px;
