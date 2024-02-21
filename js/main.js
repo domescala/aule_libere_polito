@@ -358,6 +358,8 @@ function updateDoc_campus(campus, disp){
     });
     updateDoc_date(disp)
     setup_search_modal()
+
+    COUNTER.campus_selected(Selected_campus)
 }
 
 function remove_columns(n_fasceorarie) {
@@ -452,6 +454,7 @@ function load_localStorage(){
     else{
         localStorage["favorites"] = "[]"
     }
+
 }   
 
 
@@ -540,6 +543,8 @@ function open_modal(id_row){
     else{
         q("#modal_favorite").removeClass("favorite")
     }
+
+    COUNTER.classroom_opening(Aula_modal)
 }
 
 function exit_modal(){
@@ -576,6 +581,7 @@ FILTERS.forEach(filter => {
             filtra_aule("reset")
         }
         
+        COUNTER.filter_selected(filter.getAttribute("value").replace("_", ""))
     })
 });
 
@@ -591,6 +597,8 @@ Q(".row_aule").forEach(ROW => {
     })
 })
 
+// ---- FAVORITE ADD BUTTON ---- 
+
 q("#modal_favorite").addEventListener("click", function(){
     q("#modal_favorite").toggleClass("favorite")
     q('[_id="' + Aula_modal + '"]').toggleClass("favorite")
@@ -604,6 +612,8 @@ q("#modal_favorite").addEventListener("click", function(){
     }
     localStorage["favorites"] = JSON.stringify(Favorites)
     Order_favorites()
+
+    COUNTER.favorite_add(Aula_modal)
 })
 function Order_favorites(){
     // i valori di order dipendono se il Filtro è attivo o no e se è nei preferiti o no 
@@ -710,6 +720,7 @@ function change_date(this_element){
         
         updateDoc_date(disp)
     }
+    COUNTER.click_buttons("change date")
 }
 
 function change_campus(this_element) {
@@ -814,12 +825,13 @@ q("#button_search_class").addEventListener("click", function(){
     // open_modal_search()
     q("#search_main").focus()
     q("#button_search_class").removeClass("button_search_appear")
+
 })
 
 q("#search_main").addEventListener("input", function(){
     let val = q("#search_main").value.toUpperCase()
     q("#search_main").value = val;
-
+    
     // se contiene il carattere nascosto al fondo allora è stato premuto sulla datalist
     if (val.slice(-1) === '\u2063') {
         val = val.slice(0, -1); //rimuovi il carattere e lancia il modal
