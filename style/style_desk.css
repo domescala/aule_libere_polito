@@ -46,6 +46,7 @@ left: calc(20vw - 100px);
     
     #main_container {
     padding: 0 calc(20vw - 100px);
+    max-width: 1000px;
     }
     
     /* -------------------------------- */
@@ -260,6 +261,7 @@ left: calc(20vw - 100px);
     height: 100vh;
     display: flex;
     justify-content: center;
+    width: 100%;
     }
     #modal_bg_block{
     }
