@@ -392,8 +392,8 @@ function filtra_aule(key_tags) {
     if(key_tags=="_fasce_libere"){
         if(get_current_slot() != -1){
             // l'attributo _fasce_libere contiene il numero di fasce libere 
-            // l'attributo _currentfasce_libere contiene invece una serie di numeri-> le disponibilita dellaula ad ogni fascia -> da utlizzare solo nel giorno corrente
-            // se un aula ha 11111100 e siamo alle ultime 2 ore, questa dovrà essere ordinata al fondo perchè gli slot liberi dalla penultima ora sono zero, invece quelli totali sono sei
+            // l'attributo _currentfasce_libere contiene invece una serie di numeri-> le disponibilita dell'aula ad ogni fascia -> da utilizzare solo nel giorno corrente
+            // se un aula ha 11111100 e siamo alle ultime 2 ore, questa dovrà essere ordinata al fondo perché gli slot liberi dalla penultima ora sono zero, invece quelli totali sono sei
 
             time_slot = get_current_slot()
 
@@ -468,7 +468,7 @@ function open_modal(id_row){
     ROW.addClass("modal_open")
     MODAL.removeClass("hidden")
     
-    // per ogni attributo cerco il tag p allinterno di #modal_info_aula che ha il valore uguale al nome dellattributo 
+    // per ogni attributo cerco il tag p all'interno di #modal_info_aula che ha il valore uguale al nome dell'attributo 
     // es: row.getAttribute("_piano")
     // <div value="_piano">
     //     <p>🔢 Piano:</p>
@@ -643,7 +643,7 @@ function Order_favorites(){
 }
 function getStartday(){
     let today = Now.offsetHours(3.5)
-    // sposto il giorno di tre ore e mezza per farlo conludere alle 20.30
+    // sposto il giorno di tre ore e mezza per farlo concludere alle 20.30
     let today_day = today.getDay()
     let start_day;
     if (today_day == 0 || today_day == 6) // se è sabato o domenica
@@ -701,7 +701,7 @@ function setup_selectors(){
 
 function change_date(this_element){
     // aggiorna la data fa update delle aule
-    // le modifiche sono contemoranea ad entrabi gli input
+    // le modifiche sono contemporanea ad entrambi gli input
     let date = this_element.valueAsNumber
     let day = new Date(date).getDay()
     if (day == 0 || day == 6  ) // se è sabato o domenica
@@ -807,7 +807,7 @@ function setup_search_modal() {
 }
 
 // bottone cerca appare quando si scrolla, scompare dopo tot secondi
-// se si continua a scrollare il timeout per farlo scommparire si resetta
+// se si continua a scrollare il timeout per farlo scomparire si resetta
 var timeout_button_search;
 q("#main_container").addEventListener("scroll", function(){
     if (!Filter_already) {
