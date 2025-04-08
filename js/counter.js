@@ -27,20 +27,20 @@ var counter_increment = function(){}
 
 
 
-window.addEventListener("load", function () {
-    setTimeout(() => {
-        COUNTER.main_page()
-        counter_increment = function (action, key){
-            var namespace = 'auleliberev2'
-            var options = { behavior: 'vote' } 
+// window.addEventListener("load", function () {
+//     setTimeout(() => {
+//         COUNTER.main_page()
+//         counter_increment = function (action, key){
+//             var namespace = 'auleliberev2'
+//             var options = { behavior: 'vote' } 
         
-            counterApi.increment(key, action, namespace, options, function(err, res){
-                console.log(res)
-            })
+//             counterApi.increment(key, action, namespace, options, function(err, res){
+//                 console.log(res)
+//             })
         
-        }
-    }, 10);
-})
+//         }
+//     }, 10);
+// })
 
 q("#search_main").addEventListener("mousedown", function () {
 

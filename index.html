@@ -145,6 +145,7 @@
                     Attingendo i dati dal <a target="_blank" href="https://www.swas.polito.it/dotnet/orari_lezione_pub/mobile/ricerca_aule_libere.aspx">🔗portale</a>, il sito ordina le aule in una lista verticale di N righe. In ognuna ci sono 8 blocchi, uno per
                     fascia oraria, ad indicare la disponibilità. A colpo d'occhio l'utente vede quali aule sono disponibili nella fascia corrente e in quelle successive. Un sistema di filtri permette di ordinare
                     in base alla disponibilità, alla zona, al piano, alla capienza e alla superficie.<br>
+                    Per scoprire nel dettaglio come funziona, questo è il <a href="https://github.com/domescala/aule_libere_polito" target="_blank">🔗repository</a>
                 </p>
                 <span class="credit_emoji_sub">
                     Features 🚀
@@ -217,10 +218,6 @@
                     e li impagina in un'interfaccia più chiara e leggibile.<br>
                     Nel sito sono caricati inoltre i dati sulle caratteristiche delle aule (Capienza, Superficie, Zona e
                     Piano) per poter applicare dei filtri ed ordinarle.
-                <br>
-                    Poiché i dati delle aule sono aggiornati manualmente, questo sito utilizza <a target="_blank" href="https://counterapi.com">counterapi</a> con
-                    il solo scopo di contare il numero delle visite e valutare di conseguenza se continuare o
-                    interrompere gli aggiornamenti.
                 <br>
                     Il sito memorizza localmente, ovvero sul TUO dispositivo (vedi: <a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage">localStorage🔗</a>), l'ultima sede selezionata e la lista di aule preferite<br>
                     Consulti spesso gli orari del Valentino? Quando apri questa pagina la ricerca sarà già impostata sul
@@ -339,7 +336,7 @@
         </div>
     </div>
 
-    <script src="https://counterapi.com/counterapi.embed.js" ></script>
+    <!-- <script src="https://counterapi.com/counterapi.embed.js" ></script> -->
     <script src="result.js"></script>
     <script src="js/dome_vanillajs.js"></script>
     <script src="js/classrooms_info.js"></script>

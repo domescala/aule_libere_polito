@@ -1229,8 +1229,8 @@ body.filter_active div.artificial_before {
     margin-bottom: 4px;
 }
 #credits a{
-    font-size: 12px;
-    color:unset;
+    font-size: 14px;
+    color: #6919f3;
     text-decoration: underline;
 }
 #credits span{
