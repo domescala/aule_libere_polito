@@ -34,7 +34,7 @@ position: FIXED;
         
 width: 195px;
         
-left: calc(20vw - 100px);
+left: calc(30vw - 100px);
     }
     a {
     }
@@ -45,8 +45,8 @@ left: calc(20vw - 100px);
     }
     
     #main_container {
-    padding: 0 calc(20vw - 100px);
-    max-width: 1000px;
+    padding: 0 calc(30vw - 100px);
+    /* max-width: 1000px; */
     }
     
     /* -------------------------------- */
