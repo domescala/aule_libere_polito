@@ -175,6 +175,15 @@ function httpGetAsync(theUrl, callback)
     var Nameid = "gv_AuleLibere_lbl_AuleLibere_" // da 0 a 7
     var Disp_aule; 
 
+    const HISTORY = {
+        state:"",
+        popCallback: ()=>{},
+        pushState: (s = "", callback = ()=>{}) => {
+            HISTORY.state = s.toString()
+            HISTORY.popCallback = callback
+            history.pushState(s, "", "")
+        }
+    }
 
 function parse_html_poli(html_data){
     Html_data = html_data
@@ -463,6 +472,8 @@ const MODAL = q("#modal_box")
 const MODAL_CONTENT = MODAL.q("#modal_info_aula")
 
 function open_modal(id_row){
+    HISTORY.pushState("modal-classroom", exit_modal)
+
     Aula_modal = id_row
     const ROW = q('[_id="'+id_row+'"]')
     ROW.addClass("modal_open")
@@ -548,6 +559,8 @@ function open_modal(id_row){
 }
 
 function exit_modal(){
+    HISTORY.pushState()
+    close_modal_search() 
     MODAL.addClass("hidden")
     q(".modal_open").removeClass("modal_open")
     Aula_modal = ""
@@ -822,11 +835,12 @@ q("#main_container").addEventListener("scroll", function(){
     Filter_already = false
 })
 q("#button_search_class").addEventListener("click", function(){
-    // open_modal_search()
-    q("#search_main").focus()
-    q("#button_search_class").removeClass("button_search_appear")
-
+    open_modal_search()
 })
+
+
+
+
 
 q("#search_main").addEventListener("input", function(){
     let val = q("#search_main").value.toUpperCase()
@@ -856,10 +870,30 @@ q("#search_main").addEventListener("focusout", (event) => {
 });
 
 function open_modal_search(){
-    q("#modalsearch_box").removeClass("hidden")
+    q("#button_search_class").removeClass("button_search_appear")
+    q("#search_main").focus()
 }
+q("#search_main").addEventListener("focus", function(){
+    HISTORY.pushState("searching-focus", close_modal_search)
+})
 function close_modal_search(){
-    q("#modalsearch_box").addClass("hidden")
+    q("#search_main").blur()
 }
+
+
+window.addEventListener('popstate', function (event) {
+    if(HISTORY.state == "searching-focus" || HISTORY.state == "modal-classroom"){
+        HISTORY.popCallback()
+    }
+    HISTORY.pushState()
+    
+
+});
+
+
+
+setInterval(() => {
+ console.log(HISTORY)
+}, 1000)
 
 main()
