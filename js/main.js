@@ -886,14 +886,6 @@ window.addEventListener('popstate', function (event) {
         HISTORY.popCallback()
     }
     HISTORY.pushState()
-    
-
 });
-
-
-
-setInterval(() => {
- console.log(HISTORY)
-}, 1000)
 
 main()
