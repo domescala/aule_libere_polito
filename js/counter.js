@@ -1,73 +1,24 @@
-const COUNTER = {
-    favorite_add: function(classroom){
-        counter_increment("favorite classrooms", "Aula " + classroom)
-    },
-    classroom_opening: function (classroom) {
-        counter_increment("watch classrooms", "Aula " + classroom)
-    },
-    campus_selected: function (campus) {
-        counter_increment("campus selected", campus)
-    },
-    filter_selected: function (filter) {
-        counter_increment("filter selected", filter)
-    },
-    click_buttons: function (button) {
-        counter_increment("click_buttons", button)
-    },
-    click_links: function (link) {
-        counter_increment("click_links", link)
-    },
-    main_page: function () {
-        counter_increment("view", "mainpage")
-    }
-}
+const trackPage = () => {
+  if (
+    window.location.host.includes("localhost:") ||
+    window.location.host.includes("127.0.0.1") ||
+    window.location.host.includes("192.168.")
+  ) {
+    console.log("track counter debug bypass");
+    return;
+  }
+  const aDay = 1000 * 60 * 60 * 24;
+  const lastDateCounter = localStorage["date-counter-v0.1"];
+  const aDayPassed =
+    new Date(Number(lastDateCounter)).getTime() + aDay < new Date().getTime();
 
+  if (lastDateCounter == undefined || aDayPassed) {
+    new Image().src = "https://kutt.it/eVff7v";
+    localStorage["date-counter-v0.1"] = new Date().getTime();
+    console.log("track counter alive: hit!");
+  } else {
+    console.log("track counter alive: already hit!");
+  }
+};
 
-var counter_increment = function(){}
-
-
-
-// window.addEventListener("load", function () {
-//     setTimeout(() => {
-//         COUNTER.main_page()
-//         counter_increment = function (action, key){
-//             var namespace = 'auleliberev2'
-//             var options = { behavior: 'vote' } 
-        
-//             counterApi.increment(key, action, namespace, options, function(err, res){
-//                 console.log(res)
-//             })
-        
-//         }
-//     }, 10);
-// })
-
-q("#search_main").addEventListener("mousedown", function () {
-
-    COUNTER.click_buttons("main search")
-})
-q("#search_main").addEventListener("input", function () {
-
-    COUNTER.click_buttons("run search")
-})
-q("#button_search_class").addEventListener("mousedown", function () {
-
-    COUNTER.click_buttons("bottom search")
-})
-
-Q(".date_input").forEach(e => { 
-    e.addEventListener("click", function () {
-        COUNTER.click_buttons("open date")
-    })
-})
-
-q("#campus_input").addEventListener("click", function () {
-    COUNTER.click_buttons("open campus")
-})
-
-
-Q("a").forEach(e => {
-    e.addEventListener("mousedown", function () {
-        COUNTER.click_links(e.innerHTML)
-    })
-});
+trackPage();
