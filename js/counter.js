@@ -8,6 +8,9 @@ const notToday = (lastDate) => {
   );
 };
 
+const KEY_STORAGE_HIT = "hits-counter-v0.2"
+const KEY_STORAGE_LAST = "hits-lastDate-v0.2"
+
 const trackPage = () => {
   // ignore localhost domain (debug)
   if (
@@ -16,18 +19,18 @@ const trackPage = () => {
     window.location.host.includes("192.168.")
   ) {
     console.log("track counter debug bypass");
-    const hits = tryStorage("hits-v0.1", { today_hits: 1, total_hits: 1 });
+    const hits = tryStorage(KEY_STORAGE_HIT, { today_hits: 1, total_hits: 1 });
     updateCounter(hits);
     return;
   }
   // ignore recent click
-  const lastDate = localStorage["hits-lastDate-v0.1"];
+  const lastDate = localStorage[KEY_STORAGE_LAST];
   if (lastDate == undefined || notToday(lastDate)) {
-    localStorage["lastVisit-v0.1"] = new Date().getTime();
+    localStorage[KEY_STORAGE_LAST] = new Date().getTime();
     console.log("track counter alive: hit!");
     getCounter();
   } else {
-    const hits = tryStorage("hits-v0.1", { today_hits: 1, total_hits: 1 });
+    const hits = tryStorage(KEY_STORAGE_HIT, { today_hits: 1, total_hits: 1 });
     updateCounter(hits);
     console.log("track counter alive: already hit!");
   }
@@ -45,7 +48,7 @@ const tryStorage = (key, defaultValue) => {
 };
 
 const getCounter = () => {
-  let hits = tryStorage("hits-counter-v0.1", { today_hits: 0, total_hits: 0 });
+  let hits = tryStorage(KEY_STORAGE_HIT, { today_hits: 0, total_hits: 0 });
 
   fetch(
     "https://hitscounter.dev/api/hit?output=json&url=https%3A%2F%2Fdomescala.github.io%2Faule_libere_polito"
