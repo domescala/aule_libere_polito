@@ -8,31 +8,30 @@ const notToday = (lastDate) => {
   );
 };
 
-const KEY_STORAGE_HIT = "hits-counter-v0.2"
-const KEY_STORAGE_LAST = "hits-lastDate-v0.2"
+const KEY_STORAGE_HIT = "hits-counter-v0.3"
+const KEY_STORAGE_LAST = "hits-lastDate-v0.3"
 
 const trackPage = () => {
   // ignore localhost domain (debug)
-  if (
-    window.location.host.includes("localhost:") ||
-    window.location.host.includes("127.0.0.1") ||
-    window.location.host.includes("192.168.")
-  ) {
-    console.log("track counter debug bypass");
-    const hits = tryStorage(KEY_STORAGE_HIT, { today_hits: 1, total_hits: 1 });
-    updateCounter(hits);
-    return;
-  }
+//   if (
+//     window.location.host.includes("localhost:") ||
+//     window.location.host.includes("127.0.0.1") ||
+//     window.location.host.includes("192.168.")
+//   ) {
+//     console.log("track counter debug bypass");
+//     const hits = tryStorage(KEY_STORAGE_HIT, { today_hits: 1, total_hits: 1 });
+//     updateCounter(hits);
+//     return;
+//   }
   // ignore recent click
   const lastDate = localStorage[KEY_STORAGE_LAST];
   if (lastDate == undefined || notToday(lastDate)) {
     localStorage[KEY_STORAGE_LAST] = new Date().getTime();
     console.log("track counter alive: hit!");
-    getCounter();
+    hitCounter();
   } else {
-    const hits = tryStorage(KEY_STORAGE_HIT, { today_hits: 1, total_hits: 1 });
-    updateCounter(hits);
     console.log("track counter alive: already hit!");
+    historyCounter();
   }
 };
 
@@ -47,7 +46,7 @@ const tryStorage = (key, defaultValue) => {
   return value;
 };
 
-const getCounter = () => {
+const hitCounter = () => {
   let hits = tryStorage(KEY_STORAGE_HIT, { today_hits: 0, total_hits: 0 });
 
   fetch(
@@ -60,13 +59,35 @@ const getCounter = () => {
     })
     .then((result) => {
       hits = { today_hits: result.today_hits, total_hits: result.total_hits };
-      localStorage["hits-v0.1"] = JSON.stringify(hits);
+      localStorage[KEY_STORAGE_HIT] = JSON.stringify(hits);
     })
     .catch((error) => {
       console.log(error);
     })
     .finally(() => updateCounter(hits));
 };
+
+const historyCounter = () => {
+    let hits = tryStorage(KEY_STORAGE_HIT, { today_hits: 0, total_hits: 0 });
+  
+    fetch(
+      "https://hitscounter.dev/api/history?url=https%3A%2F%2Fdomescala.github.io%2Faule_libere_polito"
+    )
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+      })
+      .then((result) => {
+        hits = { today_hits: result.today_hits, total_hits: result.total_hits };
+        localStorage[KEY_STORAGE_HIT] = JSON.stringify(hits);
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+      .finally(() => updateCounter(hits));
+  };
+
 
 const updateCounter = (hits) => {
   let { today_hits, total_hits } = hits;
@@ -83,7 +104,11 @@ const updateCounter = (hits) => {
   let sentence = sentences[Math.floor(Math.random() * sentences.length)];
   sentence = `${today_hits + 1} studenti ${sentence}`;
   document.querySelector(".views-today").innerHTML = sentence;
+  document.querySelector(".views-today").style.display = "revert";
   document.querySelector(".views-total b").innerHTML = total_hits;
 };
 
 trackPage();
+
+
+
