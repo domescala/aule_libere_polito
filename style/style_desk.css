@@ -6,6 +6,7 @@
     }
     
     body {
+    margin-left: -2px;
     }
     
     body.loading {
@@ -29,12 +30,9 @@
     margin-left: 200px;
     }
     #inputs-box{
-        
-position: FIXED;
-        
-width: 195px;
-        
-left: calc(30vw - 100px);
+        position: FIXED;
+        width: 195px;
+        left: calc(30vw - 170px);
     }
     a {
     }
@@ -47,6 +45,7 @@ left: calc(30vw - 100px);
     #main_container {
     padding: 0 calc(30vw - 100px);
     /* max-width: 1000px; */
+    margin-left: -80px;
     }
     
     /* -------------------------------- */
@@ -54,7 +53,7 @@ left: calc(30vw - 100px);
     /* -------------------------------- */
     
     .row_orari {
-    /* width: 600px; */
+    min-width: 420px;
     }
     
     
@@ -74,7 +73,7 @@ left: calc(30vw - 100px);
     /*             AULE                 */
     /* -------------------------------- */
     #container_row_aule{
-    /* width: 556px; */
+    min-width: 420px;
     margin-left: 200px;
     }
     .row_aule {
@@ -438,6 +437,7 @@ overflow: hidden;
     
     #credits{
     padding: 61px 15px 12px;
+    min-width: fit-content;
     }
     #credits div{
     display: flex;
