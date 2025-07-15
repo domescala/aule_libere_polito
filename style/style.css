@@ -74,6 +74,23 @@ body.loading-out {
     font-weight: 700;
     margin-top: 11px;
 }
+#doc_title .views-today{
+    font-size: 14px;
+    border: 1px solid #9758ff;
+    background: #f1e9ff;
+    color: #9758ff;
+    font-family: "Roboto Slab", monospace;
+    padding: 4px 6px;
+    border-radius: 4px;
+    display: block;
+    max-width: 90%;
+    width: fit-content;
+    font-weight: normal;
+}
+#doc_title .views-today span{
+    translate: 0px -1px;
+    display: inline-block;
+}
 #doc_title h1{
     font-size: 52px;
     font-family: "Roboto Slab", monospace;

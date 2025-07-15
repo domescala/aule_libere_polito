@@ -1,3 +1,5 @@
+![Badge](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fdomescala.github.io%2Faule_libere_polito&label=%F0%9F%8F%83%E2%80%8D%E2%99%80%EF%B8%8F%F0%9F%92%A8+studenti+in+cerca+di+aule%3A&color=%238540f5&message=&style=flat&tz=UTC)
+
 # Aule libere Polito
 📍 Progetto indipendente con l'obiettivo di migliorare il servizio "aule libere" del Politecnico di Torino
 ## 💣 Problema
@@ -18,6 +20,7 @@ Il [nuovo sito 🚀](https://domescala.github.io/aule_libere_polito/) ordina le 
 - Stile anche per dispositivi desktop
 - Avviso in caso di prese elettriche assenti 
 - Aule preferite⭐
+- Conta visite👀
 
 ### ⏳ In progress
 - Tipologia dei banchi 

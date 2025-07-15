@@ -368,7 +368,6 @@ function updateDoc_campus(campus, disp){
     updateDoc_date(disp)
     setup_search_modal()
 
-    COUNTER.campus_selected(Selected_campus)
 }
 
 function remove_columns(n_fasceorarie) {
