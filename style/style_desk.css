@@ -20,10 +20,11 @@
     #doc_title {
     }
     #doc_title p{
-    font-size: 12px;
+    font-size: 28px;
     }
     #doc_title h1{
     width: unset;
+    max-width: 600px;
     }
     
     #block_scroll {
@@ -33,6 +34,7 @@
         position: FIXED;
         width: 195px;
         left: calc(30vw - 170px);
+        /* position: sticky; */
     }
     a {
     }
@@ -209,7 +211,7 @@
     }
     
     #filter_box .filter p {
-    font-size: 14px;
+    font-size: 17px;
     }
     
     #filter_box .filter.active {}

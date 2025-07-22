@@ -29,7 +29,8 @@
     <div id="main_container">
         <div id="doc_title">
             <h1>aule libere polito</h1>
-            <p class="description-title">Trova facilmente le aule per studiare al Poli!🏃<br /> Filtri avanzati, avvisi sulla presenza di prese elettriche, funzione 'aule preferite' e molto altro...</p>
+            <p class="description-title">Trova facilmente le aule libere per studiare al Poli!<br /></p>
+            <p class="description-subtitle">Con filtri avanzati, avvisi sulla presenza di prese elettriche, funzione 'aule preferite' e molto altro . . .</p>
             <p class="update-info"> - </p>
             <p class="views-today" style="display: none;"></p> 
         </div>
@@ -37,7 +38,7 @@
             <p>🔍</p>
         </div>
         <div id="search_main_box">
-            <input id="search_main" type="text" placeholder="Cerca un'aula..." list="search_class_list">
+            <input id="search_main" type="text" placeholder="Cerca un'aula . . ." list="search_class_list">
             <div class="search_background"></div>
             <datalist id="search_class_list">
             </datalist>
@@ -51,7 +52,7 @@
                 <div id="campus_box">
                     <p class="campus_title">📍 Sede:</p>
                     <select id="campus_input" onchange="change_campus(this)">
-                        <option value="SEDE_CENTRALE">Sede Centrale</option>
+                        <option value="SEDE_CENTRALE">Centrale</option>
                         <option value="MIRAFIORI">Mirafiori</option>
                         <option value="LINGOTTO">Lingotto</option>
                         <option value="VALENTINO">Valentino</option>
@@ -132,7 +133,7 @@
             </div>
             <div>
                 <span class="credit_emoji">
-                    Cos'è? 💡
+                    Aule libere polito 💡
                 </span>
                 <p>
                     Questo è un progetto indipendente con l'obiettivo di migliorare la fruibilità del servizio per la ricerca delle aule libere del Politecnico di Torino.<br>
@@ -239,7 +240,9 @@
                 </p>
             </div>
             <p class="credit_name">Sviluppato da <a target="_blank" href="https://domescala.github.io">Domenico
-                    Scaletta</a></p>
+                    Scaletta🤸🏻</a> </p>
+            <section class="donation"><a href="https://paypal.me/domescala" target="_blank">offrimi </a></section>
+            <br /><br />
         </div>
 
     </div>
@@ -253,10 +256,10 @@
         </div>
         <div id="modal_content_box">
             <a id="modal_link" target="_blank">📍 Mappa e altre info 🔗</a>
-            <p id="exit_modal" onclick="exit_modal()">torna all'elenco</p>
-
-
+            
+            
             <div id="modal_info_aula">
+                <p id="exit_modal" onclick="exit_modal()">✖</p>
                 <div class="modal_row" id="modal_title">
                     <h1>-</h1>
                 </div>

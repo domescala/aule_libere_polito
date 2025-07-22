@@ -1,9 +1,18 @@
 @font-face {
     font-family: 'comic-cat'; /*a name to be used later*/
     src: url('Comic_CAT.otf'); /*URL to font*/
+    src: url('ComicCAT.woff2'); /*URL to font*/
 }
 :root {
     --background: black;
+    --green: #00a459;
+    --light-green: #05a45c;
+    --ultra-light-green: #eaffe4;
+    --purple: #6411f3;
+    --light-purple: #9758ff;
+    --ultra-light-purple: #f1e9ff;
+    --red: #ff1f51;
+    --light-red: #fff4f6;
 }
 
 * {
@@ -65,31 +74,41 @@ body.loading-out {
     /* width: 400px; */
     /* height: 195px; */
     position: sticky;
-    top: -302px;
+    top: -450px;
     background: white;
     z-index: 11;
     /* word-spacing: 300px; */
     left: 0;
 }
+
 #doc_title p{
-    font-size: 10px;
-    font-family: "Roboto Mono", monospace;
-    color: #9858fb;
+    font-size: 21px;
+    font-family: "comic-cat", "Roboto Slab", monospace;
+    color: var(--light-purple);
     font-weight: normal;
     margin-top: 11px;
-    max-width: 350px;
+    padding-right: 20px;
+    max-width:600px;
 }
+
 #doc_title .update-info{
+    font-size: 12px;
     color: #939393;
     position: absolute;
     top: 0;
+    font-family: 'Roboto Mono';
+}
+#doc_title p.description-subtitle{
+    font-size: 14px;
+    color: #939393;
+    margin-top: 11px;
 }
 #doc_title .views-today{
     font-size: 14px;
-    border: 1px solid #9758ff;
-    background: #f1e9ff;
-    color: #9758ff;
-    font-family: "Roboto Slab", monospace;
+    border: 1px solid var(--purple);
+    background: var(--ultra-light-purple);
+    color: var(--purple);
+    font-family: comic-cat, "Roboto Slab", monospace;
     padding: 4px 6px;
     border-radius: 4px;
     display: block;
@@ -102,12 +121,17 @@ body.loading-out {
     display: inline-block;
 }
 #doc_title h1{
-    font-size: 52px;
+    font-size: 16.5vw;
     font-family: "comic-cat", "Roboto Slab", monospace;
     font-weight: 600;
-    color: #6411f3;
+    color: var(--purple);
 }
-
+@media only screen and (min-width: 600px) {
+        /* styles for browsers larger than 960px; */
+    #doc_title h1{
+        font-size: 99px;
+    }
+}
 #block_scroll {
     position: sticky;
     top: 0;
@@ -217,7 +241,7 @@ justify-content: space-around;
 }
 
 .row_orari p {
-    font-size: 10px;
+    font-size: 12px;
     font-family: "Roboto Mono", monospace;
     width: 32px;
     padding: 6px 0px;
@@ -232,7 +256,7 @@ justify-content: space-around;
     outline: 1px solid #cfcfcf;
     font-weight: 600;
     line-height: 1.5;
-    color: #202020;
+    color: #535353;
     /* line-height: 2; */
     word-spacing: 4px;
     border-radius: 5px;
@@ -306,9 +330,9 @@ transition: scale 0.2s ease;
     background:#ffc83d;
 }
 .row_aule p.info_aula {
-    color: #6812fa;
-    outline: 1px solid #6613ff;
-    background: #f1e9ff;
+    color: var(--purple);
+    outline: 1px solid var(--purple);
+    background: var(--ultra-light-purple);
     font-weight: bold;
     margin-right: 0px;
     /* max-width: 50%; */
@@ -421,24 +445,24 @@ div.lista_aule div {
         /* border-top-right-radius:5px; */
     }
     div.lista_aule div.enabled {
-        background: #9dffd2;
-        outline: 1px solid #07c56e;
+        background: var(--ultra-light-green);
+        outline: 1px solid var(--light-green);
         position: relative;
     }
 
     div.lista_aule div.disabled {
-        background: #ffd1dc;
-        outline: 1px solid #e1204d;
+        background: var(--light-red);
+        outline: 1px solid var(--red);
         position: relative;
     }
 
 
     div.lista_aule div.enabled::after {
         content: "✓";
-        color: #07c56e;
+        color: var(--light-green);
         color: transparent;
         z-index: 1;
-        border: 2px solid #07c56e;
+        border: 2px solid var(--light-green);
         height: 10px;
         width: 5px;
         rotate: 38deg;
@@ -449,7 +473,7 @@ div.lista_aule div {
 
     div.lista_aule div.disabled::after {
         content: "✖";
-        color: #e1204d;
+        color: var(--red);
         z-index: 1;
     }
 
@@ -464,6 +488,9 @@ div.lista_aule div {
         body.current_day div.lista_aule div.current_slot{
             background: #FFEB3B;
             outline: 1px solid #feeb4f;
+        }
+         body.current_day div.lista_aule div.disabled.current_slot{
+            background: #fff8c4;
         }
 
         body.current_day div.lista_aule div.current_slot::before {
@@ -487,7 +514,7 @@ div.lista_aule div {
         body.current_day div.lista_aule div.disabled.current_slot::before {
             /* position: absolute; */
             /* background: #ec0f424d; */
-            border: 2px dashed rgb(248 16 69);
+            border: 2px dashed var(--red);
             outline: 0;
             border: 0;
         }
@@ -528,26 +555,27 @@ filter: blur(1px) grayscale(1);
 }
 #campus_input{
     background: white;
-    font-family: "Roboto Slab", sans-serif;
-    font-size: 16px;
+    font-family: "comic-cat", "Roboto Slab", sans-serif;
+    font-size: 24px;
     /* margin-right: 20px; */
     /* margin-top: 4px; */
     /* line-height: 1; */
-    border: 1px solid #00a459;
+    border: 1px solid var(--green);
     padding: 2px 4px 2px 4px;
     border-radius: 7px;
     line-height: 1;
     margin-top: 7px;
-    color: #00a459;
+    color: var(--green);
     outline: none;
     margin-right: auto;
     cursor: pointer;
+    width: fit-content;
 }
 #campus_input:active{
     scale: 0.95;
 }
 .campus_title{
-    font-size: 10px;
+    font-size: 11px;
     font-family: "Roboto Slab", monospace;
     /* width: 62%; */
 }
@@ -585,8 +613,8 @@ body.filter_active div.artificial_before {
     left: 0px;
     /* width: 82vw; */
     /* padding-left: 10px; */
-    border-top: 1px dashed #e2224a;
-    border-bottom: 1px dashed #6312f7;
+    border-top: 1px dashed var(--red);
+    border-bottom: 1px dashed var(--purple);
 }
 
 #filter_box div {
@@ -601,7 +629,7 @@ body.filter_active div.artificial_before {
 #filter_box p {
     /* display: block; */
     /* padding: 4px 8px; */
-    font-size: 10px;
+    font-size: 11px;
     font-family: "Roboto Slab", monospace;
     /* color: #000000; */
 }
@@ -612,12 +640,12 @@ body.filter_active div.artificial_before {
 
 #filter_box .filter p {
     display: block;
-    padding: 4px 8px;
+    padding: 4px 6px;
     border-radius: 7px;
-    border: 1px solid #6312f7;
-    color: #6312f7;
-    font-size: 12px;
-    font-family: 'Roboto Slab', monospace;
+    border: 1px solid var(--purple);
+    color: var(--purple);
+    font-size: 15px;
+    font-family: "comic-cat", 'Roboto Slab', monospace;
     font-weight: 400;
     transition-property: color scale background;
     transition-duration: 0.1s;
@@ -628,7 +656,7 @@ body.filter_active div.artificial_before {
 
 #filter_box .filter.active p {
     scale: 0.95;
-    background: #6613ff;
+    background: var(--purple);
     color: white;
     font-weight: normal;
     /* box-shadow: 0px 0px 5px 2px #7930ff; */
@@ -639,7 +667,7 @@ body.filter_active div.artificial_before {
 }
 #filter_box .filter.active:active p{
     scale: 0.90;
-    background: #894aff;
+    background: var(--light-purple);
 
 }
 
@@ -673,7 +701,7 @@ body.filter_active div.artificial_before {
     /* border: 1px solid black; */
     /* position: absolute; */
     /* padding: 5px; */
-    /* box-shadow: 0px 0px 8px 3px #e2224ad4; */
+    /* box-shadow: 0px 0px 8px 3px var(--red)d4; */
     width: 100%;
     /* opacity: 0; */
     }
@@ -688,7 +716,7 @@ body.filter_active div.artificial_before {
     padding: 0;
 }
 .date_title{
-    font-size: 10px;
+    font-size: 11px;
     font-family: "Roboto Slab", monospace;
     /* width: 45%; */
 }
@@ -700,20 +728,20 @@ body.filter_active div.artificial_before {
     border-radius: 5px;
     /* border: 1px solid #dc0031; */
     color: #ffffff;
-    background: #e2224a;
+    background: var(--red);
 }
 .date_value{
-    font-family: "Roboto Slab", sans-serif;
-    font-size: 16px;
+    font-family: "comic-cat", "Roboto Slab", sans-serif;
+    font-size: 21px;
     margin-right: 20px;
     /* margin-top: 4px; */
     /* line-height: 1; */
-    border: 1px solid #d71e45;
+    border: 1px solid var(--red);
     padding: 5px 8px;
     border-radius: 7px;
     line-height: 1;
     margin-top: 7px;
-    color: #eb234d;
+    color: var(--red);
     margin-right: auto;
 }
 /* -------------------------------- */
@@ -829,9 +857,9 @@ body.filter_active div.artificial_before {
     border-radius: 5px;
     outline: 1px solid #171717;
     padding: 5px 13px;
-    font-family: 'Roboto mono', monospace;
-    font-weight: 600;
-    font-size: 12px;
+    font-family: comic-cat,'Roboto mono', monospace;
+    /* font-weight: 600; */
+    font-size: 16px;
     color: #171717;
     cursor: pointer;
     transition-property: color border background filter;
@@ -866,8 +894,11 @@ body.filter_active div.artificial_before {
     content: "";
 }
 #modal_favorite.favorite p::before{
-    content: "⭐";
-    animation:favoriteadd_star 0.5s ease 
+    content: "★";
+    animation:favoriteadd_star 0.5s ease;
+    color: #ffffff;
+    scale:1.5;
+    translate: 0px -2px;
 }
 
 @keyframes favoriteadd_star {
@@ -875,12 +906,15 @@ body.filter_active div.artificial_before {
         scale: 0;
         opacity: 0;
         rotate: 360deg;
+        color: #ffc83d;
     }
 
-    70%{scale: 2;
-        rotate: -30deg;}
+    70%{scale: 2.5;
+        rotate: -30deg;
+        color: #ffc83d;
+    }
     90%{
-        scale: 0.9;
+        scale: 1.3;
         
     }
 
@@ -912,7 +946,7 @@ body.filter_active div.artificial_before {
     /* position: fixed; */
     /* right: 0; */
     margin: 15px 15px 6px auto;
-    font-size: 10px;
+    font-size: 17px;
     font-family: "Roboto Mono", sans-serif;
     font-weight: 600;
     /* height: 30px; */
@@ -925,36 +959,16 @@ body.filter_active div.artificial_before {
     /* position: absolute; */
     /* position: relative; */
     cursor: pointer;
+    outline: 1px solid #4b4b4b;
+    padding: 2px 6px;
+    border-radius: 6px;
+    color: #4b4b4b;
+    position: absolute;
+    right: 5px;
+}
 
-}
-#exit_modal::before{
-    content: "\2B05\FE0F";
-    display:inline-block;
-    transition: opacity 1s ease;
-    margin-right: 5px
-}
 #exit_modal:active{
     scale:0.9;
-}
-#exit_modal:hover::before{
-    animation:exithover 1s ease forwards
-}
-@keyframes exithover {
-    0%{
-        /* transform: translateX(50px) ; */
-    }
-    10%{
-        transform: translateX(2px) ;
-        opacity: 1;
-    }
-    25%{
-        transform: translateX(-20px) ;
-        opacity: 0;
-    }
-    100%{
-        opacity: 0;
-        transform: translateX(0px) ;
-    }
 }
 
 #modal_link {
@@ -964,10 +978,10 @@ body.filter_active div.artificial_before {
     /* width: 121px; */
     border-radius: 5px;
     border: 1px solid #959595;
-    font-family: "Roboto mono", monospace;
+    font-family: comic-cat, "Roboto mono", monospace;
     word-spacing: -2px;
     top: 0;
-    font-size: 12px;
+    font-size: 18px;
     /* display: block; */
     order: 2;
     display: inline-block;
@@ -975,6 +989,7 @@ body.filter_active div.artificial_before {
 
 #modal_info_aula {
     display: flex;
+    position: relative;
     padding: 7px 15px 0px 15px;
     background: white;
     flex-wrap: wrap;
@@ -997,11 +1012,13 @@ body.filter_active div.artificial_before {
 #modal_info_aula .modal_row {}
 
 #modal_title.modal_row {
-    font-size: 51px;
-    font-family: "Roboto Slab", sans-serif;
+    font-size: 75px;
+    font-family: comic-cat, "Roboto Slab", sans-serif;
     border-bottom: 1px solid #c2c2c2;
     margin-bottom: 14px;
     line-height: 1.2;
+    color: #4b4b4b;
+    font-weight: 600;
 }
 
 
@@ -1014,14 +1031,16 @@ body.filter_active div.artificial_before {
 /* blocco informazioni aula */
 /* titolo  */
 #modal_info_aula p.title {
-    font-size: 10px;
-    font-family: "Roboto mono", monospace;
+    font-size: 13px;
+    font-family: "Roboto Slab", monospace;
+    margin-bottom: 4px;
 }
 
 /* contenuto  */
 #modal_info_aula p.contain {
     font-size: 22px;
-    font-family: "Roboto Slab", sans-serif;
+    font-family: comic-cat, "Roboto Slab", sans-serif;
+    /* color: #6510ef; */
 }
 
 /* suffisso per capienza e superficie*/
@@ -1130,17 +1149,17 @@ body.filter_active div.artificial_before {
 #search_main{
     margin: 0px 10px;
     background: white;
-    font-family: "Roboto Slab", sans-serif;
+    font-family: "comic-cat", "Roboto Slab", sans-serif;
     font-size: 16px;
     /* margin-right: 20px; */
     /* margin-top: 4px; */
     /* line-height: 1; */
-    border: 1px solid #6312f7;
+    border: 1px solid var(--purple);
     padding: 2px 4px 2px 4px;
     border-radius: 7px;
     line-height: 1;
     /* margin-top: 7px; */
-    color: #6312f7;
+    color: var(--purple);
     outline: none;
     width: 151px;
     height: 24px;
@@ -1265,7 +1284,7 @@ body.filter_active div.artificial_before {
     /* border-top:1px solid black; */
 }
 #credits p{
-    font-size: 12px;
+    font-size: 14px;
     font-family: "Roboto Mono", sans-serif;
     font-weight: 400;
     color: #0a0a0a;
@@ -1274,7 +1293,7 @@ body.filter_active div.artificial_before {
 }
 #credits a{
     font-size: 14px;
-    color: #6919f3;
+    color: var(--purple);
     text-decoration: underline;
 }
 #credits span{
@@ -1284,12 +1303,12 @@ body.filter_active div.artificial_before {
     line-height: 1.5;
     font-weight: 600;
     font-family: "comic-cat", 'Roboto Mono';
-    color: #6510ef;
+    color: var(--purple);
     width: 100%;
 }
 #credits .credit_emoji_sub{
     color: #454444;
-    font-size: 13px;
+    font-size: 16px;
     line-height: 1.5;
     font-weight: 600;
 }
@@ -1318,20 +1337,44 @@ body.filter_active div.artificial_before {
 #credits .credit_name {
     margin-top: 20px;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
     color:#202020;
 }
 #credits .credit_name a{
-    font-weight: 600;
+    font-size: inherit;
+}
+#credits .donation a{
+    font-size: 16px;
     text-decoration: none;
     animation: color_infinite 10s linear infinite alternate-reverse;
     word-wrap: nowrap;
     font-family: "comic-cat";
+    outline: 1px dashed red;
+    padding: 3px 5px;
+    border-radius: 6px;
 }
 
 @keyframes color_infinite {
-    0% {color: #ffa724;}
-    50% {color: #ff3138;}
-    100% {color: #2436ff;}
+    0% {color: #ffa724;outline-color: #ffa724;filter: drop-shadow(0px 0px 10px #ffa724a2);}
+    50% {color: #ff3138;outline-color: #ff3138;filter: drop-shadow(0px 0px 10px #ff3138a2);}
+    100% {color: #2436ff;outline-color: #2436ff;filter: drop-shadow(0px 0px 10px #2436ffa2);}
+}
+#credits .donation a {
+    width: fit-content;
+    margin: auto;
+    margin-top: 16px;
+    display: block;
+}
+#credits .donation a::after{
+    content: "un caffèéèè☕";
+    animation: content-anim 15s ease infinite;
+}
+@keyframes content-anim {
+    0% { content:"un caffèéèè☕";}
+    15% {content:"un donut🍩";}
+    30% { content:"un gelato🍦";}
+    45% { content:"una pizza🍕";}
+    60% { content:"una pinta🍻";}
+    75% { content:"un cestino di ciliege🍒💸";}
 }
