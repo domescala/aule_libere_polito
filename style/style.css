@@ -1,3 +1,7 @@
+@font-face {
+    font-family: 'comic-cat'; /*a name to be used later*/
+    src: url('Comic_CAT.otf'); /*URL to font*/
+}
 :root {
     --background: black;
 }
@@ -69,10 +73,16 @@ body.loading-out {
 }
 #doc_title p{
     font-size: 10px;
-    font-family: "Roboto mono", monospace;
-    color: #939393;
-    font-weight: 700;
+    font-family: "Roboto Mono", monospace;
+    color: #9858fb;
+    font-weight: normal;
     margin-top: 11px;
+    max-width: 350px;
+}
+#doc_title .update-info{
+    color: #939393;
+    position: absolute;
+    top: 0;
 }
 #doc_title .views-today{
     font-size: 14px;
@@ -93,8 +103,9 @@ body.loading-out {
 }
 #doc_title h1{
     font-size: 52px;
-    font-family: "Roboto Slab", monospace;
+    font-family: "comic-cat", "Roboto Slab", monospace;
     font-weight: 600;
+    color: #6411f3;
 }
 
 #block_scroll {
@@ -195,18 +206,19 @@ justify-content: space-around;
 
 /* border: inset; */
 
-outline: 2px solid #424242;
+/* outline: 2px solid #424242; */
 }
 
 
 
 .row_orari div {
     width: 100%;
+    padding: 0px 0.31%;
 }
 
 .row_orari p {
     font-size: 10px;
-    font-family: "Roboto mono", monospace;
+    font-family: "Roboto Mono", monospace;
     width: 32px;
     padding: 6px 0px;
     width: 100%;
@@ -217,17 +229,21 @@ outline: 2px solid #424242;
     /* border-bottom: 37px solid #91f6bf; */
     /* border-top: 1px solid #ce8bff; */
     text-align: center;
-    outline: 1px dashed #424242;
+    outline: 1px solid #cfcfcf;
     font-weight: 600;
     line-height: 1.5;
     color: #202020;
-    line-height: 2;
+    /* line-height: 2; */
     word-spacing: 4px;
+    border-radius: 5px;
+    background: #fbfbfb;
 }
 
 body.current_day .row_orari div.current_slot p{
     
-background: #fff470;
+background: #FFEB3B;
+    
+outline: 1px solid #feeb4f;
 }
 
 
@@ -290,10 +306,10 @@ transition: scale 0.2s ease;
     background:#ffc83d;
 }
 .row_aule p.info_aula {
-    color: #ffffff;
+    color: #6812fa;
     outline: 1px solid #6613ff;
-    background: #6613ff;
-    font-weight: normal;
+    background: #f1e9ff;
+    font-weight: bold;
     margin-right: 0px;
     /* max-width: 50%; */
     /* transition: all 1s ease; */
@@ -405,25 +421,35 @@ div.lista_aule div {
         /* border-top-right-radius:5px; */
     }
     div.lista_aule div.enabled {
-        background: #00d573;
-        outline: 1px solid #00d573;
+        background: #9dffd2;
+        outline: 1px solid #07c56e;
         position: relative;
     }
 
     div.lista_aule div.disabled {
-        background: #ffffff;
-        outline: 1px solid #989898;
+        background: #ffd1dc;
+        outline: 1px solid #e1204d;
         position: relative;
     }
 
 
     div.lista_aule div.enabled::after {
-        content: "📚";
+        content: "✓";
+        color: #07c56e;
+        color: transparent;
         z-index: 1;
+        border: 2px solid #07c56e;
+        height: 10px;
+        width: 5px;
+        rotate: 38deg;
+        translate: 0px -2px;
+        border-top: 0;
+        border-left: 0;
     }
 
     div.lista_aule div.disabled::after {
-        content: "🚫";
+        content: "✖";
+        color: #e1204d;
         z-index: 1;
     }
 
@@ -436,8 +462,8 @@ div.lista_aule div {
     
     /* highlight slot if is the current day  */
         body.current_day div.lista_aule div.current_slot{
-            background: #fff470;
-            outline: 1px solid #fff470;
+            background: #FFEB3B;
+            outline: 1px solid #feeb4f;
         }
 
         body.current_day div.lista_aule div.current_slot::before {
@@ -446,10 +472,11 @@ div.lista_aule div {
             font-family: monospace;
             /* background: #feff0bc4; */
             color: transparent;
-            width: 24px;
-            height: 24px;
-            border: 2px dashed  rgb(0 78 19);
-            border-radius: 16px;
+            width: 100px;
+            height: 100px;
+            outline: 11px dashed rgb(14 197 114);
+            border-radius: 50%;
+            scale: 0.23;
             position: absolute;
             /* z-index: 0; */
             line-height: 1;
@@ -461,6 +488,7 @@ div.lista_aule div {
             /* position: absolute; */
             /* background: #ec0f424d; */
             border: 2px dashed rgb(248 16 69);
+            outline: 0;
             border: 0;
         }
 
@@ -520,7 +548,7 @@ filter: blur(1px) grayscale(1);
 }
 .campus_title{
     font-size: 10px;
-    font-family: "Roboto mono", monospace;
+    font-family: "Roboto Slab", monospace;
     /* width: 62%; */
 }
 
@@ -574,7 +602,7 @@ body.filter_active div.artificial_before {
     /* display: block; */
     /* padding: 4px 8px; */
     font-size: 10px;
-    font-family: "Roboto mono", monospace;
+    font-family: "Roboto Slab", monospace;
     /* color: #000000; */
 }
 
@@ -589,12 +617,11 @@ body.filter_active div.artificial_before {
     border: 1px solid #6312f7;
     color: #6312f7;
     font-size: 12px;
-    font-family: 'Roboto Mono', monospace;
-    font-weight: 600;
+    font-family: 'Roboto Slab', monospace;
+    font-weight: 400;
     transition-property: color scale background;
     transition-duration: 0.1s;
     cursor: pointer;
-
 }
 
 #filter_box .filter.active {}
@@ -662,7 +689,7 @@ body.filter_active div.artificial_before {
 }
 .date_title{
     font-size: 10px;
-    font-family: "Roboto mono", monospace;
+    font-family: "Roboto Slab", monospace;
     /* width: 45%; */
 }
 #date_box .date_button{
@@ -1256,8 +1283,8 @@ body.filter_active div.artificial_before {
     font-size: 16px;
     line-height: 1.5;
     font-weight: 600;
-    font-family: 'Roboto Mono';
-    color: #2d2d2d;
+    font-family: "comic-cat", 'Roboto Mono';
+    color: #6510ef;
     width: 100%;
 }
 #credits .credit_emoji_sub{
@@ -1300,6 +1327,7 @@ body.filter_active div.artificial_before {
     text-decoration: none;
     animation: color_infinite 10s linear infinite alternate-reverse;
     word-wrap: nowrap;
+    font-family: "comic-cat";
 }
 
 @keyframes color_infinite {

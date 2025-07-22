@@ -772,7 +772,7 @@ function setup_version_date() {
     }
 
     let txt = `dati aggiornati il ${new Date(Update_date).to_ddmmyyyy(".")} (${delta})`
-    q("#doc_title p").innerHTML = txt 
+    q("#doc_title .update-info").innerHTML = txt 
 }
 
 function get_current_slot(){
