@@ -105,8 +105,8 @@ body.loading-out {
 }
 #doc_title .views-today{
     font-size: 14px;
-    border: 1px solid var(--purple);
-    background: var(--ultra-light-purple);
+    /* border: 1px solid var(--purple); */
+    /* background: var(--ultra-light-purple); */
     color: var(--purple);
     font-family: comic-cat, "Roboto Slab", monospace;
     padding: 6px 6px 4px;
