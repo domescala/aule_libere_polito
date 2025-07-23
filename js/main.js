@@ -554,7 +554,6 @@ function open_modal(id_row){
         q("#modal_favorite").removeClass("favorite")
     }
 
-    COUNTER.classroom_opening(Aula_modal)
 }
 
 function exit_modal(){
@@ -593,7 +592,6 @@ FILTERS.forEach(filter => {
             filtra_aule("reset")
         }
         
-        COUNTER.filter_selected(filter.getAttribute("value").replace("_", ""))
     })
 });
 
@@ -625,7 +623,6 @@ q("#modal_favorite").addEventListener("click", function(){
     localStorage["favorites"] = JSON.stringify(Favorites)
     Order_favorites()
 
-    COUNTER.favorite_add(Aula_modal)
 })
 function Order_favorites(){
     // i valori di order dipendono se il Filtro è attivo o no e se è nei preferiti o no 
@@ -732,7 +729,7 @@ function change_date(this_element){
         
         updateDoc_date(disp)
     }
-    COUNTER.click_buttons("change date")
+    // click_buttons("change date")
 }
 
 function change_campus(this_element) {
@@ -888,3 +885,88 @@ window.addEventListener('popstate', function (event) {
 });
 
 main()
+
+
+const randomDelay = (high = 100, low = 20, percent=0.2) => {
+    return (Math.floor(Math.random() - percent)) ? high : Math.random()*low
+} 
+
+const startTypingAnimation = () => {
+    const speedWriting = 60;
+    const waitToCanc = 2500;
+    const speedCanc = 30;
+    const waitToWrite = 550;
+
+    typingElement.innerHTML = ""
+    clearTimeout(typingTimer)
+    
+    typingIndex = typingIndex < typingContents.length-1 ? typingIndex+1 : 0 
+    const typeWriter = (text = typingContents[typingIndex],  charIndex=0) => {
+        if (charIndex < text.length) {
+            typingElement.innerHTML += text[charIndex];
+            typingTimer = setTimeout(()=>typeWriter(text, charIndex+1), speedWriting + randomDelay());
+        }
+        else{
+            typingTimer = setTimeout(()=>typeCanc(text, charIndex), waitToCanc);
+        }
+    }
+
+    const typeCanc = (text, charIndex) => {
+        if (charIndex >= 0) {
+            typingElement.innerHTML = text.slice(0,charIndex).join("");
+            typingTimer = setTimeout(()=>typeCanc(text, charIndex-1), speedCanc + randomDelay(20));
+        }
+        else{
+            typingIndex = typingIndex < typingContents.length-1 ? typingIndex+1 : 0
+            typingTimer = setTimeout(()=> typeWriter(typingContents[typingIndex]), waitToWrite)
+            
+        }
+    }
+    typeWriter()
+}
+const stopTypingAnimation = () => {
+    clearTimeout(typingTimer)
+    typingElement.innerHTML = typingContents[typingIndex].join("")
+}
+let typingTimer
+let typingIndex = 0;
+const typingElement = document.querySelector(".donation .typing-text")
+const typingContents = [
+    "offrimi un caffèéèè -☕",
+    "offrimi un quackson -🥐",
+    "offrimi un gelato -🍦",
+    "offrimi una pizza -🍕",
+    "offrimi una pinta -🍻",
+    "offrimi un cestino di ciliege -🍒-💸",].map(e=> {
+        let s = e.split("-")
+        let text = s[0]
+        let emoji = s.slice(1)
+        return [...text,...emoji]
+} )
+// startTypingAnimation()
+stopTypingAnimation()
+
+q("#main_container").addEventListener("scrollend", ()=>{
+    console.log(typingElement.getBoundingClientRect().top < window.innerHeight + 300)
+    if(typingElement.getBoundingClientRect().top < window.innerHeight + 300){
+        startTypingAnimation()
+    }
+    else{
+        stopTypingAnimation()
+    }
+})
+
+const intro = () => {
+    const TITLE = document.querySelector("h1")
+    const titleText = TITLE.innerHTML
+    TITLE.innerHTML = ""
+    const typeWriter = (text, element,  speed = 50,  index=0) => {
+        if (index < text.length) {
+            element.innerHTML += text[index];
+            setTimeout(() => typeWriter(text, element, speed,  index+1), speed + randomDelay(100, 20, 0.1));
+        }
+    }
+    typeWriter(titleText, TITLE, 50)
+}
+
+intro()

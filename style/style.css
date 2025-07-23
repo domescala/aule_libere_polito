@@ -109,12 +109,31 @@ body.loading-out {
     background: var(--ultra-light-purple);
     color: var(--purple);
     font-family: comic-cat, "Roboto Slab", monospace;
-    padding: 4px 6px;
+    padding: 6px 6px 4px;
     border-radius: 4px;
     display: block;
     max-width: 90%;
     width: fit-content;
     font-weight: normal;
+    min-height: 19px;
+}
+#doc_title .views-today::before{
+    content:"●";
+    animation: live-blink 2s ease infinite;
+    font-size: 20px;
+    margin-right: 6px;
+    line-height: 0;
+}
+@keyframes live-blink {
+    0%{opacity: 1;}
+    50%{opacity: 0;}
+}
+#doc_title .views-today::after{
+    /* questa emoji è invisibile. Serve solamente a dare le dimensioni corrette a views-today durante l'animazione */
+    content:"🍕";
+    width: 0;
+    color: transparent;
+    display: inline-block;
 }
 #doc_title .views-today span{
     translate: 0px -1px;
@@ -1142,7 +1161,7 @@ body.filter_active div.artificial_before {
 #search_main_box{
     display: flex;
     width: 100%;
-    height: 28px;
+    height: 30px;
     position: relative;
     cursor: pointer;
 }
@@ -1267,10 +1286,11 @@ body.filter_active div.artificial_before {
     z-index: 400;
     width: 100%;
     background: white;
-    margin: 17px 0px 25px;
+    margin: 17px 0px 0px;
     width: 100%;
     box-shadow: 0px -4px 12px 0px #00000029;
-    padding: 13px 15px 12px;
+    padding: 13px 15px 30px;
+    overflow: hidden;
 }
 #credits div{
     border-bottom: 1px dashed #afafaf;
@@ -1289,7 +1309,6 @@ body.filter_active div.artificial_before {
     font-weight: 400;
     color: #0a0a0a;
     /* max-width:400px; */
-    margin-bottom: 4px;
 }
 #credits a{
     font-size: 14px;
@@ -1301,7 +1320,7 @@ body.filter_active div.artificial_before {
     /* margin-top: 4px; */
     font-size: 16px;
     line-height: 1.5;
-    font-weight: 600;
+    /* font-weight: 600; */
     font-family: "comic-cat", 'Roboto Mono';
     color: var(--purple);
     width: 100%;
@@ -1310,7 +1329,7 @@ body.filter_active div.artificial_before {
     color: #454444;
     font-size: 16px;
     line-height: 1.5;
-    font-weight: 600;
+    /* font-weight: 600; */
 }
 #credits .list{
     line-height: 1.5;
@@ -1344,7 +1363,7 @@ body.filter_active div.artificial_before {
 #credits .credit_name a{
     font-size: inherit;
 }
-#credits .donation a{
+#credits .donation span{
     font-size: 16px;
     text-decoration: none;
     animation: color_infinite 10s linear infinite alternate-reverse;
@@ -1356,25 +1375,125 @@ body.filter_active div.artificial_before {
 }
 
 @keyframes color_infinite {
-    0% {color: #ffa724;outline-color: #ffa724;filter: drop-shadow(0px 0px 10px #ffa724a2);}
-    50% {color: #ff3138;outline-color: #ff3138;filter: drop-shadow(0px 0px 10px #ff3138a2);}
-    100% {color: #2436ff;outline-color: #2436ff;filter: drop-shadow(0px 0px 10px #2436ffa2);}
+    0% {color: #ffa724;outline-color: #ffa724;filter: drop-shadow(0px 0px 10px #ffa72478);}
+    50% {color: #ff3138;outline-color: #ff3138;filter: drop-shadow(0px 0px 10px #ff313880);}
+    100% {color: #2436ff;outline-color: #2436ff;filter: drop-shadow(0px 0px 10px #2436ff73);}
 }
-#credits .donation a {
+#credits .donation{
+    border:none;
+    margin-bottom: 50px;
+}
+#credits .donation span {
     width: fit-content;
     margin: auto;
-    margin-top: 16px;
+    margin-top: -1px;
     display: block;
+    cursor:pointer;
 }
-#credits .donation a::after{
-    content: "un caffèéèè☕";
-    animation: content-anim 15s ease infinite;
+#credits .typing-text{
+    display: inline;
+    font-weight: inherit;
+    color: inherit;
+    filter: inherit;
 }
-@keyframes content-anim {
-    0% { content:"un caffèéèè☕";}
-    15% {content:"un donut🍩";}
-    30% { content:"un gelato🍦";}
-    45% { content:"una pizza🍕";}
-    60% { content:"una pinta🍻";}
-    75% { content:"un cestino di ciliege🍒💸";}
+#credits .donation span::after {
+    content: "|";
+    font-family: monospace;
+    animation: cursor-blink 1s ease infinite;
+}
+@keyframes cursor-blink {
+    0%{opacity:0}
+    50%{opacity:0}
+    51%{opacity:1}
+    100%{opacity:1}
+}
+#credits:has(.donation-box:hover) div{
+    filter: blur(3px) opacity(0.5);
+}
+#credits div.donation-box, #credits .donation-box div{
+    filter: none!important;
+}
+
+#credits .donation-box{
+    border:0;
+    position:relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#credits div.donation-modal{
+    display:flex;
+    border:0;
+    position: relative;
+    opacity: 1;
+    justify-content: center;
+    width: 100vw;
+    height: 0px;
+    position: absolute;
+    padding:0;
+    height: 300px;
+    /* background: radial-gradient(ellipse at bottom, #000000, transparent 76%); */
+    /* background:#ff000030; */
+    align-items: center;
+    translate: 0px 0px;
+    transition: translate 0s 1s ease;
+}
+#credits .donation-box:hover .donation-modal{
+    translate: 0px -150px;
+    transition: none;
+
+}
+
+#credits a.donation-paypal,
+#credits a.donation-satispay{
+    /* position: relative; */
+    background-color: var(--ultra-light-purple);
+    background-image: url("satispay.svg");
+    background-repeat: no-repeat;
+    background-size: 76%;
+    background-position: center;
+    width: 70px;
+    height: 70px;
+    display: block;
+    padding: 5px;
+    border-radius: 10px;
+    margin: 0 5px;
+    outline: 1px dashed var(--light-purple);
+    outline-offset: -6px;
+    box-shadow: 0 0 20px white;
+    translate: 0px 160px;
+    transition: translate linear(0 0%, 0.22 2.1%, 0.86 6.5%, 1.11 8.6%, 1.3 10.7%, 1.35 11.8%, 1.37 12.9%, 1.37 13.7%, 1.36 14.5%, 1.32 16.2%, 1.03 21.8%, 0.94 24%, 0.89 25.9%, 0.88 26.85%, 0.87 27.8%, 0.87 29.25%, 0.88 30.7%, 0.91 32.4%, 0.98 36.4%, 1.01 38.3%, 1.04 40.5%, 1.05 42.7%, 1.05 44.1%, 1.04 45.7%, 1 53.3%, 0.99 55.4%, 0.98 57.5%, 0.99 60.7%, 1 68.1%, 1.01 72.2%, 1 86.7%, 1 100%);
+    transition-duration: 2s;
+    
+}
+#credits a.donation-paypal, 
+#credits:has(.donation-box:hover)  a.donation-satispay{
+    transition-delay: .05s
+}
+#credits a.donation-satispay, 
+#credits:has(.donation-box:hover)  a.donation-paypal{
+    transition-delay: 0s
+}
+
+
+#credits:has(.donation-box:hover)  a.donation-paypal,
+#credits:has(.donation-box:hover)  a.donation-satispay{
+    translate: 0px -60px;
+    transition-duration: 0.9s;
+}
+
+#credits a.donation-paypal{
+    background-image: url("paypal.svg");
+}
+
+
+
+#main_container > div:not(#doc_title), #main_container #doc_title > p{
+    opacity: 0;
+    animation: opacity0-1 2s 1s linear forwards;
+}
+
+@keyframes opacity0-1 {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
 }
