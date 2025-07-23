@@ -937,7 +937,7 @@ const typingContents = [
     "offrimi un gelato -🍦",
     "offrimi una pizza -🍕",
     "offrimi una pinta -🍻",
-    "offrimi un cestino di ciliege -🍒-💸",].map(e=> {
+    "offrimi un cestino di ciliegie -🍒-💸",].map(e=> {
         let s = e.split("-")
         let text = s[0]
         let emoji = s.slice(1)
