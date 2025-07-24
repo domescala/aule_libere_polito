@@ -29,6 +29,8 @@
 }
 
 body {
+    /* height: 60px; */
+    /* overflow: hidden; */
     /* padding: 0px 0px 0px 10px; */
     font-family: sans-serif;
     /* overflow: hidden; */
@@ -211,7 +213,7 @@ a {
     font-family: sans-serif;
     z-index: 0;
     overflow-y: scroll;
-    height: 100vh;
+    height: 100svh;
     /* padding: 0px 10px; */
     flex-wrap: wrap;
     overflow-x: hidden;
@@ -222,37 +224,16 @@ a {
 /* -------------------------------- */
 
 .row_orari {
-
-flex-direction: row;
-
-margin: 7px 0px 0px 0px;
-
-width: 100%;
-
-border: 0;
-
-display: flex;
-
-text-align: center;
-
-align-items: center;
-
-/* word-spacing: 100px; */
-
-margin-top: 16px;
-
-/* border: 1px solid #9d9d9d; */
-
-justify-content: space-around;
-
-/* border: 2px black inset; */
-
-/* border: inset; */
-
-/* outline: 2px solid #424242; */
+    flex-direction: row;
+    margin: 7px 0px 0px 0px;
+    width: 100%;
+    border: 0;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin-top: 16px;
+    justify-content: space-around;
 }
-
-
 
 .row_orari div {
     width: 100%;
@@ -300,29 +281,14 @@ outline: 1px solid #feeb4f;
     padding: 0px 10px 10px;
 }
 .row_aule {
-
-display: flex;
-
-width: 100%;
-
-flex-wrap: wrap;
-
-margin-top: 23px;
-
-
-/* border-radius: 6px; */
-
-border-top: 1px solid #a3a3a3;
-
-/* height: 100%; */
-
-/* height: 21px; */
-
-/* overflow: hidden; */
-
-justify-content: flex-end;
-cursor: pointer;
-transition: scale 0.2s ease;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 23px;
+    border-top: 1px solid #a3a3a3;
+    justify-content: flex-end;
+    cursor: pointer;
+    transition: scale 0.2s ease;
 }
 .row_aule:active{
     scale:0.95;
@@ -910,14 +876,18 @@ body.filter_active div.artificial_before {
 
 }
 #modal_favorite.favorite p::after{
-    content: "";
+    content: " aula preferita :)";
+    color: #453512;
 }
 #modal_favorite.favorite p::before{
     content: "★";
     animation:favoriteadd_star 0.5s ease;
     color: #ffffff;
+    color: #ffc83d;;
     scale:1.5;
     translate: 0px -2px;
+    -webkit-text-stroke: 0.5px #453512
+    
 }
 
 @keyframes favoriteadd_star {
@@ -1215,7 +1185,7 @@ body.filter_active div.artificial_before {
     z-index: 200;
 }
 #search_main:focus+.search_background{
-    height: 100vh;
+    height: 100svh;
     width: 100vw;
     background:rgb(255, 255, 255);
     position: absolute;
@@ -1490,9 +1460,11 @@ body.filter_active div.artificial_before {
 
 #main_container > div:not(#doc_title), #main_container #doc_title > p{
     opacity: 0;
+    animation: opacity0-1 2s 2.5s linear forwards;
+}
+#main_container #doc_title .description-title{
     animation: opacity0-1 2s 1s linear forwards;
 }
-
 @keyframes opacity0-1 {
     0%{opacity: 0;}
     100%{opacity: 1;}

@@ -13,17 +13,11 @@ const KEY_STORAGE_LAST = "hits-lastDate-v0.3";
 
 const trackPage = () => {
   // ignore localhost domain (debug)
-  //   if (
-  //     window.location.host.includes("localhost:") ||
-  //     window.location.host.includes("127.0.0.1") ||
-  //     window.location.host.includes("192.168.")
-  //   ) {
-  //     console.log("track counter debug bypass");
-  //     const hits = tryStorage(KEY_STORAGE_HIT, { today_hits: 1, total_hits: 1 });
-  //     updateCounter(hits);
-  //     return;
-  //   }
-  // ignore recent click
+  if (window.location.host != "domescala.github.io") {
+    const hits = tryStorage(KEY_STORAGE_HIT, { today_hits: 1, total_hits: 1 });
+    updateCounter(hits);
+    return;
+  }
   const lastDate = localStorage[KEY_STORAGE_LAST];
   if (lastDate == undefined || notToday(lastDate)) {
     localStorage[KEY_STORAGE_LAST] = new Date().getTime();
@@ -114,7 +108,7 @@ const updateCounter = (hits) => {
   };
   viewsElement.style.display = "revert";
   document.querySelector(".views-total b").innerHTML = total_hits;
-  setTimeout(()=> typeWriter(), 3000)
+  setTimeout(() => typeWriter(), 3000);
 };
 
 trackPage();
